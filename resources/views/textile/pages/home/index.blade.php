@@ -8,8 +8,7 @@
    @include('textile.pages.home.section_c_vedio')
    @include('textile.pages.home.section_d_display_a')
    @include('textile.pages.home.section_d_display_b')
- 
    @include('textile.pages.home.section_e_social_shop')
-  
    @include('textile.pages.home.section_f_blog')
+   
 @endsection

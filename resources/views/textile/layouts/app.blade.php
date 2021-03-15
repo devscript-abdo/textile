@@ -9,7 +9,7 @@
 
 <body>
     <div class="page-wrapper">
-
+      
         @include('textile.layouts.sections.navbar')
 
         <main class="main">
@@ -26,10 +26,10 @@
 
      @include('textile.layouts.sections.mobileNavbar')
 
-     @include('textile.layouts.sections.newsLatter')
+     {{--@include('textile.layouts.sections.newsLatter')--}}
 
      @include('textile.layouts.parts.scripts')
-     
+
      <!-------------------------Haymacproduction.ma-------------------------------->
 </body>
 

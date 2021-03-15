@@ -30,6 +30,7 @@ use Spatie\Honeypot\ProtectAgainstSpam;
 Route::middleware('cache.headers:public;max_age=2628000;etag')->group(function (){
     
     Route::get('/', [SiteController::class, 'index'])->name('home');
+    Route::get('/produits', [SiteController::class, 'produits'])->name('products');
     
     Route::get('/a-propos-de-nous', [SiteController::class, 'about'])->name('about');
     

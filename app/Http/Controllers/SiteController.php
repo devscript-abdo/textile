@@ -116,4 +116,11 @@ class SiteController extends Controller
         
         return false;
     }
+
+    /********** */
+
+    public function produits()
+    {
+        return view('textile.pages.categories.index');
+    }
 }
