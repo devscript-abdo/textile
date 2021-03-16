@@ -41,7 +41,7 @@ class SiteController extends Controller
 
         $clients  = $this->Client()->activeItems();
 
-        return view('dark.pages.about.index', compact('testimonials', 'services', 'teams', 'clients'));
+        return view('textile.pages.about.index');
     }
 
     public function services()
