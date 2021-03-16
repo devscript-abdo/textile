@@ -44,6 +44,16 @@ class SiteController extends Controller
         return view('textile.pages.about.index');
     }
 
+
+    public function partner()
+    {
+        return view('textile.pages.partner.index');
+    }
+
+    public function magazines()
+    {
+        return view('textile.pages.magazines.index');
+    }
     public function services()
     {
 

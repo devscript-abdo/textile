@@ -32,13 +32,13 @@
 
                             {{--@include('textile.layouts.sections.megaNavbar.categoryMega')--}}
                         </li>
-                        <li class="{{request()->routeIs('portfolio') ?'active':''}}">
-                            <a href="{{route('portfolio')}}">Partner</a>
+                        <li class="{{request()->routeIs('partner') ?'active':''}}">
+                            <a href="{{route('partner')}}">Partner</a>
 
                             {{--@include('textile.layouts.sections.megaNavbar.productMega')--}}
                         </li>
-                        <li class="{{request()->routeIs('about') ?'active':''}}">
-                            <a href="{{route('about')}}">Nos magazine</a>
+                        <li class="{{request()->routeIs('magazines') ?'active':''}}">
+                            <a href="{{route('magazines')}}">Nos magazine</a>
 
                             {{--@include('textile.layouts.sections.megaNavbar.productMega')--}}
                         </li>

@@ -33,6 +33,10 @@ Route::middleware('cache.headers:public;max_age=2628000;etag')->group(function (
     Route::get('/produits', [SiteController::class, 'produits'])->name('products');
     
     Route::get('/a-propos-de-nous', [SiteController::class, 'about'])->name('about');
+
+    Route::get('/devenir-partenaire', [SiteController::class, 'partner'])->name('partner');
+
+    Route::get('/nos-magazines', [SiteController::class, 'magazines'])->name('magazines');
     
     Route::get('/nos-services', [SiteController::class, 'services'])->name('services');
     
