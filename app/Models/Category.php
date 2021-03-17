@@ -3,20 +3,28 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use TCG\Voyager\Models\Category as Categories;
 
-class Category extends Model
+class Category extends Categories
 {
     use HasFactory;
 
 
-    public function projects()
-    {
-        return $this->belongsToMany('App\Models\Project', 'project_category', 'category_id', 'project_id');
-    }
+   public function products(){
 
-    public function services()
-    {
-        return $this->belongsToMany('App\Models\Service', 'service_category', 'category_id', 'service_id');
-    }
+      return $this->hasMany('App\Models\Product');
+
+   }
+
+
+
+   public function childrens()
+   {
+       return $this->hasMany(self::class, 'parent_id');
+   }
+
+   public function parents()
+   {
+       return $this->hasMany(self::class, 'id', 'parent_id');
+   }
 }

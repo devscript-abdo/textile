@@ -10,7 +10,7 @@
             @include('textile.pages.partner.section_d_form')
         </div>
         <hr class="mt-4 mb-5">
-        @include('textile.pages.partner.section_e_stores')
+        {{--@include('textile.pages.partner.section_e_stores')--}}
     </div>
    </div>
 @endsection

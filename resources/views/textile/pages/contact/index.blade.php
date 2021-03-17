@@ -4,6 +4,7 @@
 
    @include('textile.pages.contact.section_a_top')
    @include('textile.pages.contact.section_b_nav')
+   
    <div class="page-content">
     <div id="map" class="mb-5"></div><!-- End #map -->
      <div class="container">

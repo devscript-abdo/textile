@@ -10,7 +10,6 @@ class ContactController extends Controller
 
     public function index()
     {
-
         return view('textile.pages.contact.index');
     }
 }
