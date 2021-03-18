@@ -127,10 +127,17 @@ class SiteController extends Controller
         return false;
     }
 
-    /********** */
+    /********Textille.ma**************************************************************** */
 
-    public function produits()
+    public function products()
     {
         return view('textile.pages.categories.index');
+    }
+
+    public function singleProduct($product){
+
+     // $product = $this->Product()->getProduct($product);
+
+      return view('textile.pages.products.single.sticky.index');
     }
 }

@@ -7,8 +7,12 @@
     <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('assets/js/wNumb.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap-input-spinner.js')}}"></script>
+    <!-----Product single------>
+    <script src="{{asset('assets/js/jquery.elevateZoom.min.js')}}"></script>
+    <!-----End Product single------>
     <script src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{asset('assets/js/nouislider.min.js')}}"></script>
+    @yield('singleProductJs')
+    {{--<script src="{{asset('assets/js/nouislider.min.js')}}"></script>--}}
     <!-- Main JS File -->
     <script src="{{asset('assets/js/main.js')}}"></script>
-    <script src="{{asset('assets/js/demos/demo-15.js')}}"></script>
+    {{--<script src="{{asset('assets/js/demos/demo-15.js')}}"></script>--}}

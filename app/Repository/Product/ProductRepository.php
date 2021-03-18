@@ -30,4 +30,11 @@ class ProductRepository  implements ProductInterface
     {
         return $this->model->showInNavbar();
     }
+
+    public function getProduct($slug)
+    {
+        return $this->model->whereSlug($slug)->whereActive(true)
+            ->with(['category'])
+            ->firstOrFail();
+    }
 }

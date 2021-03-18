@@ -34,7 +34,7 @@
                             <ul>
                                 @foreach($productsNav as $product)
                                     <li>
-                                        <a href="product-category-fullwidth.html">
+                                        <a href="{{route('products.single',$product->slug)}}">
                                             <span>
                                                 {{$product->name}}
                                                 <span class="tip tip-new">
@@ -63,7 +63,7 @@
         <div class="col-md-4">
             <div class="banner banner-overlay">
                 <a href="category.html" class="banner banner-menu">
-                    <img src="assets/images/menu/banner-1.jpg" alt="Banner">
+                    <img src="{{asset('assets/images/menu/banner-1.jpg')}}" alt="Banner">
 
                     <div class="banner-content banner-content-top">
                         <div class="banner-title text-white">Last <br>Chance<br><span><strong>Sale</strong></span></div><!-- End .banner-title -->

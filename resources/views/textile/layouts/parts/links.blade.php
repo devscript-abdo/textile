@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/plugins/owl-carousel/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/plugins/magnific-popup/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/plugins/nouislider/nouislider.css')}}">
+   
     <!-- Main CSS File -->
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/nouislider/nouislider.css')}}">
+
     <link rel="stylesheet" href="{{asset('assets/css/demos/demo-15.css')}}">
    

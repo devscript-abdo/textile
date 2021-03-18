@@ -11,5 +11,6 @@ interface ProductInterface
     public function query();
 
     public function showInNav();
-    // more
+    
+    public function getProduct($product);
 }
