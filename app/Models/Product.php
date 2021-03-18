@@ -13,4 +13,11 @@ class Product extends Model
     {
         return $this->belongsTo('App\Models\Category');
     }
+
+    public function scopeShowInNavbar($query){
+        return $query->where('show_in_nav', true)
+            ->inRandomOrder()
+            ->limit(8)
+            ->get();
+    }
 }

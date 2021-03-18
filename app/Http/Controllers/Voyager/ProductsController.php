@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Voyager;
 
 use App\Models\Category;
+use App\Models\Product;
 use Exception;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
@@ -304,7 +305,10 @@ class ProductsController extends VoyagerBaseController
         }
 
         $allCategories = Category::all();
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable','allCategories'));
+        $product = Product::find($id);
+        $categoriesForProduct = $product->category->id;
+
+        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable','allCategories','categoriesForProduct'));
     }
 
     // POST BR(E)AD
@@ -394,11 +398,13 @@ class ProductsController extends VoyagerBaseController
 
         $view = 'voyager::bread.edit-add';
 
+        $allCategories = Category::all();
+        $categoriesForProduct = 0;
         if (view()->exists("voyager::$slug.edit-add")) {
             $view = "voyager::$slug.edit-add";
         }
 
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
+        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable','allCategories','categoriesForProduct'));
     }
 
     /**

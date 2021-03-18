@@ -92,20 +92,20 @@
                             @endforeach
                             <div class="form-group">
                                 <label>Categories</label>
-
+                                   
                                 <ul style="list-style-type: none; padding-left: 0">
                                 @foreach ($allCategories as $category)
                                     @if($category->parent_id === null && count($category->childrens))
                                         <li>
                                             <label>
-                                              <input value="{{ $category->id }}" type="radio" name="category_id" style="margin-right: 5px;" {{--$categoriesForProduct->contains($category) ? 'checked' : '' --}}>
+                                              <input value="{{ $category->id }}" type="radio" name="category_id" style="margin-right: 5px;" {{$categoriesForProduct == $category->id ? 'checked' : '' }}>
                                               {{ $category->name }}
                                             </label>
                                             <ul>
                                                 @foreach ($category->childrens as $categoriee)
                                                     <li>
                                                         <label>
-                                                            <input value="{{ $categoriee->id }}" type="radio" name="category_id" style="margin-right: 5px;" {{--$categoriesForProduct->contains($category) ? 'checked' : '' --}}>
+                                                            <input value="{{ $categoriee->id }}" type="radio" name="category_id" style="margin-right: 5px;" {{$categoriesForProduct == $categoriee->id ? 'checked' : '' }}>
                                                             {{ $categoriee->name }}
                                                         </label>
                                                     </li>
@@ -115,7 +115,7 @@
                                     @elseif($category->parent_id ===null && $category->childrens()->count()===0)
                                          <li class="menu-item">
                                             <label>
-                                                <input value="{{ $category->id }}" type="radio" name="category_id" style="margin-right: 5px;" {{--$categoriesForProduct->contains($category) ? 'checked' : '' --}}>
+                                                <input value="{{ $category->id }}" type="radio" name="category_id" style="margin-right: 5px;" {{$categoriesForProduct == $category->id ? 'checked' : ''}}>
                                                 {{ $category->name }}
                                             </label>
                                          </li>

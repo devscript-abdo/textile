@@ -27,10 +27,10 @@
 
                             {{--@include('textile.layouts.sections.megaNavbar.productMega')--}}
                         </li>
-                        <li class="{{request()->routeIs('products') ?'active':''}}">
+                        <li class="megamenu-container {{request()->routeIs('products') ?'active':''}}">
                             <a href="{{route('products')}}">Boutique</a>
 
-                            {{--@include('textile.layouts.sections.megaNavbar.categoryMega')--}}
+                             @include('textile.layouts.sections.megaNavbar.categoryMega')
                         </li>
                         <li class="{{request()->routeIs('partner') ?'active':''}}">
                             <a href="{{route('partner')}}">Partner</a>

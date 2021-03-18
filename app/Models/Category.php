@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use TCG\Voyager\Models\Category as Categories;
 
 class Category extends Categories
@@ -15,8 +16,6 @@ class Category extends Categories
       return $this->hasMany('App\Models\Product');
 
    }
-
-
 
    public function childrens()
    {

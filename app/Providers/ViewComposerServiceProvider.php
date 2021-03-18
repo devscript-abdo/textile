@@ -2,9 +2,12 @@
 
 namespace App\Providers;
 
+
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use App\Repository\Category\CategoryInterface;
 use App\Repository\Page\PageInterface;
+use App\Repository\Product\ProductInterface;
 
 class ViewComposerServiceProvider extends ServiceProvider
 {
@@ -35,8 +38,21 @@ class ViewComposerServiceProvider extends ServiceProvider
             'dark.pages.about.*',
             'dark.pages.services.*'
         ];
+
+        $viewsCategories = [
+            'textile.layouts.*'
+        ];
+
         View::composer($viewsPages, function ($view) use ($pages) {
             $view->with('pages', $pages);
+        });
+
+        $categories = app(CategoryInterface::class)->query()->with('childrens')->select(['id', 'parent_id', 'slug', 'name'])->get();
+        $products = app(ProductInterface::class)->showInNav();
+
+        View::composer($viewsCategories, function ($view) use ($categories, $products) {
+            $view->with('categories', $categories);
+            $view->with('productsNav', $products);
         });
     }
 }
