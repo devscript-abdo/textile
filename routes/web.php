@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Artisan;
@@ -31,9 +33,12 @@ Route::middleware('cache.headers:public;max_age=2628000;etag')->group(function (
     
     Route::get('/', [SiteController::class, 'index'])->name('home');
 
-    Route::get('/produits', [SiteController::class, 'products'])->name('products');
-    Route::get('/produits/{product}', [SiteController::class, 'singleProduct'])->name('products.single');
+    Route::get('/produits', [ProductController::class, 'index'])->name('products');
+    Route::get('/produits/{product}', [ProductController::class, 'show'])->name('products.single');
     
+    Route::get('/categories',[CategoryController::class,'index'])->name('categories');
+    Route::get('/categories/{category}',[CategoryController::class,'show'])->name('categories.single');
+
     Route::get('/a-propos-de-nous', [SiteController::class, 'about'])->name('about');
 
     Route::get('/devenir-partenaire', [SiteController::class, 'partner'])->name('partner');

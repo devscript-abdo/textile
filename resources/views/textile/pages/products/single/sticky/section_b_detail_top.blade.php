@@ -4,30 +4,27 @@
             <div class="product-gallery product-gallery-separated">
                 <span class="product-label label-sale">Sale</span>
                 <figure class="product-separated-item">
-                    <img src="{{asset('assets/images/products/single/sticky/1.jpg')}}" data-zoom-image="{{asset('assets/images/products/single/sticky/1-big.jpg')}}" alt="product image">
+                    <img src="{{$product->image}}" data-zoom-image="{{$product->image}}" alt="{{$product->name}}">
 
                     <a href="#" id="btn-separated-gallery" class="btn-product-gallery">
                         <i class="icon-arrows"></i>
                     </a>
                 </figure>
 
-                <figure class="product-separated-item">
-                    <img src="{{asset('assets/images/products/single/sticky/2.jpg')}}" data-zoom-image="{{asset('assets/images/products/single/sticky/2-big.jpg')}}" alt="product image">
-                </figure>
+                @if($product->all_photos)
+                    @foreach($product->all_photos as $photo)
+                        <figure class="product-separated-item">
+                            <img src="{{$product->singlePhoto($photo)}}" data-zoom-image="{{$product->singlePhoto($photo)}}" alt="{{$product->name}}">
+                        </figure>
+                    @endforeach
+                @endif
 
-                <figure class="product-separated-item">
-                    <img src="{{asset('assets/images/products/single/sticky/3.jpg')}}" data-zoom-image="{{asset('assets/images/products/single/sticky/3-big.jpg')}}" alt="product image">
-                </figure>
-
-                <figure class="product-separated-item">
-                    <img src="{{asset('assets/images/products/single/sticky/4.jpg')}}" data-zoom-image="{{asset('assets/images/products/single/sticky/4-big.jpg')}}" alt="product image">
-                </figure>
             </div><!-- End .product-gallery -->
         </div><!-- End .col-md-6 -->
 
         <div class="col-md-6">
             <div class="product-details sticky-content">
-                <h1 class="product-title">Brown faux fur longline coat</h1><!-- End .product-title -->
+                <h1 class="product-title">{{$product->name}}</h1><!-- End .product-title -->
 
                 <div class="ratings-container">
                     <div class="ratings">
@@ -37,12 +34,12 @@
                 </div><!-- End .rating-container -->
 
                 <div class="product-price">
-                    <span class="new-price">$190.00</span>
-                    <span class="old-price">$310.00</span>
+                    <span class="new-price">{{$product->price}}</span>
+                    {{--<span class="old-price">$310.00</span>--}}
                 </div><!-- End .product-price -->
 
                 <div class="product-content">
-                    <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus. </p>
+                    <p>{{$product->excerpt}}</p>
                 </div><!-- End .product-content -->
 
                 <div class="product-countdown" data-until="2019, 10, 29"></div><!-- End .product-countdown -->
@@ -81,9 +78,9 @@
                 <div class="product-details-footer">
                     <div class="product-cat">
                         <span>Category:</span>
-                        <a href="#">Women</a>,
-                        <a href="#">Dresses</a>,
-                        <a href="#">Yellow</a>
+                        <a href="{{$product->getCategory('slug')}}">{{$product->getCategory('name')}}</a>
+                        {{--<a href="#">Dresses</a>,
+                        <a href="#">Yellow</a>--}}
                     </div><!-- End .product-cat -->
 
                     <div class="social-icons social-icons-sm">
@@ -107,14 +104,7 @@
                         <div id="product-accordion-desc" class="collapse" aria-labelledby="product-desc-heading" data-parent="#product-accordion">
                             <div class="card-body">
                                 <div class="product-desc-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.</p>
-                                    <ul>
-                                        <li>Nunc nec porttitor turpis. In eu risus enim. In vitae mollis elit. </li>
-                                        <li>Vivamus finibus vel mauris ut vehicula.</li>
-                                        <li>Nullam a magna porttitor, dictum risus nec, faucibus sapien.</li>
-                                    </ul>
-
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede.</p>
+                                   <p> {!! $product->description !!}</p>
                                 </div><!-- End .product-desc-content -->
                             </div><!-- End .card-body -->
                         </div><!-- End .collapse -->

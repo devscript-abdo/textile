@@ -4,7 +4,7 @@
                                 <div class="product-gallery product-gallery-vertical">
                                     <div class="row">
                                         <figure class="product-main-image">
-                                            <img id="product-zoom" src="{{asset('assets/images/products/single/1.jpg')}}" data-zoom-image="{{asset('assets/images/products/single/1-big.jpg')}}" alt="product image">
+                                            <img id="product-zoom" src="{{$product->image}}" data-zoom-image="{{$product->image}}" alt="product image">
 
                                             <a href="#" id="btn-product-gallery" class="btn-product-gallery">
                                                 <i class="icon-arrows"></i>
@@ -12,21 +12,13 @@
                                         </figure><!-- End .product-main-image -->
 
                                         <div id="product-zoom-gallery" class="product-image-gallery">
-                                            <a class="product-gallery-item active" href="#" data-image="assets/images/products/single/1.jpg" data-zoom-image="{{asset('assets/images/products/single/1-big.jpg')}}">
-                                                <img src="{{asset('assets/images/products/single/1-small.jpg')}}" alt="product side">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/2.jpg" data-zoom-image="{{asset('assets/images/products/single/2-big.jpg')}}">
-                                                <img src="{{asset('assets/images/products/single/2-small.jpg')}}" alt="product cross">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/3.jpg" data-zoom-image="{{asset('assets/images/products/single/3-big.jpg')}}">
-                                                <img src="{{asset('assets/images/products/single/3-small.jpg')}}" alt="product with model">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/4.jpg" data-zoom-image="{{asset('assets/images/products/single/4-big.jpg')}}">
-                                                <img src="{{asset('assets/images/products/single/4-small.jpg')}}" alt="product back">
-                                            </a>
+                                            @if($product->all_photos)
+                                                @foreach($product->all_photos as $photo)
+                                                    <a class="product-gallery-item active" href="#" data-image="{{$product->singlePhoto($photo)}}" data-zoom-image="{{$product->singlePhoto($photo)}}">
+                                                        <img src="{{$product->singlePhoto($photo)}}" alt="product side">
+                                                    </a>
+                                                @endforeach
+                                            @endif
                                         </div><!-- End .product-image-gallery -->
                                     </div><!-- End .row -->
                                 </div><!-- End .product-gallery -->
@@ -34,7 +26,7 @@
 
                             <div class="col-md-6">
                                 <div class="product-details">
-                                    <h1 class="product-title">Dark yellow lace cut out swing dress</h1><!-- End .product-title -->
+                                    <h1 class="product-title">{{$product->name}}</h1><!-- End .product-title -->
 
                                     <div class="ratings-container">
                                         <div class="ratings">
@@ -44,11 +36,11 @@
                                     </div><!-- End .rating-container -->
 
                                     <div class="product-price">
-                                        $84.00
+                                        {{$product->price}}
                                     </div><!-- End .product-price -->
 
                                     <div class="product-content">
-                                        <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus. </p>
+                                        <p> {{$product->excerpt}} </p>
                                     </div><!-- End .product-content -->
 
                                     <div class="details-filter-row details-row-size">
@@ -77,14 +69,14 @@
                                         </div><!-- End .select-custom -->
 
                                         <a href="#" class="size-guide"><i class="icon-th-list"></i>size guide</a>
-                                    </div><!-- End .details-filter-row -->
+                                    </div>
 
                                     <div class="details-filter-row details-row-size">
                                         <label for="qty">Qty:</label>
                                         <div class="product-details-quantity">
                                             <input type="number" id="qty" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
-                                        </div><!-- End .product-details-quantity -->
-                                    </div><!-- End .details-filter-row -->
+                                        </div>
+                                    </div>
 
                                     <div class="product-details-action">
                                         <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
@@ -92,16 +84,18 @@
                                         <div class="details-action-wrapper">
                                             <a href="#" class="btn-product btn-wishlist" title="Wishlist"><span>Add to Wishlist</span></a>
                                             <a href="#" class="btn-product btn-compare" title="Compare"><span>Add to Compare</span></a>
-                                        </div><!-- End .details-action-wrapper -->
-                                    </div><!-- End .product-details-action -->
+                                        </div>
+                                    </div>
 
                                     <div class="product-details-footer">
                                         <div class="product-cat">
                                             <span>Category:</span>
-                                            <a href="#">Women</a>,
-                                            <a href="#">Dresses</a>,
-                                            <a href="#">Yellow</a>
-                                        </div><!-- End .product-cat -->
+
+                                            <a href="{{$product->getCategory('slug')}}">
+                                                {{$product->getCategory('name')}}
+                                            </a>
+                                    
+                                        </div>
 
                                         <div class="social-icons social-icons-sm">
                                             <span class="social-label">Share:</span>

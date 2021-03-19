@@ -4,7 +4,7 @@
 
     @include('textile.layouts.parts.metas')
     @include('textile.layouts.parts.links')
-
+    @livewireStyles
 </head>
 
 <body>
@@ -27,7 +27,7 @@
      @include('textile.layouts.sections.mobileNavbar')
 
      {{--@include('textile.layouts.sections.newsLatter')--}}
-
+     @livewireScripts
      @include('textile.layouts.parts.scripts')
 
      <!-------------------------Haymacproduction.ma-------------------------------->

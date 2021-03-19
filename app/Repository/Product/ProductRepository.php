@@ -15,7 +15,11 @@ class ProductRepository  implements ProductInterface
         $this->model = $model;
     }
 
+    public function model(){
 
+        return $this->model;
+        
+    }
     public function query()
     {
         return $this->model->query();
@@ -36,5 +40,10 @@ class ProductRepository  implements ProductInterface
         return $this->model->whereSlug($slug)->whereActive(true)
             ->with(['category'])
             ->firstOrFail();
+    }
+
+    public function active()
+    {
+        return $this->model->active();
     }
 }

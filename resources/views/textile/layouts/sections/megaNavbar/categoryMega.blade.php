@@ -7,10 +7,12 @@
                         <div class="col-md-6">
                             @foreach($categories as $categorie)
                             @if($categorie->parent_id === null && count($categorie->childrens))
-                                    <div class="menu-title">{{$categorie->name}}</div><!-- End .menu-title -->
+                                    <div class="menu-title">
+                                        <a href="{{$categorie->url}}" style="color:#333333 !important">{{$categorie->name}}</a>
+                                    </div><!-- End .menu-title -->
                                         <ul>
                                             @foreach ($categorie->childrens as $categoriee)
-                                                <li><a href="#">{{$categoriee->name}}</a></li>
+                                                <li><a href="{{$categoriee->url}}">{{$categoriee->name}}</a></li>
             
                                                 {{--<li>
                                                     <a href="category-market.html">
@@ -22,7 +24,7 @@
                                             @endforeach
                                         </ul>
                                 @elseif($categorie->parent_id ===null && $categorie->childrens()->count()===0)
-                                <div class="menu-title">{{$categorie->name}}</div><!-- End .menu-title -->
+                                <div class="menu-title"><a href="{{$categorie->url}}" style="color:#333333 !important">{{$categorie->name}}</a></div><!-- End .menu-title -->
                                 @endif
                             @endforeach
 

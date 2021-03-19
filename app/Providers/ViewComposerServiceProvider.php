@@ -40,7 +40,8 @@ class ViewComposerServiceProvider extends ServiceProvider
         ];
 
         $viewsCategories = [
-            'textile.layouts.*'
+            'textile.layouts.*',
+            'textile.pages.categories.*'
         ];
 
         View::composer($viewsPages, function ($view) use ($pages) {
