@@ -19,8 +19,10 @@ class Product extends Model
     {
         $category = Category::find($value);
         if ($category->parent_id !== null) {
-           // dd($category->name);
+            // dd($category->name);
             $this->attributes['category_parent'] = $category->parent_id;
+        } else {
+            $this->attributes['category_parent'] = null;
         }
         $this->attributes['category_id'] = $value;
     }
