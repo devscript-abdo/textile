@@ -15,6 +15,15 @@ class Product extends Model
         return $this->belongsTo('App\Models\Category');
     }
 
+    public function setCategoryIdAttribute($value)
+    {
+        $category = Category::find($value);
+        if ($category->parent_id !== null) {
+           // dd($category->name);
+            $this->attributes['category_parent'] = $category->parent_id;
+        }
+        $this->attributes['category_id'] = $value;
+    }
     public function scopeShowInNavbar($query)
     {
         return $query->where('show_in_nav', true)
@@ -58,7 +67,7 @@ class Product extends Model
     public function getCategory($field)
     {
         if ($field === 'slug') {
-            
+
             return route('categories.single', $this->category->slug);
         }
         return $this->category->{$field};

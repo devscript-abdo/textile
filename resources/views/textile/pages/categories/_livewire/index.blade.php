@@ -19,5 +19,18 @@
     Livewire.on('filterCategory', () => {
       //  alert('A post was added with the id of: ');
     })
+
+    let categories = document.getElementsByClassName('categoriesChecker');
+    //console.log(categories);
+    for (let item of categories) {
+        item.addEventListener('change', function() {
+          if (item.checked) {
+            //console.log("Checkbox is checked..");
+          } else {
+            Livewire.emit('reRender')
+           // console.log("Checkbox is not checked..");
+          }
+        });
+     }
 </script>
 @endsection

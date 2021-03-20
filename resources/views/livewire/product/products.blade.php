@@ -2,6 +2,7 @@
     <div class="row">
 
         <div class="col-lg-9">
+            
             @include('textile.pages.categories._livewire.sections.section_a_toolbox')
        
             @include('textile.pages.categories._livewire.sections.section_b_products_loop')

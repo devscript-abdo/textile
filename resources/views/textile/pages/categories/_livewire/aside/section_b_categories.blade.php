@@ -7,10 +7,11 @@
 
     <div class="collapse show" id="widget-1">
         <div class="widget-body">
+            <div>@json($category)</div>
             <div class="filter-items filter-items-count">
                 <div class="filter-item">
                     <div class="custom-control custom-checkbox">
-                        <input wire:click="$emit('filterCategory')" wire:model="category"  type="checkbox" class="custom-control-input" value="0" id="categorie-0">
+                        <input wire:click="$emit('filterCategory')" wire:model="category"  type="checkbox" class="custom-control-input categoriesChecker" value="0" id="categorie-0">
                         <label class="custom-control-label" for="categorie-0">All</label>
                     
                     </div><!-- End .custom-checkbox -->
@@ -21,13 +22,13 @@
                     @if($categorie->parent_id === null && count($categorie->childrens))
                         <div class="filter-item">
                             <div class="custom-control custom-checkbox">
-                                <input wire:click="$emit('filterCategory')" wire:model="category" type="checkbox" class="custom-control-input" value="{{$categorie->id}}" id="categorie-{{$categorie->id}}">
+                                <input wire:click="$emit('filterCategory')" wire:model="category" type="checkbox" class="custom-control-input categoriesChecker" value="{{$categorie->id}}" id="categorie-{{$categorie->id}}">
                                 <label class="custom-control-label" for="categorie-{{$categorie->id}}">{{$categorie->name}}</label>
                                 <span class="item-count">3</span>
                                 @foreach ($categorie->childrens as $categoriee)
                                     <div class="filter-item">
                                         <div class="custom-control custom-checkbox">
-                                            <input  wire:click="$emit('filterCategory')" wire:model="category" type="checkbox" class="custom-control-input" value="{{$categoriee->id}}" id="categorie--{{$categoriee->id}}">
+                                            <input  wire:click="$emit('filterCategory')" wire:model="category" type="checkbox" class="custom-control-input categoriesChecker" value="{{$categoriee->id}}" id="categorie--{{$categoriee->id}}">
                                             <label class="custom-control-label" for="categorie--{{$categoriee->id}}">{{$categoriee->name}}</label>
                                         </div><!-- End .custom-checkbox -->
                                         <span class="item-count">3</span>
@@ -39,7 +40,7 @@
                     @elseif($categorie->parent_id ===null && $categorie->childrens()->count()===0)
                         <div class="filter-item">
                             <div class="custom-control custom-checkbox">
-                                <input wire:click="$emit('filterCategory')" wire:model="category"  type="checkbox" class="custom-control-input" value="{{$categorie->id}}" id="categorie-{{$categorie->id}}">
+                                <input wire:click="$emit('filterCategory')" wire:model="category"  type="checkbox" class="custom-control-input categoriesChecker" value="{{$categorie->id}}" id="categorie-{{$categorie->id}}">
                                 <label class="custom-control-label" for="categorie-{{$categorie->id}}">{{$categorie->name}}</label>
                             
                             </div><!-- End .custom-checkbox -->

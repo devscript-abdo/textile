@@ -1,11 +1,11 @@
 <div class="products mb-3">
-    @if($loading)
+    {{--@if($loading)
     <div class="d-flex justify-content-center">
         <div class="spinner-border" role="status">
           <span class="sr-only">Loading...</span>
         </div>
       </div>
-    @endif
+    @endif--}}
     @foreach($products as $product)
         <div class="product product-list">
             <div class="row">
