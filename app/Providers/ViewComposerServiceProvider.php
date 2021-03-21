@@ -48,7 +48,7 @@ class ViewComposerServiceProvider extends ServiceProvider
             $view->with('pages', $pages);
         });
 
-        $categories = app(CategoryInterface::class)->query()->with('childrens')->select(['id', 'parent_id', 'slug', 'name'])->get();
+        $categories = app(CategoryInterface::class)->getWithChildrens();
         $products = app(ProductInterface::class)->showInNav();
 
         View::composer($viewsCategories, function ($view) use ($categories, $products) {

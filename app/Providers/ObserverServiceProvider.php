@@ -4,9 +4,11 @@ namespace App\Providers;
 
 use App\Models\Category;
 use App\Models\Client;
+use App\Models\Color;
 use App\Models\Comment;
 use App\Models\Page;
 use App\Models\Post;
+use App\Models\Product;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Slider;
@@ -16,9 +18,11 @@ use App\Models\Team;
 use App\Models\Testimonial;
 use App\Observers\CategoryObserver;
 use App\Observers\ClientObserver;
+use App\Observers\ColorObserver;
 use App\Observers\CommentObserver;
 use App\Observers\PageObserver;
 use App\Observers\PostObserver;
+use App\Observers\ProductObserver;
 use App\Observers\ProjectObserver;
 use App\Observers\ServiceObserver;
 use App\Observers\SliderObserver;
@@ -59,5 +63,8 @@ class ObserverServiceProvider extends ServiceProvider
         Testimonial::observe(TestimonialObserver::class);
         Page::observe(PageObserver::class);
         Subscription::observe(SubscriptionObserver::class);
+
+        Product::observe(ProductObserver::class);
+        Color::observe(ColorObserver::class);
     }
 }

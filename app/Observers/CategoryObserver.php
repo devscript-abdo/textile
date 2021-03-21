@@ -14,7 +14,12 @@ class CategoryObserver
      */
     public function created(Category $category)
     {
-        //
+        $sluger = json_encode($category->slug);
+        cache()->pull('categories_cache');
+        cache()->pull('categories_cache_active');
+        cache()->pull("categorie_cache_{$sluger}");
+        cache()->pull('categories_cache_childrens');
+  
     }
 
     /**
@@ -25,7 +30,11 @@ class CategoryObserver
      */
     public function updated(Category $category)
     {
-        //
+        $sluger = json_encode($category->slug);
+        cache()->pull('categories_cache');
+        cache()->pull('categories_cache_active');
+        cache()->pull("categorie_cache_{$sluger}");
+        cache()->pull('categories_cache_childrens');
     }
 
     /**
@@ -36,7 +45,11 @@ class CategoryObserver
      */
     public function deleted(Category $category)
     {
-        //
+        $sluger = json_encode($category->slug);
+        cache()->pull('categories_cache');
+        cache()->pull('categories_cache_active');
+        cache()->pull("categorie_cache_{$sluger}");
+        cache()->pull('categories_cache_childrens');
     }
 
     /**
@@ -47,7 +60,11 @@ class CategoryObserver
      */
     public function restored(Category $category)
     {
-        //
+        $sluger = json_encode($category->slug);
+        cache()->pull('categories_cache');
+        cache()->pull('categories_cache_active');
+        cache()->pull("categorie_cache_{$sluger}");
+        cache()->pull('categories_cache_childrens');
     }
 
     /**
@@ -58,6 +75,10 @@ class CategoryObserver
      */
     public function forceDeleted(Category $category)
     {
-        //
+        $sluger = json_encode($category->slug);
+        cache()->pull('categories_cache');
+        cache()->pull('categories_cache_active');
+        cache()->pull("categorie_cache_{$sluger}");
+        cache()->pull('categories_cache_childrens');
     }
 }

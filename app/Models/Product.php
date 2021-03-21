@@ -10,9 +10,18 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+      //  'colors' => 'object',
+    ];
+
     public function category()
     {
         return $this->belongsTo('App\Models\Category');
+    }
+
+    public function colors()
+    {
+        return $this->belongsToMany('App\Models\Color', 'color_product', 'product_id', 'color_id');
     }
 
     public function setCategoryIdAttribute($value)
@@ -25,6 +34,15 @@ class Product extends Model
             $this->attributes['category_parent'] = null;
         }
         $this->attributes['category_id'] = $value;
+    }
+
+    public function setColorsAttribute($value)
+    {
+      
+        $data = json_decode($value,true);
+    
+        $this->attributes['colors'] = $data;
+        
     }
     public function scopeShowInNavbar($query)
     {

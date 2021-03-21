@@ -7,6 +7,7 @@
       </div>
     @endif--}}
     @foreach($products as $product)
+      
         <div class="product product-list">
             <div class="row">
                 <div class="col-6 col-lg-3">

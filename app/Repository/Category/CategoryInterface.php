@@ -11,4 +11,8 @@ interface CategoryInterface
 
     public function activeItems();
 
+    public function getCategory($slug);
+
+    public function getWithChildrens();
+
 }

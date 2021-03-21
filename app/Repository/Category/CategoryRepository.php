@@ -31,4 +31,14 @@ class CategoryRepository  implements CategoryInterface
         return $this->model->active();
     }
 
+    public function getCategory($slug)
+    {
+        return $this->model->whereSlug($slug)
+            ->with(['products'])
+            ->firstOrFail();
+    }
+    public function getWithChildrens()
+    {
+        return $this->query()->with('childrens')->select(['id', 'parent_id', 'slug', 'name'])->get();
+    }
 }

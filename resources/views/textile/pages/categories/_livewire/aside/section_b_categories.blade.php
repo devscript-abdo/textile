@@ -7,7 +7,7 @@
 
     <div class="collapse show" id="widget-1">
         <div class="widget-body">
-            <div>@json($category)</div>
+            {{--<div>@json($category)</div>--}}
             <div class="filter-items filter-items-count">
                 <div class="filter-item">
                     <div class="custom-control custom-checkbox">

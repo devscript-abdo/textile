@@ -34,21 +34,21 @@ class ProjectRepositoryCache  implements ProjectInterface
 
     public function all()
     {
-        return $this->cache->remember('projects_cache', self::TTL, function () {
+        return $this->cache->remember('projects_cache', \Carbon\Carbon::now()->addDays(30), function () {
             return $this->model->all();
         });
     }
 
     public function activeItems()
     {
-        return $this->cache->remember('projects_cache_active', self::TTL, function () {
+        return $this->cache->remember('projects_cache_active', \Carbon\Carbon::now()->addDays(30), function () {
             return $this->model->active();
         });
     }
 
     public function homeItems()
     {
-        return $this->cache->remember('projects_cache_home', self::TTL, function () {
+        return $this->cache->remember('projects_cache_home', \Carbon\Carbon::now()->addDays(30), function () {
             return $this->model->home();
         });
     }
@@ -57,7 +57,7 @@ class ProjectRepositoryCache  implements ProjectInterface
     {
         $sluger = json_encode($slug);
 
-        return $this->cache->remember("project_cache_{$sluger}", self::TTL, function () use ($slug) {
+        return $this->cache->remember("project_cache_{$sluger}", \Carbon\Carbon::now()->addDays(30), function () use ($slug) {
             return $this->model->whereSlug($slug)->whereActive(true)
                 ->with(['tags', 'category'])
                 ->firstOrFail();
@@ -67,7 +67,7 @@ class ProjectRepositoryCache  implements ProjectInterface
     public function getSolutions()
     {
 
-        return $this->cache->remember('projects_solution_cache', self::TTL, function () {
+        return $this->cache->remember('projects_solution_cache', \Carbon\Carbon::now()->addDays(30), function () {
             return $this->model->solutions();
         });
     }

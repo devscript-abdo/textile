@@ -25,11 +25,33 @@
     for (let item of categories) {
         item.addEventListener('change', function() {
           if (item.checked) {
-            //console.log("Checkbox is checked..");
+          //  window.scrollTo(0, 0);
           } else {
             Livewire.emit('reRender')
            // console.log("Checkbox is not checked..");
           }
+        });
+     }
+
+     let types = document.getElementsByClassName('typeChecker');
+    //console.log(categories);
+    for (let item of types) {
+        item.addEventListener('click', function() {
+          if (item.checked) {
+          //  window.scrollTo(0, 0);
+          } else {
+            Livewire.emit('reRender')
+           // console.log("Checkbox is not checked..");
+          }
+        });
+    }
+
+     let colors = document.getElementsByClassName('colorsChecker');
+    //console.log(categories);
+    for (let item of colors) {
+        item.addEventListener('click', function() {
+          item.classList.add("selected");
+          window.livewire.emit('filterColor',item.dataset.getcolor);
         });
      }
 </script>

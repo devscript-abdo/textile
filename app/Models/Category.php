@@ -10,7 +10,6 @@ class Category extends Categories
 {
     use HasFactory;
 
-
     public function products()
     {
 
@@ -31,4 +30,6 @@ class Category extends Categories
     {
         return route('categories.single', $this->slug);
     }
+
+  
 }

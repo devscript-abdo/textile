@@ -16,8 +16,8 @@
                 @include('textile.pages.categories._livewire.aside.section_b_categories')
                 @include('textile.pages.categories._livewire.aside.section_c_size')
                 @include('textile.pages.categories._livewire.aside.section_d_color')
-                @include('textile.pages.categories._livewire.aside.section_e_brand')
-                @include('textile.pages.categories._livewire.aside.section_f_price')
+                {{--@include('textile.pages.categories._livewire.aside.section_e_brand')--}}
+                {{--@include('textile.pages.categories._livewire.aside.section_f_price')--}}
             </div>
         </aside>
     </div>
