@@ -16,11 +16,11 @@ class RepositoryServiceProvider extends ServiceProvider
 
         $this->app->bind(
             'App\Repository\Category\CategoryInterface',
-            'App\Repository\Category\CategoryRepositoryCache'
+            'App\Repository\Category\CategoryRepository'
         );
         $this->app->bind(
             'App\Repository\Product\ProductInterface',
-            'App\Repository\Product\ProductRepositoryCache'
+            'App\Repository\Product\ProductRepository'
         );
 
         $this->app->bind(

@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
+use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Models\Category as Categories;
 
 class Category extends Categories
@@ -31,5 +31,21 @@ class Category extends Categories
         return route('categories.single', $this->slug);
     }
 
-  
+    public function getPhotoAttribute()
+    {
+        $image  = Voyager::image($this->image);
+        return $image;
+    }
+
+    public function scopeRandoms($query)
+    {
+        // return $query->with('products')->inRandomOrder()->get();
+        return $query->with(['products' => fn ($q) => $q->where('inHome', true)
+            ->with(['colors'])
+            ->inRandomOrder()
+            ->limit(3)])
+            ->has('products')
+            ->inRandomOrder()
+            ->first();
+    }
 }

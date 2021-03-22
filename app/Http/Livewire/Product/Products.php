@@ -28,11 +28,14 @@ class Products extends Component
         if ($url->getName() === 'categories.single') {
             $categorie =  $categoryInterface->getCategory($url->parameter('category'))->id;
             //dd( $categorie);
-            $this->products = $productsInterface->model()->whereCategoryId($categorie)
+            $this->products = $productsInterface->model()
+                ->whereCategoryId($categorie)
+                ->orWhere('category_parent',$categorie)
+                //->firstOrFail()
                 ->with(['category'])
                 ->get();
         } else {
-            $this->products = $productsInterface->active();
+            $this->products = $productsInterface->activeItems();
         }
   
         $this->colors =   $colorInterface->active();

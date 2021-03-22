@@ -55,11 +55,16 @@ class ProductRepositoryCache  implements ProductInterface
         });
     }
 
-    public function active()
+    public function activeItems()
     {
         return $this->cache->remember('products_cache_active', $this->timeToLive(), function () {
             return $this->model->active();
         });
+    }
+
+    public function randomsHome()
+    {
+        return $this->model->randoms();
     }
 
     private function timeToLive()

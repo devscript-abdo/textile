@@ -10,11 +10,12 @@ use Spatie\Feed\FeedItem;
 use Spatie\Searchable\Searchable;
 use Spatie\Searchable\SearchResult;
 use Carbon\Carbon;
+use TCG\Voyager\Traits\Translatable;
+use App\Traits\Language;
 
 class Post extends Model implements Feedable, Searchable
 {
-    use HasFactory;
-
+    use HasFactory, Translatable, Language;
 
     public function category()
     {
@@ -54,7 +55,7 @@ class Post extends Model implements Feedable, Searchable
     public function getFullDateAttribute()
     {
         $date = Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at);
-        return "<span><i>{$date->format('d')}</i>{$date->format('F')} </span>";
+        return "{$date->format('d')},{$date->format('F')},{$date->format('Y')}";
     }
 
     public function getFullDateSingleAttribute()

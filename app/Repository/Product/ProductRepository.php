@@ -15,10 +15,10 @@ class ProductRepository  implements ProductInterface
         $this->model = $model;
     }
 
-    public function model(){
+    public function model()
+    {
 
         return $this->model;
-        
     }
     public function query()
     {
@@ -42,8 +42,12 @@ class ProductRepository  implements ProductInterface
             ->firstOrFail();
     }
 
-    public function active()
+    public function activeItems()
     {
         return $this->model->active();
+    }
+    public function randomsHome()
+    {
+        return $this->model->randoms();
     }
 }

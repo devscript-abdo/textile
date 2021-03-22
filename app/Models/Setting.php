@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 use TCG\Voyager\Traits\Translatable;
 
+use App\Traits\Language;
+
 class Setting extends Model
 {
-    use HasFactory, Translatable;
+    use HasFactory, Translatable, Language;
 
     protected $translatable = ['value'];
-
 }

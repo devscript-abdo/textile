@@ -13,7 +13,7 @@
                 <div class="col-6 col-lg-3">
                     <figure class="product-media">
                         <span class="product-label label-new">New</span>
-                        <a href="{{route('products.single','prouct-alpha')}}">
+                        <a href="{{route('products.single',$product->slug)}}">
                             <img src="{{$product->image}}" alt="{{$product->name}}" class="product-image">
                         </a>
                     </figure><!-- End .product-media -->

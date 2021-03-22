@@ -31,12 +31,10 @@ class ViewComposerServiceProvider extends ServiceProvider
         $pages = [
             // 'about' => Page::whereSlug('a-propos-de-nous')->whereStatus('active')->first(),
             'about' => app(PageInterface::class)->getPage('a-propos-de-nous'),
-            'service' => app(PageInterface::class)->getPage('nos-services'),
+     
         ];
         $viewsPages = [
-            'dark.pages.home.*',
-            'dark.pages.about.*',
-            'dark.pages.services.*'
+            'textile.pages.*',
         ];
 
         $viewsCategories = [

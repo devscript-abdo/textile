@@ -6,7 +6,7 @@ interface ProductInterface
 {
 
 
-    public function active();
+    public function activeItems();
     
     public function all();
 
@@ -17,4 +17,6 @@ interface ProductInterface
     public function getProduct($product);
 
     public function model();
+
+    public function randomsHome();
 }

@@ -32,32 +32,16 @@
                                 }
                             }
                         }'>
-                        <blockquote class="testimonial testimonial-icon text-center">
-                            <p>“ Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. ”</p>
+                        @foreach($testimonials as $testimonial)
+                            <blockquote class="testimonial testimonial-icon text-center">
+                                <p>“ {{$testimonial->content}} ”</p>
 
-                            <cite>
-                                Charly Smith,
-                                <span>Customer</span>
-                            </cite>
-                        </blockquote><!-- End .testimonial -->
-
-                        <blockquote class="testimonial testimonial-icon text-center">
-                            <p>“ Impedit, ratione sequi, sunt incidunt magnam et. Delectus obcaecati optio eius error libero perferendis nesciunt atque. ”</p>
-
-                            <cite>
-                                Damon Stone
-                                <span>Customer</span>
-                            </cite>
-                        </blockquote><!-- End .testimonial -->
-
-                        <blockquote class="testimonial testimonial-icon text-center">
-                            <p>“ Perferendis perspiciatis, voluptate, distinctio earum veritatis animi tempora eget blandit nunc tortor eu nibh. ”</p>
-
-                            <cite>
-                                John Smith
-                                <span>Customer</span>
-                            </cite>
-                        </blockquote><!-- End .testimonial -->
+                                <cite>
+                                    {{$testimonial->name}},
+                                    <span>{{$testimonial->post}}</span>
+                                </cite>
+                            </blockquote>
+                        @endforeach
                     </div><!-- End .testimonials-slider owl-carousel -->
                 </div><!-- End .cta-wrapper -->
             </div><!-- End .col-lg-6 -->

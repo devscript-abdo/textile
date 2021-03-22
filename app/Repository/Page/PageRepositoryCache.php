@@ -37,7 +37,7 @@ class PageRepositoryCache  implements PageInterface
 
     public function getPage($slug)
     {
-        return $this->cache->remember('pages_cache' . $slug, self::TTL, function () use ($slug) {
+        return $this->cache->remember('page_cache' . $slug, self::TTL, function () use ($slug) {
             return $this->model->whereSlug($slug)->whereStatus('active')->first();
         });
     }

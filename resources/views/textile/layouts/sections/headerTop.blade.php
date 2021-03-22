@@ -5,19 +5,28 @@
                 <a href="#">Usd</a>
                 <div class="header-menu">
                     <ul>
-                        <li><a href="#">Eur</a></li>
-                        <li><a href="#">Usd</a></li>
+                        <li><a href="/">MAD</a></li>
+                      
                     </ul>
                 </div><!-- End .header-menu -->
             </div><!-- End .header-dropdown -->
 
             <div class="header-dropdown">
-                <a href="#">Eng</a>
+                <a href="#">Lang</a>
                 <div class="header-menu">
                     <ul>
-                        <li><a href="#">English</a></li>
-                        <li><a href="#">French</a></li>
-                        <li><a href="#">Spanish</a></li>
+                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                            <li> 
+                                <a 
+                                    rel="alternate" 
+                                    hreflang="{{ $localeCode }}" 
+                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
+                                    class="dropdown-item" 
+                                >
+                                 {{ $properties['native'] }}
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div><!-- End .header-menu -->
             </div><!-- End .header-dropdown -->
@@ -30,8 +39,8 @@
                     <ul>
                         <li><a href="tel:#"><i class="icon-phone"></i>Call: +0123 456 789</a></li>
                         <li><a href="wishlist.html"><i class="icon-heart-o"></i>Wishlist <span>(3)</span></a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="{{route('about')}}">About Us</a></li>
+                        <li><a href="{{route('contact')}}">Contact Us</a></li>
                         <li><a href="#signin-modal" data-toggle="modal"><i class="icon-user"></i>Login</a></li>
                     </ul>
                 </li>

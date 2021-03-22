@@ -18,17 +18,23 @@ class SiteController extends Controller
     {
         $sliders  = $this->Slider()->activeItems();
 
-        $services = $this->Service()->homeItems();
+        $categorie = $this->Category()->randomsHome();
 
-        $projects = $this->Project()->homeItems();
-
-        $clients  = $this->Client()->activeItems();
+        $products = $this->Product()->randomsHome();
 
         $testimonials = $this->Testimonial()->activeItems();
 
         $posts = $this->Post()->activeItems();
 
-        return view('textile.pages.home.index', compact('sliders', 'services', 'projects', 'clients', 'testimonials', 'posts'));
+        /*$services = $this->Service()->homeItems();
+
+        $projects = $this->Project()->homeItems();
+
+        $clients  = $this->Client()->activeItems();
+
+       */
+
+        return view('textile.pages.home.index', compact('sliders', 'categorie', 'products', 'testimonials','posts'));
     }
 
     public function about()
@@ -123,7 +129,7 @@ class SiteController extends Controller
 
             return true;
         }
-        
+
         return false;
     }
 
@@ -134,10 +140,11 @@ class SiteController extends Controller
         return view('textile.pages.categories.index');
     }
 
-    public function singleProduct($product){
+    public function singleProduct($product)
+    {
 
-     // $product = $this->Product()->getProduct($product);
+        // $product = $this->Product()->getProduct($product);
 
-      return view('textile.pages.products.single.sticky.index');
+        return view('textile.pages.products.single.sticky.index');
     }
 }

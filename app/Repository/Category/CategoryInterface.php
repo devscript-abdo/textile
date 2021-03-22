@@ -15,4 +15,6 @@ interface CategoryInterface
 
     public function getWithChildrens();
 
+    public function randomsHome();
+
 }
