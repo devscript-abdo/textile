@@ -91,9 +91,9 @@ class SiteController extends Controller
 
     public function singleBlog($post)
     {
-        $post = $this->Post()->getPost($post, ['comments', 'tags']);
+        $post = $this->Post()->getPost($post);
 
-        return view('dark.pages.blog.single.index', compact('post'));
+        return view('textile.pages.blog.single.index', compact('post'));
     }
 
     public function tags()

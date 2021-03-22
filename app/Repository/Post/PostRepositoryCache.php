@@ -48,7 +48,7 @@ class PostRepositoryCache  implements PostInterface
             });
         }
         return $this->cache->remember("post_cache_{$sluger}", self::TTL, function () use ($slug, $with) {
-            return $this->model->whereSlug($slug)->whereStatus('PUBLISHED')->first();
+            return $this->model->whereSlug($slug)->whereStatus('PUBLISHED')->firstOrFail();
         });
     }
 

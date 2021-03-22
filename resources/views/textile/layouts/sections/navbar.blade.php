@@ -18,32 +18,32 @@
                 <nav class="main-nav">
                     <ul class="menu sf-arrows">
                         <li class="megamenu-container {{request()->routeIs('home') ?'active':''}}">
-                            <a href="{{route('home')}}">Home</a>
+                            <a href="{{route('home')}}">{{__('navbar.home')}}</a>
 
                              {{--@include('textile.layouts.sections.megaNavbar.homeMega')--}}
                         </li>
                         <li class="{{request()->routeIs('about') ?'active':''}}">
-                            <a href="{{route('about')}}">About US</a>
+                            <a href="{{route('about')}}">{{__('navbar.about')}}</a>
 
                             {{--@include('textile.layouts.sections.megaNavbar.productMega')--}}
                         </li>
                         <li class="megamenu-container {{request()->routeIs('products') ?'active':''}}">
-                            <a href="{{route('products')}}">Boutique</a>
+                            <a href="{{route('products')}}">{{__('navbar.shope')}}</a>
 
                              @include('textile.layouts.sections.megaNavbar.categoryMega')
                         </li>
                         <li class="{{request()->routeIs('partner') ?'active':''}}">
-                            <a href="{{route('partner')}}">Partner</a>
+                            <a href="{{route('partner')}}">{{__('navbar.partner')}}</a>
 
                             {{--@include('textile.layouts.sections.megaNavbar.productMega')--}}
                         </li>
                         <li class="{{request()->routeIs('magazines') ?'active':''}}">
-                            <a href="{{route('magazines')}}">Nos magazine</a>
+                            <a href="{{route('magazines')}}">{{__('navbar.magazine')}}</a>
 
                             {{--@include('textile.layouts.sections.megaNavbar.productMega')--}}
                         </li>
                         <li class="{{request()->routeIs('contact') ?'active':''}}">
-                            <a href="{{route('contact')}}">Contact</a>
+                            <a href="{{route('contact')}}">{{__('navbar.contact')}}</a>
 
                             {{--@include('textile.layouts.sections.megaNavbar.productMega')--}}
                         </li>

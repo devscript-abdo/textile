@@ -4,10 +4,9 @@ return [
 
     'home' => 'Home',
     'about' => 'About Us',
-    'services' => 'Our Services',
-
-    'portfolio' => 'Portfolio',
-    'solutions' => 'Our Solutions',
+    'shope'=>"Boutique",
+    'partner' => 'become Partner',
+    'magazine' => 'Our Magazines',
     'blog' => 'Blog',
     'contact' => 'Contact US',
     /********** */

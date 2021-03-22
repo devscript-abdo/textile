@@ -1497,7 +1497,8 @@ blockquote {
     font-size: 1.4rem;
     letter-spacing: -.01em;
     padding: 3.95rem 3rem;
-    text-transform: uppercase; }
+    /*text-transform: uppercase; */
+  }
   .menu > li + li {
     margin-left: 0; }
   .menu.sf-arrows > li > .sf-with-ul {

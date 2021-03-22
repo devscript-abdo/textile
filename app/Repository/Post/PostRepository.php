@@ -32,7 +32,7 @@ class PostRepository  implements PostInterface
                 ->with($with)
                 ->firstOrFail();
         }
-        return $this->model->whereSlug($slug)->whereStatus('PUBLISHED')->first();
+        return $this->model->whereSlug($slug)->whereStatus('PUBLISHED')->firstOrFail();
     }
 
     public function activeItems()
