@@ -34,6 +34,11 @@ class RepositoryServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
+            'App\Repository\Magazine\MagazineInterface',
+            'App\Repository\Magazine\MagazineRepository'
+        );
+
+        $this->app->bind(
             'App\Repository\Page\PageInterface',
             'App\Repository\Page\PageRepository'
         );

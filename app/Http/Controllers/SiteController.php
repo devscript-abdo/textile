@@ -34,7 +34,7 @@ class SiteController extends Controller
 
        */
 
-        return view('textile.pages.home.index', compact('sliders', 'categorie', 'products', 'testimonials','posts'));
+        return view('textile.pages.home.index', compact('sliders', 'categorie', 'products', 'testimonials', 'posts'));
     }
 
     public function about()
@@ -58,7 +58,9 @@ class SiteController extends Controller
 
     public function magazines()
     {
-        return view('textile.pages.magazines.index');
+        $magazines = $this->Magazine()->activeItems();
+        
+        return view('textile.pages.magazines.index', compact('magazines'));
     }
     public function services()
     {
