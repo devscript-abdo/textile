@@ -333,16 +333,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.0.9",
+            "version": "2.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "591c2c155cac0d2d7f34af41d3b1e29bcbfc685e"
+                "reference": "a5a5632da0b1c2d6fa9a3b65f1f4e90d1f04abb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/591c2c155cac0d2d7f34af41d3b1e29bcbfc685e",
-                "reference": "591c2c155cac0d2d7f34af41d3b1e29bcbfc685e",
+                "url": "https://api.github.com/repos/composer/composer/zipball/a5a5632da0b1c2d6fa9a3b65f1f4e90d1f04abb9",
+                "reference": "a5a5632da0b1c2d6fa9a3b65f1f4e90d1f04abb9",
                 "shasum": ""
             },
             "require": {
@@ -410,7 +410,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.0.9"
+                "source": "https://github.com/composer/composer/tree/2.0.11"
             },
             "funding": [
                 {
@@ -426,7 +426,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-27T15:09:27+00:00"
+            "time": "2021-02-24T13:57:23+00:00"
         },
         {
             "name": "composer/semver",
@@ -5582,16 +5582,16 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v5.2.3",
+            "version": "v5.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "262d033b57c73e8b59cd6e68a45c528318b15038"
+                "reference": "710d364200997a5afde34d9fe57bd52f3cc1e108"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/262d033b57c73e8b59cd6e68a45c528318b15038",
-                "reference": "262d033b57c73e8b59cd6e68a45c528318b15038",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/710d364200997a5afde34d9fe57bd52f3cc1e108",
+                "reference": "710d364200997a5afde34d9fe57bd52f3cc1e108",
                 "shasum": ""
             },
             "require": {
@@ -5624,7 +5624,7 @@
             "description": "Provides basic utilities for the filesystem",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/filesystem/tree/v5.2.3"
+                "source": "https://github.com/symfony/filesystem/tree/v5.2.4"
             },
             "funding": [
                 {
@@ -5640,7 +5640,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-27T10:01:46+00:00"
+            "time": "2021-02-12T10:38:38+00:00"
         },
         {
             "name": "symfony/finder",

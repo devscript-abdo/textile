@@ -46,9 +46,10 @@
                                         <a href="#" class="btn-product-icon btn-compare" title="Compare"><span>Compare</span></a>
                                     </div><!-- End .product-action -->
 
-                                    <div class="product-action">
+                                    {{--<div class="product-action">
                                         <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                    </div><!-- End .product-action -->
+                                    </div>--}}
+                                    <livewire:cart.add-to-cart-button :product-id="$product->id" />
                                 </figure><!-- End .product-media -->
 
                                 <div class="product-body">
