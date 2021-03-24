@@ -22,5 +22,4 @@ class Helper
     {
         return number_format(($number / 100), 2);
     }
-
 }

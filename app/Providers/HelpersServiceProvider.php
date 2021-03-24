@@ -14,9 +14,13 @@ class HelpersServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('mailletex', function () {
+        $this->app->singleton('mailletex', function () {
             return new Helper();
         });
+
+       /* $this->app->bind('mailletex', function () {
+            return new Helper();
+        });*/
     }
 
     /**
