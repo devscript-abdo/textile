@@ -23,7 +23,7 @@ class CartButton extends Component
     }
     public function update()
     {
-        $this->qty = array_sum(myCart()->all());
+        $this->qty = array_sum(\Mailletex::myCart()->all());
     }
 
     public function toggle(){

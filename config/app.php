@@ -55,7 +55,7 @@ return [
     'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
-    
+
     'mix_url' => env('MIX_ASSET_URL', null),
 
     /*
@@ -186,6 +186,8 @@ return [
 
         App\Providers\SeoServiceProvider::class,
 
+        App\Providers\HelpersServiceProvider::class
+
     ],
 
     /*
@@ -237,6 +239,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /******Added by Abdelghafour */
+        'Mailletex' => App\Helpers\HelperFacade::class
 
     ],
 

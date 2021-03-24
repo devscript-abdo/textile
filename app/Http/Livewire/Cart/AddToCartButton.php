@@ -24,7 +24,7 @@ class AddToCartButton extends Component
 
     public function hydrate()
     {
-        $this->currentQty = myCart()->getCurrentQty($this->productId);
+        $this->currentQty = \Mailletex::myCart()->getCurrentQty($this->productId);
     }
     /***
      * add product to Cart
@@ -36,7 +36,7 @@ class AddToCartButton extends Component
         if ($qty < 1) {
             return;
         }
-        myCart()->add($this->productId, $qty);
+        \Mailletex::myCart()->add($this->productId, $qty);
         $this->qty = 1;
         $this->emit('cartUpdated');
     }

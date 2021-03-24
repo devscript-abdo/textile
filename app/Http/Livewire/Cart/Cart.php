@@ -3,7 +3,6 @@
 namespace App\Http\Livewire\Cart;
 
 use App\Models\Product;
-use App\Repository\Product\ProductInterface;
 use Illuminate\Support\Collection;
 use Livewire\Component;
 
@@ -37,10 +36,10 @@ class Cart extends Component
     public function hydrate()
     {
 
-        $this->cart = myCart()->all();
+        $this->cart = \Mailletex::myCart()->all();
         $this->productsCart = tap(
             $this->products(),
-            fn (Collection $products) => $this->total = int_to_decimal($products->sum('total'))
+            fn (Collection $products) => $this->total = \Mailletex::int_to_decimal($products->sum('total'))
         )->toArray();
     }
 
@@ -68,7 +67,7 @@ class Cart extends Component
 
     public function remove(int $id)
     {
-        myCart()->remove($id);
+        \Mailletex::myCart()->remove($id);
         $this->update();
     }
 
@@ -77,7 +76,7 @@ class Cart extends Component
         $this->emit('cartUpdated');
     }
 
-    public function increase(){
-        
+    public function increase()
+    {
     }
 }

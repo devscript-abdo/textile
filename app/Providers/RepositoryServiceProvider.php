@@ -10,7 +10,7 @@ use App\Repository\Cart\CartRepository;
 class RepositoryServiceProvider extends ServiceProvider
 {
 
-   /* public $singletons = [
+    /* public $singletons = [
 
         CartInterface::class => CartRepository::class
     ];*/
@@ -21,6 +21,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
 
         $this->app->singleton(
             'App\Repository\Cart\CartInterface',
