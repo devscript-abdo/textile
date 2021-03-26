@@ -15,7 +15,7 @@
                                 x {{$product->price}}
                             </span>
                         </div><!-- End .product-cart-details -->
-
+                       
                         <figure class="product-image-container">
                             <a href="{{route('products.single',$product->url)}}" class="product-image">
                                 <img src="{{$product->image}}" alt="product">
@@ -36,7 +36,7 @@
             </div>
 
             <div class="dropdown-cart-action">
-                <a href="cart.html" class="btn btn-primary">View Cart</a>
+                <a href="{{route('cart')}}" class="btn btn-primary">View Cart</a>
                 <a href="checkout.html" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
             </div>
         </div>

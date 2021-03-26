@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ShoppingController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -18,7 +19,6 @@ use Spatie\Honeypot\ProtectAgainstSpam;
     | contains the "web" middleware group. Now create something great!
     |
     */
-
 
 
 Route::group(
@@ -62,6 +62,8 @@ Route::group(
             Route::get('/contactez-nous', [ContactController::class, 'index'])->name('contact');
 
             Route::get('/que-cherchez-vous', [SearchController::class, 'index'])->name('search');
+
+            Route::get('/cart',[ShoppingController::class,'cart'])->name('cart');
         });
     }
 );

@@ -7,7 +7,6 @@ use Illuminate\Contracts\Session\Session;
 class CartRepository  implements CartInterface
 {
 
-
     private $session;
 
     public function __construct(Session $session)

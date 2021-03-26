@@ -6,7 +6,7 @@
     <script src="{{asset('assets/js/superfish.min.js')}}"></script>
     <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('assets/js/wNumb.js')}}"></script>
-    <script src="{{asset('assets/js/bootstrap-input-spinner.js')}}"></script>
+    {{--<script src="{{asset('assets/js/bootstrap-input-spinner.js')}}"></script>--}}
     <!-----Product single------>
     <script src="{{asset('assets/js/jquery.elevateZoom.min.js')}}"></script>
     <!-----End Product single------>
