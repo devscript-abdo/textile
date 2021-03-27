@@ -1,8 +1,8 @@
 <div class="blog-posts mb-9">
     <div class="container-fluid">
         <div class="heading text-center">
-            <h2 class="title">From Our Blog</h2><!-- End .title text-center -->
-            <p class="title-desc">Donec odio. Quisque volutpat mattis eros. <br>Nullam malesuada erat</p><!-- End .title-desc -->
+            <h2 class="title">{{__('home.blog')}}</h2><!-- End .title text-center -->
+            <p class="title-desc">{{__('home.blog_description')}}</p><!-- End .title-desc -->
         </div><!-- End .heading -->
 
         <div class="owl-carousel owl-simple" data-toggle="owl" 

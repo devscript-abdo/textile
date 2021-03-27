@@ -2,23 +2,40 @@
 
 return [
 
-    /**** services section */
+    /********section - about  */
+    'about_title' => 'Who We Are',
+    /********end section - about  */
 
-    'our_services' => 'Services',
+    /***********section - 1 */
 
-    'our_services_features' => 'Best Of Our Features',
+    'categories' => 'About This Look',
+    'categories_description' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.',
 
-    /**** END services section */
+    /*********** end section - 1 */
 
-    /**** Counters section */
+    /*******section - 2  */
 
-    'happy_clients' => 'Happy Clients',
+    'products_carousel' => 'OUR PRODUCTS',
 
-    'compleate_projects' => 'Compleate Projects',
+    /*******end section - 2  */
 
-    'code_lines' => 'Lignes de code',
+    /*******section - 3 social */
 
-    'strategies_elaborees' => 'Stratégies élaborées'
-    /**** END Counters section */
+    'shop_social' => 'Shop Social',
+    'shop_social_description' => 'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.',
 
+    /*******end section - 3 social */
+
+    /*****section - 4 Testimonial */
+
+    'testimonials' => 'Our Costumers Say',
+
+    /*****end  section - 4 Testimonials */
+
+    /*******section - 5 Blog */
+
+    'blog' => 'From Our Blog',
+    'blog_description' => 'Donec odio. Quisque volutpat mattis eros.Nullam malesuada erat'
+
+    /*****end section - 5 Blog*/
 ];

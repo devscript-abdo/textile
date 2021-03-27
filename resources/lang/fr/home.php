@@ -2,23 +2,41 @@
 
 return [
 
+    /********section - about  */
+    'about_title' => 'Qui sommes nous',
+    /********end section - about  */
 
-    /**** services section */
+    /***********section - 1 */
 
-    'our_services' => 'SERVICES',
+    'categories' => 'A propos de cette categorie',
+    'categories_description' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.',
 
-    'our_services_features' => 'Best Of  Our Features',
+    /*********** end section - 1 */
 
-    /**** END services section */
+    /*******section - 2  */
 
-    /**** Counters section */
+    'products_carousel' => 'NOS PRODUITS',
 
-    'happy_clients' => 'Clients satisfaits',
+    /*******end section - 2  */
 
-    'compleate_projects' => 'Projets réalisés',
+    /*******section - 3 social */
 
-    'code_lines' => 'Lignes de code',
+    'shop_social' => 'NOS RESEAUX SOCIEAUX',
+    'shop_social_description' => 'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.',
 
-    'strategies_elaborees' => 'Stratégies élaborées'
-    /**** END Counters section */
+    /*******end section - 3 social */
+
+    /*****section - 4 Testimonial */
+
+    'testimonials' => 'ce que nos clients disent de nous',
+
+    /*****end  section - 4 Testimonials */
+
+    /*******section - 5 Blog */
+
+    'blog' => 'actualités',
+    
+    'blog_description' => 'Donec odio. Quisque volutpat mattis eros.Nullam malesuada erat'
+
+    /*****end section - 5 Blog*/
 ];

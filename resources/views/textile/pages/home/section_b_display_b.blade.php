@@ -26,8 +26,8 @@
 
             <div class="col-lg-6">
                 <div class="heading text-center">
-                    <h2 class="title">About This Look</h2><!-- End .title text-center -->
-                    <p class="title-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p><!-- End .title-desc -->
+                    <h2 class="title">{{__('home.categories')}}</h2><!-- End .title text-center -->
+                    <p class="title-desc">{{__('home.categories_description')}}</p><!-- End .title-desc -->
                 </div><!-- End .heading -->
 
                 <div class="row">

@@ -39,7 +39,7 @@ class RepositoryServiceProvider extends ServiceProvider
 
         $this->app->bind(
             'App\Repository\Color\ColorInterface',
-            'App\Repository\Color\ColorRepositoryCache'
+            'App\Repository\Color\ColorRepository'
         );
 
         $this->app->bind(

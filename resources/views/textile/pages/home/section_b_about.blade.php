@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-5 mb-3 mb-lg-0">
-                <h2 class="title">Who We Are</h2><!-- End .title -->
+                <h2 class="title">{{__('home.about_title')}}</h2><!-- End .title -->
                 {{--<p class="lead text-primary mb-3">
                       Pellentesque odio nisi, euismod pharetra a ultricies
                      <br>in diam. Sed arcu. Cras consequat

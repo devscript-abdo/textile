@@ -1,7 +1,7 @@
 <div class="container">
 
     <hr class="mt-2 mb-5">
-    <h2 class="title text-center mb-3">5 Columns Simple</h2><!-- End .title -->
+    <h2 class="title text-center mb-3">{{__('home.products_carousel')}}</h2><!-- End .title -->
         <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow product-4-carousel" data-toggle="owl" 
                                 data-owl-options='{
                                     "nav": false, 

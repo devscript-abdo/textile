@@ -32,6 +32,7 @@ class Product extends Model
 
     public function setCategoryIdAttribute($value)
     {
+       // dd($value);
         $this->attributes['category_id'] = $value;
 
         $category = Category::find($value);
