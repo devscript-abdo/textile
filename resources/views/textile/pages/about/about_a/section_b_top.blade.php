@@ -1,5 +1,8 @@
 <div class="container">
-    <div class="page-header page-header-big text-center" style="background-image: url('assets/images/about-header-bg.jpg')">
-        <h1 class="page-title text-white">About us<span class="text-white">Who we are</span></h1>
+    <div class="page-header page-header text-center">
+        <h1 class="page-title text-white">
+            {{$pages['about']->field('title')}}
+            {{--<span class="text-white">{{__('home.about_title')}}</span>--}}
+        </h1>
     </div><!-- End .page-header -->
 </div><!-- End .container -->

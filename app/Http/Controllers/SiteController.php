@@ -41,13 +41,11 @@ class SiteController extends Controller
     {
         $testimonials = $this->Testimonial()->activeItems();
 
-        $services = $this->Service()->homeItems();
-
         $teams = $this->Team()->activeItems();
 
         $clients  = $this->Client()->activeItems();
 
-        return view('textile.pages.about.index');
+        return view('textile.pages.about.index', compact('clients', 'teams', 'testimonials'));
     }
 
 
@@ -59,30 +57,11 @@ class SiteController extends Controller
     public function magazines()
     {
         $magazines = $this->Magazine()->activeItems();
-        
+
         return view('textile.pages.magazines.index', compact('magazines'));
     }
-    public function services()
-    {
 
-        $services = $this->Service()->activeItems();
 
-        return view('dark.pages.services.index', compact('services'));
-    }
-
-    public function portfolio()
-    {
-        $projects = $this->Project()->activeItems();
-
-        return view('dark.pages.portfolio.index', compact('projects'));
-    }
-    public function singlePortfolio($project)
-    {
-
-        $project = $this->Project()->getProject($project);
-
-        return view('dark.pages.portfolio.single.index', compact('project'));
-    }
 
     public function blog()
     {

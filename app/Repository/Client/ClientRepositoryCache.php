@@ -37,7 +37,7 @@ class ClientRepositoryCache  implements ClientInterface
 
     public function activeItems()
     {
-        return $this->cache->remember('clients_cache', self::TTL, function () {
+        return $this->cache->remember('clients_active_cache', self::TTL, function () {
             return $this->model->active();
         });
     }

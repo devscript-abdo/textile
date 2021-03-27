@@ -12,7 +12,7 @@
             </div><!-- End .header-dropdown -->
 
             <div class="header-dropdown">
-                <a href="#">Lang</a>
+                <a href="#">Lang ({{Mailletex::currentLocaleName()}})</a>
                 <div class="header-menu">
                     <ul>
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
