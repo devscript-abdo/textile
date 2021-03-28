@@ -38,7 +38,7 @@ class ProductRepository  implements ProductInterface
     public function getProduct($slug)
     {
         return $this->model->whereSlug($slug)->whereActive(true)
-            ->with(['category'])
+            ->with(['category', 'colors'])
             ->firstOrFail();
     }
 

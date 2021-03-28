@@ -5,7 +5,6 @@ return [
    /**** */
 
    'readmore'=>'Read More',
-   
-   'allservices'=>'See All Services'
+   'add_to_cart'=>'Add to cart'
 
 ];

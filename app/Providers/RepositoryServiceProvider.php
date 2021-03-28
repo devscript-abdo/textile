@@ -23,7 +23,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
 
 
-        $this->app->singleton(
+        $this->app->bind(
             'App\Repository\Cart\CartInterface',
             'App\Repository\Cart\CartRepository'
         );

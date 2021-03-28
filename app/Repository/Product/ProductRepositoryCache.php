@@ -50,7 +50,7 @@ class ProductRepositoryCache  implements ProductInterface
 
         return $this->cache->remember("product_cache_{$sluger}", $this->timeToLive(), function () use ($slug) {
             return $this->model->whereSlug($slug)->whereActive(true)
-                ->with(['category'])
+                ->with(['category', 'colors'])
                 ->firstOrFail();
         });
     }

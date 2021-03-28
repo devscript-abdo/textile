@@ -5,10 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Models\Category as Categories;
+use TCG\Voyager\Traits\Translatable;
+use App\Traits\Language;
 
 class Category extends Categories
 {
-    use HasFactory;
+    use HasFactory, Language, Translatable;
+
+    protected $translatable = ['name', 'description'];
 
     public function products()
     {

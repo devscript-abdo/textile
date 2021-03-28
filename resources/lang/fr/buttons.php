@@ -1,6 +1,8 @@
 <?php
 
-return array (
-  'allservices' => 'les services',
+return [
+
   'readmore' => 'Lire plus',
-);
+  'add_to_cart' => 'Ajouter au panier'
+
+];

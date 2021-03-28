@@ -1,10 +1,10 @@
 <div class="product-details-tab">
     <ul class="nav nav-pills justify-content-center" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" id="product-desc-link" data-toggle="tab" href="#product-desc-tab" role="tab" aria-controls="product-desc-tab" aria-selected="true">Description</a>
+            <a class="nav-link active" id="product-desc-link" data-toggle="tab" href="#product-desc-tab" role="tab" aria-controls="product-desc-tab" aria-selected="true">{{__('shop.shop_single_description')}}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="product-review-link" data-toggle="tab" href="#product-review-tab" role="tab" aria-controls="product-review-tab" aria-selected="false">Reviews (2)</a>
+            <a class="nav-link" id="product-review-link" data-toggle="tab" href="#product-review-tab" role="tab" aria-controls="product-review-tab" aria-selected="false">{{__('shop.shop_reviews')}} (2)</a>
         </li>
     </ul>
     <div class="tab-content">

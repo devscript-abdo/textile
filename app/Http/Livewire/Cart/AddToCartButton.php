@@ -6,6 +6,8 @@ use Livewire\Component;
 
 class AddToCartButton extends Component
 {
+    public $isSingle = false;
+    
     public $qty = 1;
 
     public $productId;
