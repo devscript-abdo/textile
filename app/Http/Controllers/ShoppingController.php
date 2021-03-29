@@ -68,6 +68,10 @@ class ShoppingController extends Controller
         if ($productsCart) {
 
             Mail::to($email)->send(new OrderMail($data, $productsCart));
+
+            \MailletexCart::destroy();
+
+            return redirect()->route('products')->with('isDone', true);
         }
     }
 }

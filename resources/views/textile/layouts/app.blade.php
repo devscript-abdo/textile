@@ -26,7 +26,10 @@
 
      @include('textile.layouts.sections.mobileNavbar')
 
-     {{--@include('textile.layouts.sections.newsLatter')--}}
+     @if(session()->has('isDone') && session('isDone') === true)
+      @include('textile.layouts.sections.newsLatter')
+     @endif
+
      @livewireScripts
      @include('textile.layouts.parts.scripts')
 

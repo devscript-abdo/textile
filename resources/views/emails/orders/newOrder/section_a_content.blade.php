@@ -19,13 +19,13 @@
 								<td class="product-col">
 									<div class="product">
 										<figure class="product-media">
-											<a href="{{$product['product']->url}}">
+											<a href="{{$product['product']->url}}" target="_blank">
 												<img src="{{$product['product']->image}}" alt="{{$product->name}}">
 											</a>
 										</figure>
 
 										<h3 class="product-title">
-											<a href="{{$product['product']->url}}">{{$product->name}}</a>
+											<a href="{{$product['product']->url}}" target="_blank">{{$product->name}}</a>
 										</h3><!-- End .product-title -->
 									</div><!-- End .product -->
 								</td>
