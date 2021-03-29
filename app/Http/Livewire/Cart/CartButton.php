@@ -26,7 +26,8 @@ class CartButton extends Component
         $this->qty = array_sum(\Mailletex::myCart()->all());
     }
 
-    public function toggle(){
-       $this->emit('toggleCart');
+    public function toggle()
+    {
+        $this->emit('toggleCart');
     }
 }

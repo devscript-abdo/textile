@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Cart\AddToCartRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Traits\InterfaceHandler;
@@ -18,7 +19,7 @@ class ProductController extends Controller
   public function index()
   {
     //$products = $this->Product()->active();
-   // $colors = $this->Color()->active();
+    // $colors = $this->Color()->active();
     return view('textile.pages.categories._livewire.index');
   }
 
@@ -33,6 +34,32 @@ class ProductController extends Controller
 
     $product = $this->Product()->getProduct($product);
 
-    return view('textile.pages.products.single.default.index', compact('product'));
+    $products = $this->Product()
+      ->model()
+      ->whereNotIn('id', [$product->id])
+      ->with(['category'])
+      ->get();
+
+    return view('textile.pages.products.single._normal.default.index', compact('product', 'products'));
+  }
+
+  public function addToCart(AddToCartRequest $request)
+  {
+    $product = $this->Product()->getProduct($request->productData);
+
+    \MailletexCart::add(
+      $product->id,
+      $product->field('name'),
+      $request->quantity,
+      0,
+      [
+
+        'colors' => $request->colors,
+        'product' => $product, 
+
+      ]
+    );
+
+    return redirect()->back();
   }
 }

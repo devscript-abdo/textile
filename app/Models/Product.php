@@ -32,7 +32,7 @@ class Product extends Model
 
     public function setCategoryIdAttribute($value)
     {
-       // dd($value);
+        // dd($value);
         $this->attributes['category_id'] = $value;
 
         $category = Category::find($value);
@@ -81,6 +81,11 @@ class Product extends Model
         $images =  json_decode($this->photos);
         $image = isset($images);
         return Voyager::image($image ? array_shift($images) : setting('portfolio.portfolio_default_image'));
+    }
+
+    public function getUrlAttribute()
+    {
+        return route('products.single', $this->slug);
     }
 
     public function singlePhoto($value)

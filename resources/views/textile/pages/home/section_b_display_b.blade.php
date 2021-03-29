@@ -49,7 +49,7 @@
                                     {{--<div class="product-action">
                                         <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
                                     </div>--}}
-                                    <livewire:cart.add-to-cart-button :product-id="$product->id" />
+                                    {{--<livewire:cart.add-to-cart-button :product-id="$product->id" />--}}
                                 </figure><!-- End .product-media -->
 
                                 <div class="product-body">

@@ -6,6 +6,7 @@
                     <th>Product</th>
                     <th>Price</th>
                     <th>Quantity</th>
+                    <th>Colors </th>
                     <th>Total</th>
                     <th></th>
                 </tr>
@@ -30,7 +31,7 @@
                         <td class="price-col">{{$product->price}}</td>
                         <td class="quantity-col">
                             <div class="cart-product-quantity">
-                                <input type="hidden" name="productauto" id="productauto" value="{{$product->id}}" data-calulate="{{$product->id}}">
+                                
                                 <input type="number" class="form-control" value="{{$product->qty}}" min="1" max="100" step="1" data-decimals="0" required>
                                 <!--------------------------------------->
                                 <div class="input-group input-spinner">
@@ -42,7 +43,21 @@
                                         <button wire:click="increase({{$product->id}})" style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button"><strong>+</strong></button>
                                     </div>
                                 </div>
-                            </div><!-- End .cart-product-quantity -->                                 
+                            </div>
+                            
+                        </td>
+                        <td class="quantity-col">
+                            @if(count($product->colors))
+                                <div class="details-filter-row details-row-size">
+                                    <label>{{__('shop.shop_color')}}</label>
+                                    <div class="product-nav product-nav-dots">
+                                        @foreach($product->colors as $color)
+                                            <a href="#" class="" style="background: {{$color->code}};"><span class="sr-only">{{$color->name}}</span></a>
+                            
+                                        @endforeach
+                                    </div>
+                                </div>
+                            @endif
                         </td>
                         <td class="total-col">{{$product->total}}</td>
                         <td class="remove-col"><button wire:click="remove({{$product->id}})" class="btn-remove"><i class="icon-close"></i></button></td>
@@ -54,7 +69,7 @@
                 @endforelse
 
             </tbody>
-        </table><!-- End .table table-wishlist -->
+        </table>
 
         <div class="cart-bottom">
             <div class="cart-discount">
@@ -63,13 +78,13 @@
                         <input type="text" class="form-control" required placeholder="coupon code">
                         <div class="input-group-append">
                             <button class="btn btn-outline-primary-2" type="submit"><i class="icon-long-arrow-right"></i></button>
-                        </div><!-- .End .input-group-append -->
-                    </div><!-- End .input-group -->
+                        </div>
+                    </div>
                 </form>
-            </div><!-- End .cart-discount -->
+            </div>
 
             <a href="#" class="btn btn-outline-dark-2"><span>UPDATE CART</span><i class="icon-refresh"></i></a>
-        </div><!-- End .cart-bottom -->
+        </div>
     </div>
     <!---------------------------------------------------------------------------------------------------->
     <!---------------------------------------------------------------------------------------------------->

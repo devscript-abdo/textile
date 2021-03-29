@@ -186,7 +186,10 @@ return [
 
         App\Providers\SeoServiceProvider::class,
 
-        App\Providers\HelpersServiceProvider::class
+        App\Providers\HelpersServiceProvider::class,
+
+        /*******Shopping Cart */
+        Overtrue\LaravelShoppingCart\ServiceProvider::class,
 
     ],
 
@@ -241,7 +244,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         /******Added by Abdelghafour */
-        'Mailletex' => App\Helpers\HelperFacade::class
+        'Mailletex' => App\Helpers\HelperFacade::class,
+
+        'MailletexCart'      => Overtrue\LaravelShoppingCart\Facade::class,
 
     ],
 

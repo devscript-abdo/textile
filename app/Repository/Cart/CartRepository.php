@@ -14,9 +14,10 @@ class CartRepository  implements CartInterface
         $this->session = $session;
     }
 
-    public function add(int $id, int $qty)
+    public function add(int $id,  $data)
     {
-        $this->session->put($this->identity($id), $qty);
+       // $this->session->put($this->identity($id), $data);
+        $this->session->push($this->identity($id), $data)['qte'];
     }
 
     private function identity(int $id): string
@@ -27,7 +28,10 @@ class CartRepository  implements CartInterface
 
     public function getCurrentQty(int $id)
     {
-        return $this->session->get($this->identity($id), 0);
+        $data =  $this->session->get($this->identity($id), 0);
+        //dd($data['qte']);
+         return $data;
+       // return $this->session->get($this->identity($id), 0)['qte'];
     }
 
     public function all()
@@ -35,7 +39,8 @@ class CartRepository  implements CartInterface
         return $this->session->get('cart', []);
     }
 
-    public function remove(int $id){
+    public function remove(int $id)
+    {
         $this->session->remove($this->identity($id));
     }
 }

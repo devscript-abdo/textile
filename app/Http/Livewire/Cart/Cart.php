@@ -37,6 +37,7 @@ class Cart extends Component
     {
 
         $this->cart = \Mailletex::myCart()->all();
+
         $this->productsCart = tap(
             $this->products(),
             fn (Collection $products) => $this->total = \Mailletex::int_to_decimal($products->sum('total'))
@@ -57,7 +58,7 @@ class Cart extends Component
                     'url' => $product->slug,
                     'price' => $product->price ?? 0,
                     //'formated_price' => $product->formated_price,
-                    'qty' => $qty = $this->cart[$product->id],
+                    'qty' => $qty = $this->cart[$product->id][0]['qte'],
                     'total' => $product->price * $qty,
                     /***************************** */
                     'image' => $product->image,

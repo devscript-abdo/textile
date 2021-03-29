@@ -39,7 +39,7 @@ return [
     'shop_single_designs_photos' => "Voir les photos",
 
     'shop_single_designs_select' => "Sélectionner le numero du design ",
-    
+
 
     'shop_signle_qte' => 'Quantité',
 
@@ -47,5 +47,7 @@ return [
 
     'shop_single_share' => 'Partager',
 
-    'shop_single_description' => 'Description'
+    'shop_single_description' => 'Description',
+
+    'shop_single_you_like' => 'Produits dans la même  catégorie'
 ];

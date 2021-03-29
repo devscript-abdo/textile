@@ -7,8 +7,8 @@
         <div class="cart">
             <div class="container">
                 <div class="row">
-                    {{--@include('textile.pages.cart.section_b_products')--}}
-                    @include('textile.pages.cart.section_b_products_livewire')
+                     @include('textile.pages.cart.section_b_products')
+                    {{--@include('textile.pages.cart.section_b_products_livewire')--}}
                     
                 </div>
             </div>
@@ -18,10 +18,7 @@
 
 
 @section('categoriesJs')
-<script>
-  function getProductId(){
-     return document.getElementById('productauto').value;
-  }
-  console.log(getProductId());
-</script>
+    <script>
+
+    </script>
 @endsection

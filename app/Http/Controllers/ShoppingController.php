@@ -10,7 +10,16 @@ class ShoppingController extends Controller
 
     public function cart()
     {
+        $productsCart = \MailletexCart::all();
+        return view('textile.pages.cart.index', compact('productsCart'));
+    }
 
-        return view('textile.pages.cart.index');
+    public function cartUpdate(Request $request)
+    {
+
+
+        \MailletexCart::update($request->productId, $request->quantity);
+        // \MailletexCart::update($request->productId, ['name' => 'New item name']);
+        return redirect()->back();
     }
 }

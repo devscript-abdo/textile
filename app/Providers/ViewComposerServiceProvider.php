@@ -31,7 +31,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         $pages = [
             // 'about' => Page::whereSlug('a-propos-de-nous')->whereStatus('active')->first(),
             'about' => app(PageInterface::class)->getPage('a-propos-de-nous'),
-     
+
         ];
         $viewsPages = [
             'textile.pages.*',
@@ -40,6 +40,11 @@ class ViewComposerServiceProvider extends ServiceProvider
         $viewsCategories = [
             'textile.layouts.*',
             'textile.pages.categories.*'
+        ];
+
+        $viewsCart = [
+            'textile.layouts.sections.cart.*',
+            //'textile.pages.cart.*'
         ];
 
         View::composer($viewsPages, function ($view) use ($pages) {
@@ -52,6 +57,11 @@ class ViewComposerServiceProvider extends ServiceProvider
         View::composer($viewsCategories, function ($view) use ($categories, $products) {
             $view->with('categories', $categories);
             $view->with('productsNav', $products);
+        });
+        
+        $productsCart = \ShoppingCart::all();
+        View::composer($viewsCart, function ($view) use ($productsCart) {
+            $view->with('productsCart', $productsCart);
         });
     }
 }

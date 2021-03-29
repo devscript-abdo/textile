@@ -39,7 +39,7 @@
                         </div><--}}
 
                         {{--<a href="#" class="btn-product btn-cart"><span>add to cart</span></a>--}}
-                        <livewire:cart.add-to-cart-button :product-id="$product->id" :key="time().$product->id" />
+                        {{--<livewire:cart.add-to-cart-button :product-id="$product->id" :key="time().$product->id" />--}}
                     </div>
                 </div>
 
@@ -57,7 +57,7 @@
                         @if($product->all_photos)
                             <div class="product-nav product-nav-thumbs">
                                 @foreach($product->all_photos as $photo)
-                                    <a href="{{route('products.single',$product->slug)}}" class="{{$loop->first?'active':''}}">
+                                    <a href="{{route('products.single',$product->slug)}}" class="{{$loop->first ? 'active' : ''}}">
                                         <img src="{{$product->singlePhoto($photo)}}" alt="product desc">
                                     </a>
                                 @endforeach

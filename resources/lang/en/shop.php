@@ -43,5 +43,7 @@ return [
 
     'shop_single_share' => 'Share',
 
-    'shop_single_description' => 'Description'
+    'shop_single_description' => 'Description',
+
+    'shop_single_you_like'=>'Products in categorie'
 ];

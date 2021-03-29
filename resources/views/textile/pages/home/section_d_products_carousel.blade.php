@@ -38,7 +38,7 @@
                                                 <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                                             </div><!-- End .product-action -->
 
-                                            <livewire:cart.add-to-cart-button :product-id="$product->id" />
+                                            {{--<livewire:cart.add-to-cart-button :product-id="$product->id" />--}}
                                         </figure><!-- End .product-media -->
 
                                         <div class="product-body">

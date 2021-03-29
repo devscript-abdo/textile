@@ -42,61 +42,61 @@
                                     <div class="product-content">
                                         <p> {{$product->field('excerpt')}} </p>
                                     </div>
-                                    @if(count($product->colors))
-                                        <div class="details-filter-row details-row-size">
-                                            <label>{{__('shop.shop_color')}}</label>
-
-                                            {{--<div class="product-nav product-nav-thumbs">
-                                                <a href="#" class="active">
-                                                    <img src="{{asset('assets/images/products/single/1-thumb.jpg')}}" alt="product desc">
-                                                </a>
-                                                <a href="#">
-                                                    <img src="{{asset('assets/images/products/single/2-thumb.jpg')}}" alt="product desc">
-                                                </a>
-                                            </div>--}}
-                                            <div class="product-nav product-nav-dots">
-                                                @foreach($product->colors as $color)
-                                                    <a href="#" class="" style="background: {{$color->code}};"><span class="sr-only">{{$color->name}}</span></a>
-                                    
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                    @endif
-                                    @if($product->designs)
-                                        <div class="details-filter-row details-row-size">
-
-                                            <div class="details-filter-row details-row-size">
-                                                <label for="qty">{{__('shop.shop_single_designs')}}:  ({{__('shop.shop_single_designs_photos')}})</label>
-                                                <div class="product-details-quantity">
-                                                    <input type="number" id="qty" class="form-control" value="1" min="1" max="{{$product->designs}}" step="1" data-decimals="0">
-                                                   
+                                    <form id="addToCartForm" action="{{route('products.single',$product->slug)}}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="productData" value="{{$product->slug}}">
+                                        @if(count($product->colors))
+                                            <div class="">
+                                                <div class="select-custom">
+                                                    <select id="colors" class="form-control singleProductsColors" name="colors[]" multiple="multiple">
+                                                        @foreach($product->colors as $color)
+                                                            <option value="{{$color->slug}}" style="background: {{$color->code}};">
+                                                                {{$color->name}}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
-                                               
                                             </div>
-                                            <a href="#" class="size-guide">
-                                                <i class="icon-th-list"></i>{{__('shop.shop_single_designs_select')}}
+                                        @endif
+
+                                        @if($product->designs)
+                                            <div class="details-filter-row details-row-size">
+
+                                                <div class="details-filter-row details-row-size">
+                                                    <label for="qty">{{__('shop.shop_single_designs')}}:  ({{__('shop.shop_single_designs_photos')}})</label>
+                                                    <div class="product-details-quantity">
+                                                        <input type="number" name="designs" id="qty" class="form-control" value="1" min="1" max="{{$product->designs}}" step="1" data-decimals="0">
+                                                    
+                                                    </div>
+                                                
+                                                </div>
+                                                <a href="#" class="size-guide">
+                                                    <i class="icon-th-list"></i>{{__('shop.shop_single_designs_select')}}
+                                                </a>
+                                            </div>
+                                        @endif
+
+                                        <div class="details-filter-row details-row-size">
+                                            <label for="qty">{{__('shop.shop_signle_qte')}}:  ({{$product->type}})</label>
+                                            <div class="product-details-quantity">
+                                                <input type="number" name="quantity" id="qty" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
+                                            
+                                            </div>
+                                        
+                                        </div>
+
+                                        <div class="product-details-action">
+                                            <a href="#" class="btn-product btn-cart" onclick="document.getElementById('addToCartForm').submit();">
+                                                <span>{{__('buttons.add_to_cart')}}</span>
                                             </a>
+                                            {{--<livewire:cart.add-to-cart-button :is-single="true" :product-id="$product->id" :key="time().$product->id" />--}}
+
+                                            {{--<div class="details-action-wrapper">
+                                                <a href="#" class="btn-product btn-wishlist" title="Wishlist"><span>Add to Wishlist</span></a>
+                                                <a href="#" class="btn-product btn-compare" title="Compare"><span>Add to Compare</span></a>
+                                            </div>--}}
                                         </div>
-                                    @endif
-
-                                    <div class="details-filter-row details-row-size">
-                                        <label for="qty">{{__('shop.shop_signle_qte')}}:  ({{$product->type}})</label>
-                                        <div class="product-details-quantity">
-                                            <input type="number" id="qty" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
-                                           
-                                        </div>
-                                       
-                                    </div>
-
-                                    <div class="product-details-action">
-                                        {{--<a href="#" class="btn-product btn-cart"><span>add to cart</span></a>--}}
-                                        <livewire:cart.add-to-cart-button :is-single="true" :product-id="$product->id" :key="time().$product->id" />
-
-                                        {{--<div class="details-action-wrapper">
-                                            <a href="#" class="btn-product btn-wishlist" title="Wishlist"><span>Add to Wishlist</span></a>
-                                            <a href="#" class="btn-product btn-compare" title="Compare"><span>Add to Compare</span></a>
-                                        </div>--}}
-                                    </div>
+                                    </form>
 
                                     <div class="product-details-footer">
                                         <div class="product-cat">
@@ -115,6 +115,7 @@
                                           
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

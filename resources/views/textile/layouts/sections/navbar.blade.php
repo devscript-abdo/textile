@@ -60,12 +60,11 @@
                 </a>
 
                 <div class="dropdown cart-dropdown">
-                    {{--<a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                        <i class="icon-shopping-cart"></i>
-                        <span class="cart-count">2</span>
-                    </a>--}}
-                    <livewire:cart.cart-button/>
-                    <livewire:cart.cart/>
+              
+                    {{--<livewire:cart.cart-button/>
+                    <livewire:cart.cart/>--}}
+                    @include('textile.layouts.sections.cart.cartButton')
+                    @include('textile.layouts.sections.cart.cart')
                     
                 </div>
             </div>

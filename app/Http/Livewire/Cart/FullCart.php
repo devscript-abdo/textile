@@ -17,7 +17,7 @@ class FullCart extends Component
     public $total = 0.00;
 
     protected $listeners = [
-        'cartUpdated' => 'mount', 'hydrate',
+        'cartUpdated' => 'hydrate','mount'
     ];
 
     public function render()
@@ -29,6 +29,7 @@ class FullCart extends Component
     {
 
         $this->cart = \Mailletex::myCart()->all();
+        //dd($this->cart);
         $this->productsFullCart = tap(
             $this->products(),
             fn (Collection $products) => $this->total = \Mailletex::int_to_decimal($products->sum('total'))
@@ -38,6 +39,7 @@ class FullCart extends Component
     {
 
         $this->cart = \Mailletex::myCart()->all();
+         //dd($this->cart);
         $this->productsFullCart = tap(
             $this->products(),
             fn (Collection $products) => $this->total = \Mailletex::int_to_decimal($products->sum('total'))
@@ -49,6 +51,7 @@ class FullCart extends Component
             return new Collection();
         }
         return Product::whereIn('id', array_keys($this->cart))
+            //->with('colors')
             ->get()
             ->map(function (Product $product) {
                 return (object)[
@@ -57,10 +60,12 @@ class FullCart extends Component
                     'url' => $product->slug,
                     'price' => $product->price ?? 0,
                     //'formated_price' => $product->formated_price,
-                    'qty' => $qty = $this->cart[$product->id],
+                    'qty' => $qty = $this->cart[$product->id][0]['qte'],
                     'total' => $product->price * $qty,
                     /***************************** */
                     'image' => $product->image,
+                    'colors' => $product->colors ?? []
+                    //'colors' => $this->cart[$product->id]['colors'] ?? []
                 ];
             });
     }
@@ -79,14 +84,14 @@ class FullCart extends Component
     public function increase(int $id)
     {
 
-        \Mailletex::myCart()->add($id, $this->cart[$id] + 1);
+        \Mailletex::myCart()->add($id, $this->cart[$id][0]['qte'] + 1);
         $this->update();
         $this->hydrate();
     }
 
     public function decrease(int $id)
     {
-        if (($qtty = $this->cart[$id] - 1) < 1) {
+        if (($qtty = $this->cart[$id][0]['qte'] - 1) < 1) {
             $this->remove($id);
         } else {
             \Mailletex::myCart()->add($id, $qtty);
