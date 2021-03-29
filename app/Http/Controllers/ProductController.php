@@ -47,23 +47,28 @@ class ProductController extends Controller
   {
     $product = $this->Product()->getProduct($request->productData);
 
-    //dd($product);
-    \MailletexCart::add(
-      $product->id,
-      $product->field('name'),
-      $request->quantity,
-      0,
-      [
+    $exists =  \MailletexCart::all()->firstWhere('name', $product->field('name'));
+    
+    if (!$exists) {
+      \MailletexCart::add(
+        $product->id,
+        $product->field('name'),
+        $request->quantity,
+        0,
+        [
 
-        'colors' => $request->colors ?? [],
-        'product' => (object)[
-          'image' => $product->image,
-          'url' => $product->url,
-        ],
+          'colors' => $request->colors ?? [],
+          'product' => (object)[
+            'image' => $product->image,
+            'url' => $product->url,
+          ],
 
-      ]
-    );
+        ]
+      );
 
-    return redirect()->route('cart');
+      return redirect()->route('cart');
+    }
+
+    return redirect()->back();
   }
 }

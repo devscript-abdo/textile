@@ -1,13 +1,11 @@
 
-    <div class="col-lg-9">
+    <div class="col-lg-6">
         <table class="table table-cart table-mobile">
             <thead>
                 <tr>
                     <th>Product</th>
-                    <th>Price</th>
                     <th>Quantity</th>
                     <th>Colors </th>
-                    <th>Total</th>
                     <th></th>
                 </tr>
             </thead>
@@ -21,8 +19,6 @@
                         @method('PUT')
                         <input type="hidden" name="productId" value="{{$product->rawId()}}">
 						<tr>
-
-				
 								<td class="product-col">
 									<div class="product">
 										<figure class="product-media">
@@ -36,7 +32,7 @@
 										</h3><!-- End .product-title -->
 									</div><!-- End .product -->
 								</td>
-								<td class="price-col">{{$product->price}}</td>
+								
 								<td class="quantity-col">
 									<div class="cart-product-quantity">
                                      
@@ -58,7 +54,7 @@
 										</div>
 									@endif
 								</td>
-								<td class="total-col">{{$product->total}}</td>
+								
 								<td class="remove-col">
                                     <button data-prodid="{{$product->rawId()}}" class="btn-remove deleteProductFromCart">
                                         <i class="icon-close"></i>
@@ -96,66 +92,107 @@
     </div>
     <!---------------------------------------------------------------------------------------------------->
     <!---------------------------------------------------------------------------------------------------->
-    <aside class="col-lg-3">
+    <aside class="col-lg-6">
         <div class="summary summary-cart">
-            <h3 class="summary-title">Cart Total</h3><!-- End .summary-title -->
+            <h3 class="">{{__('form.form_devie_title')}}</h3>
     
-            <table class="table table-summary">
-                <tbody>
-                    <tr class="summary-subtotal">
-                        <td>Subtotal:</td>
-                        <td>$160.00</td>
-                    </tr><!-- End .summary-subtotal -->
-                    <tr class="summary-shipping">
-                        <td>Shipping:</td>
-                        <td>&nbsp;</td>
-                    </tr>
+            <form method="post" action="{{route('cartSend')}}" class="contact-form mb-3">
+                <div class="row">
+                    <div class="col-sm-6">
+                        
+                        <label for="cname" class="sr-only">{{__('form.name')}}</label>
+                        <input type="text" name="nom" class="form-control @error('nom') is-invalid @enderror" id="cname" placeholder="{{__('form.name')}} *">
+                        @error('nom')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+        
+                    <div class="col-sm-6">
+                        <label for="clname" class="sr-only">{{__('form.lname')}}</label>
+                        <input type="text" name="prenom" class="form-control @error('prenom') is-invalid @enderror" id="clname" placeholder="{{__('form.lname')}} *" >
+                        @error('prenom')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="cadresse" class="sr-only">{{__('form.adresse')}}</label>
+                        <input type="text" name="adresse" class="form-control @error('adresse') is-invalid @enderror" id="cadresse" placeholder="{{__('form.adresse')}} *" >
+                        @error('adresse')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+        
+                    <div class="col-sm-6">
+                        <label for="ctelephone" class="sr-only">{{__('form.telephone')}}</label>
+                        <input type="text" name="telephone" class="form-control  @error('telephone') is-invalid @enderror" id="ctelephone" placeholder="{{__('form.telephone')}} *" >
+                        @error('telephone')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="cemail" class="sr-only">{{__('form.email')}}</label>
+                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="cemail" placeholder="{{__('form.email')}}">
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+        
+                    <div class="col-sm-6">
+                        <label for="cprofession" class="sr-only">{{__('form.profession')}}</label>
+                        <input type="text" name="profession" class="form-control @error('profession') is-invalid @enderror" id="cprofession" placeholder="{{__('form.profession')}}" >
+                        @error('profession')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="centreprise" class="sr-only">{{__('form.entreprise')}}</label>
+                        <input type="text" name="entreprise" class="form-control @error('entreprise') is-invalid @enderror" id="centreprise" placeholder="{{__('form.entreprise')}}">
+                        @error('entreprise')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="haymacproduction.ma get ChackerAlpha">
+                       @csrf
+                        @honeypot
+                </div>
+        
+                <label for="cmessage" class="sr-only">{{__('form.message')}}</label>
+                <textarea name="message" class="form-control @error('message') is-invalid @enderror" cols="30" rows="4" id="cmessage"  placeholder="{{__('form.message')}} "></textarea>
+                @error('message')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+                <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
+                    <span>{{__('form.form_devie_button')}}</span>
+                    <i class="icon-long-arrow-right"></i>
+                </button>
+            </form>
     
-                    <tr class="summary-shipping-row">
-                        <td>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="free-shipping" name="shipping" class="custom-control-input">
-                                <label class="custom-control-label" for="free-shipping">Free Shipping</label>
-                            </div><!-- End .custom-control -->
-                        </td>
-                        <td>$0.00</td>
-                    </tr><!-- End .summary-shipping-row -->
+        </div>
     
-                    <tr class="summary-shipping-row">
-                        <td>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="standart-shipping" name="shipping" class="custom-control-input">
-                                <label class="custom-control-label" for="standart-shipping">Standart:</label>
-                            </div><!-- End .custom-control -->
-                        </td>
-                        <td>$10.00</td>
-                    </tr><!-- End .summary-shipping-row -->
-    
-                    <tr class="summary-shipping-row">
-                        <td>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="express-shipping" name="shipping" class="custom-control-input">
-                                <label class="custom-control-label" for="express-shipping">Express:</label>
-                            </div><!-- End .custom-control -->
-                        </td>
-                        <td>$20.00</td>
-                    </tr><!-- End .summary-shipping-row -->
-    
-                    <tr class="summary-shipping-estimate">
-                        <td>Estimate for Your Country<br> <a href="dashboard.html">Change address</a></td>
-                        <td>&nbsp;</td>
-                    </tr><!-- End .summary-shipping-estimate -->
-    
-                    <tr class="summary-total">
-                        <td>Total:</td>
-                        <td>1111100000</td>
-                    </tr><!-- End .summary-total -->
-                </tbody>
-            </table><!-- End .table table-summary -->
-    
-            <a href="checkout.html" class="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO CHECKOUT</a>
-        </div><!-- End .summary -->
-    
-        <a href="{{route('products')}}" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i class="icon-refresh"></i></a>
-    </aside><!-- End .col-lg-3 -->
+        <a href="{{route('products')}}" class="btn btn-outline-dark-2 btn-block mb-3">
+            <span>{{__('cart.cart_back_to_shop')}}</span><i class="icon-refresh"></i>
+        </a>
+
+    </aside>
 

@@ -27,7 +27,7 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],
     function () {
-   
+
         Route::middleware('cache.headers:public;max_age=2628000;etag')->group(function () {
 
             Route::get('/', [SiteController::class, 'index'])->name('home');
@@ -64,10 +64,10 @@ Route::group(
 
             Route::get('/que-cherchez-vous', [SearchController::class, 'index'])->name('search');
 
-            Route::get('/cart',[ShoppingController::class,'cart'])->name('cart');
-            Route::put('/cart',[ShoppingController::class,'cartUpdate'])->name('cart');
-            Route::delete('/cart',[ShoppingController::class,'cartDelete'])->name('cartDelete');
-
+            Route::get('/cart', [ShoppingController::class, 'cart'])->name('cart');
+            Route::put('/cart', [ShoppingController::class, 'cartUpdate'])->name('cart');
+            Route::delete('/cart', [ShoppingController::class, 'cartDelete'])->name('cartDelete');
+            Route::post('/cart', [ShoppingController::class, 'cartSend'])->name('cartSend');
         });
     }
 );
