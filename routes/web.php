@@ -66,6 +66,8 @@ Route::group(
 
             Route::get('/cart',[ShoppingController::class,'cart'])->name('cart');
             Route::put('/cart',[ShoppingController::class,'cartUpdate'])->name('cart');
+            Route::delete('/cart',[ShoppingController::class,'cartDelete'])->name('cartDelete');
+
         });
     }
 );

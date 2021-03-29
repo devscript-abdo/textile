@@ -13,64 +13,71 @@
             </thead>
 
             <tbody>
-                @forelse($productsCart as $product)
 				<form method="post" action="{{route('cart')}}" id="cartFom">
-					@csrf
-					@method('PUT')
-					<input type="hidden" name="productId" value="{{$product->rawId()}}">
-                    <tr>
-						
-							<td class="product-col">
-								<div class="product">
-									<figure class="product-media">
-										<a href="{{$product['product']->url}}">
-											<img src="{{$product['product']->image}}" alt="{{$product->name}}">
-										</a>
-									</figure>
+                    
+					@forelse($productsCart as $product)
+												
+                        @csrf
+                        @method('PUT')
+                        <input type="hidden" name="productId" value="{{$product->rawId()}}">
+						<tr>
 
-									<h3 class="product-title">
-										<a href="{{$product['product']->url}}">{{$product->name}}</a>
-									</h3><!-- End .product-title -->
-								</div><!-- End .product -->
-							</td>
-							<td class="price-col">{{$product->price}}</td>
-							<td class="quantity-col">
-								<div class="cart-product-quantity">
-									
-									<input type="number" name="quantity" class="form-control" value="{{$product->qty}}" min="1" max="100" step="1" data-decimals="0" required>
-			
-								</div>
-								
-							</td>
-							<td class="quantity-col">
-								@if(count($product['colors']))
-									<div class="details-filter-row details-row-size">
-										<label>{{__('shop.shop_color')}}</label>
-										<div class="product-nav product-nav-dots">
-											@foreach($product['colors'] as $color)
-												<a href="#" class="" style="background: {{$color}};"><span class="sr-only">{{$color}}</span></a>
-								
-											@endforeach
-										</div>
+				
+								<td class="product-col">
+									<div class="product">
+										<figure class="product-media">
+											<a href="{{$product['product']->url}}">
+												<img src="{{$product['product']->image}}" alt="{{$product->name}}">
+											</a>
+										</figure>
+
+										<h3 class="product-title">
+											<a href="{{$product['product']->url}}">{{$product->name}}</a>
+										</h3><!-- End .product-title -->
+									</div><!-- End .product -->
+								</td>
+								<td class="price-col">{{$product->price}}</td>
+								<td class="quantity-col">
+									<div class="cart-product-quantity">
+                                     
+										<input type="text" name="quantity" class="form-control" value="{{$product->qty}}" min="1" max="100" step="1" data-decimals="0" readonly>
+                                      
 									</div>
-								@endif
-							</td>
-							<td class="total-col">{{$product->total}}</td>
-							<td class="remove-col"><button wire:click="remove({{$product->id}})" class="btn-remove"><i class="icon-close"></i></button></td>
-					    
-                    </tr>
-				</form>
-                @empty
-                   <tr>
-                     <p>Nos product in the cart</p>
-                   </tr>
-                @endforelse
-
+                                
+								</td>
+								<td class="quantity-col">
+									@if(is_array($product['colors']))
+										<div class="details-filter-row details-row-size">
+											{{--<label>{{__('shop.shop_color')}}</label>--}}
+											<div class="product-nav product-nav-dots">
+												@foreach($product['colors'] as $color)
+													<a href="#" class="" style="background: {{$color}};"><span class="sr-only">{{$color}}</span></a>
+									
+												@endforeach
+											</div>
+										</div>
+									@endif
+								</td>
+								<td class="total-col">{{$product->total}}</td>
+								<td class="remove-col">
+                                    <button data-prodid="{{$product->rawId()}}" class="btn-remove deleteProductFromCart">
+                                        <i class="icon-close"></i>
+                                    </button>
+                                </td>
+							
+						</tr>
+					
+					@empty
+					<tr>
+						<p>Nos product in the cart</p>
+					</tr>
+					@endforelse
+                </form>
             </tbody>
         </table>
 
         <div class="cart-bottom">
-            <div class="cart-discount">
+            {{--<div class="cart-discount">
                 <form action="#">
                     <div class="input-group">
                         <input type="text" class="form-control" required placeholder="coupon code">
@@ -79,12 +86,12 @@
                         </div>
                     </div>
                 </form>
-            </div>
+            </div>--}}
 
-            <a href="#" class="btn btn-outline-dark-2" onclick="document.getElementById('cartFom').submit();">
+            {{--<a href="#" class="btn btn-outline-dark-2" onclick="document.getElementById('cartFom').submit();">
 				<span>UPDATE CART</span>
 				<i class="icon-refresh"></i>
-			</a>
+			</a>--}}
         </div>
     </div>
     <!---------------------------------------------------------------------------------------------------->
@@ -149,6 +156,6 @@
             <a href="checkout.html" class="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO CHECKOUT</a>
         </div><!-- End .summary -->
     
-        <a href="category.html" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i class="icon-refresh"></i></a>
+        <a href="{{route('products')}}" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i class="icon-refresh"></i></a>
     </aside><!-- End .col-lg-3 -->
 

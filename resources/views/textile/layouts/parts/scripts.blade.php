@@ -11,9 +11,12 @@
     <script src="{{asset('assets/js/jquery.elevateZoom.min.js')}}"></script>
     <!-----End Product single------>
     <script src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
+
     @yield('singleProductJs')
     @yield('categoriesJs')
     @yield('singleJs')
+    @yield('singleCartJs')
+
     {{--<script src="{{asset('assets/js/nouislider.min.js')}}"></script>--}}
     <!-- Main JS File -->
     <script src="{{asset('assets/js/main.js')}}"></script>
