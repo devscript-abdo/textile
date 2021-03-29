@@ -12,6 +12,6 @@ return [
     'message' => 'Message',
     /************* */
 
-    'form_devie_title'=>'Compmand',
+    'form_devie_title'=>'Command',
     'form_devie_button'=>'Send'
 ];

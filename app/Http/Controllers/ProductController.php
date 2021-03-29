@@ -48,7 +48,7 @@ class ProductController extends Controller
     $product = $this->Product()->getProduct($request->productData);
 
     $exists =  \MailletexCart::all()->firstWhere('name', $product->field('name'));
-    
+
     if (!$exists) {
       \MailletexCart::add(
         $product->id,
@@ -59,8 +59,11 @@ class ProductController extends Controller
 
           'colors' => $request->colors ?? [],
           'product' => (object)[
+
+            'unite' => $product->type,
             'image' => $product->image,
             'url' => $product->url,
+
           ],
 
         ]

@@ -1,11 +1,12 @@
 
-    <div class="col-lg-6">
+    <div class="col-lg-8">
         <table class="table table-cart table-mobile">
             <thead>
                 <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Colors </th>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                    <th>Couleurs </th>
+                    <th>Unité de mesure</th>
                     <th></th>
                 </tr>
             </thead>
@@ -43,6 +44,7 @@
 											{{--<label>{{__('shop.shop_color')}}</label>--}}
 											<div class="product-nav product-nav-dots">
 												@foreach($product['colors'] as $color)
+
 													<a href="#" class="" style="background: {{$color}};"><span class="sr-only">{{$color}}</span></a>
 									
 												@endforeach
@@ -50,7 +52,14 @@
 										</div>
 									@endif
 								</td>
-								
+                                <td class="quantity-col">
+									<div class="cart-product-quantity">
+                                     
+                                       {{$product['product']->unite}}
+                                      
+									</div>
+                                
+								</td>
 						</tr>
 					
 					@empty

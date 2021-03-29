@@ -1,11 +1,12 @@
 
-    <div class="col-lg-6">
+    <div class="col-lg-8">
         <table class="table table-cart table-mobile">
             <thead>
                 <tr>
                     <th>Product</th>
                     <th>Quantity</th>
                     <th>Colors </th>
+                    <th>unité de mesure</th>
                     <th></th>
                 </tr>
             </thead>
@@ -22,9 +23,11 @@
 								<td class="product-col">
 									<div class="product">
 										<figure class="product-media">
+
 											<a href="{{$product['product']->url}}">
 												<img src="{{$product['product']->image}}" alt="{{$product->name}}">
 											</a>
+
 										</figure>
 
 										<h3 class="product-title">
@@ -54,7 +57,14 @@
 										</div>
 									@endif
 								</td>
-								
+                                <td class="">
+									<div class="cart-product-quantity">
+
+                                        {{$product['product']->unite}}
+                                      
+									</div>
+                                
+								</td>
 								<td class="remove-col">
                                     <button data-prodid="{{$product->rawId()}}" class="btn-remove deleteProductFromCart">
                                         <i class="icon-close"></i>
@@ -92,7 +102,7 @@
     </div>
     <!---------------------------------------------------------------------------------------------------->
     <!---------------------------------------------------------------------------------------------------->
-    <aside class="col-lg-6">
+    <aside class="col-lg-4">
         <div class="summary summary-cart">
             <h3 class="">{{__('form.form_devie_title')}}</h3>
     
