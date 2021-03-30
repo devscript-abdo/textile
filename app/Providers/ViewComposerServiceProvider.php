@@ -51,7 +51,7 @@ class ViewComposerServiceProvider extends ServiceProvider
 
         $viewsCart = [
             'textile.layouts.sections.cart.*',
-            //'textile.pages.cart.*'
+
         ];
 
         View::composer($viewsPages, function ($view) use ($pages) {
@@ -67,8 +67,10 @@ class ViewComposerServiceProvider extends ServiceProvider
         });
 
         $productsCart = \ShoppingCart::all();
-        View::composer($viewsCart, function ($view) use ($productsCart) {
+        $productsCartCount = \ShoppingCart::count(true);
+        View::composer($viewsCart, function ($view) use ($productsCart, $productsCartCount) {
             $view->with('productsCart', $productsCart);
+            $view->with('productsCartCount', $productsCartCount);
         });
 
         $footerPages = app(PageInterface::class)->getFooters();

@@ -72,6 +72,6 @@ class ProductController extends Controller
       return redirect()->route('cart');
     }
 
-    return redirect()->back();
+    return redirect()->back()->with('isExiste','Ce produis et deja exit dans le panier');
   }
 }

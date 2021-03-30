@@ -65,7 +65,7 @@
                     {{--<livewire:cart.cart-button/>
                     <livewire:cart.cart/>--}}
                     @include('textile.layouts.sections.cart.cartButton')
-                    @include('textile.layouts.sections.cart.cart')
+                    {{--@include('textile.layouts.sections.cart.cart')--}}
                     
                 </div>
             </div>

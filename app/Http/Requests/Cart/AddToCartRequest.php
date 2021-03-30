@@ -26,10 +26,17 @@ class AddToCartRequest extends FormRequest
     public function rules()
     {
         return [
-            'colors' => 'nullable|array',
+            'colors' => 'required_with:mycolor|array',
             'designs' => 'nullable|integer',
             'quantity' => 'required|integer',
             'productData' => 'required|string'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'colors.required_with' => "s'il vous plaît choisir au moins une couleure",
         ];
     }
 }

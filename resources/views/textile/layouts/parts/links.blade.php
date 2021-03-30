@@ -14,7 +14,7 @@
     <!-- Main CSS File -->
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     
-    <link rel="stylesheet" href="{{asset('assets/css/plugins/nouislider/nouislider.css')}}">
+    {{--<link rel="stylesheet" href="{{asset('assets/css/plugins/nouislider/nouislider.css')}}">--}}
 
     @yield('homePageCss')
 

@@ -4,10 +4,11 @@
   @include('textile.pages.products.single._normal.default.section_a_nav')
     <div class="page-content">
         <div class="container">
-           @include('textile.pages.products.single._normal.default.section_b_detail_top')
-           @include('textile.pages.products.single._normal.default.section_c_detail_taps')
-           <h2 class="title text-center mb-4">{{__('shop.shop_single_you_like')}}</h2>
-           @include('textile.pages.products.single._normal.default.section_d_you_like')
+         
+            @include('textile.pages.products.single._normal.default.section_b_detail_top')
+            @include('textile.pages.products.single._normal.default.section_c_detail_taps')
+            <h2 class="title text-center mb-4">{{__('shop.shop_single_you_like')}}</h2>
+            @include('textile.pages.products.single._normal.default.section_d_you_like')
         </div>
     </div>
 @endsection
