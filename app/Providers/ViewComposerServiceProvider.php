@@ -32,6 +32,7 @@ class ViewComposerServiceProvider extends ServiceProvider
             // 'about' => Page::whereSlug('a-propos-de-nous')->whereStatus('active')->first(),
             'about' => app(PageInterface::class)->getPage('a-propos-de-nous'),
             'partner' => app(PageInterface::class)->getPage('devenir-partenaire'),
+            'magazine' => app(PageInterface::class)->getPage('nos-magazines'),
 
         ];
         $viewsPages = [

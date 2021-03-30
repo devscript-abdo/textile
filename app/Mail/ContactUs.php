@@ -30,9 +30,9 @@ class ContactUs extends Mailable
     public function build()
     {
 
-        return $this->from('site@' . request()->getHost(),'haymacproduction.com')
+        return $this->from('site@' . request()->getHost(), 'mailletex.ma')
             ->subject('Nouveau message depuis le site web')
             ->view('emails.contactUs.contact')
-            ->with('data', $this->data);
+            ->with('data', (object)$this->data);
     }
 }

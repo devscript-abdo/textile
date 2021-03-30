@@ -16,7 +16,8 @@ trait Language
     public function field($field)
     {
         return $this->getTranslatedAttribute($field, $this->currentLocale(), 'fallbackLocale')
-           ?? $this->{$field};
+
+            ?? $this->{$field};
     }
 
     private function currentLocale()

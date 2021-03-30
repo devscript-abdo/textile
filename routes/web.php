@@ -55,6 +55,7 @@ Route::group(
 
 
             Route::get('/contactez-nous', [ContactController::class, 'index'])->name('contact');
+            Route::post('/contactez-nous', [ContactController::class, 'store'])->name('contactPost');
 
             Route::get('/que-cherchez-vous', [SearchController::class, 'index'])->name('search');
 

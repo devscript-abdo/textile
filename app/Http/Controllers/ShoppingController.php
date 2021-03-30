@@ -35,7 +35,7 @@ class ShoppingController extends Controller
 
     public function cartSend(OrderRequest $request)
     {
-       
+
         //  dd($commands);
         $order = new Order();
         $order->nom = $request->nom;

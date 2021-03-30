@@ -1,5 +1,5 @@
 <div class="stores mb-4 mb-lg-5">
-    <h2 class="title text-center mb-3">Our Stores</h2><!-- End .title text-center mb-2 -->
+    <h2 class="title text-center mb-3">{{__('magazine.ou_magazines_title')}}</h2><!-- End .title text-center mb-2 -->
 
     <div class="row">
         @foreach($magazines as $magazine)

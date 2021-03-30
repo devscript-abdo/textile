@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Middleware\SeoChecker;
 use App\Http\Requests\Partner\PartnerRequest;
-use App\Http\Seo\BlogHandler;
 use App\Models\Subscription;
 use App\Traits\InterfaceHandler;
-use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Mail;
-
 use App\Mail\Partner\Partner;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class SiteController extends Controller
 {
@@ -29,14 +26,6 @@ class SiteController extends Controller
         $testimonials = $this->Testimonial()->activeItems();
 
         $posts = $this->Post()->activeItems();
-
-        /*$services = $this->Service()->homeItems();
-
-        $projects = $this->Project()->homeItems();
-
-        $clients  = $this->Client()->activeItems();
-
-       */
 
         return view('textile.pages.home.index', compact('sliders', 'categorie', 'products', 'testimonials', 'posts'));
     }
@@ -59,7 +48,7 @@ class SiteController extends Controller
     }
     public function partnerPost(PartnerRequest $request)
     {
-       // dd($request);
+        // dd($request);
         $data = $request->except(['_token', 'valid_from']);
 
         $email = setting('contact.email_reciver') ?? 'contact@' . request()->getHost();

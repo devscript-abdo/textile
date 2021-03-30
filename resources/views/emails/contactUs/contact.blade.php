@@ -45,13 +45,13 @@
             	<tr>
             		<td>
             			<div class="text" style="padding: 0 2.5em; text-align: center;">
-            				<h2>{{$data['email']}}</h2>
+            				<h2>{{$data->email}}</h2>
 							{{--<h3>Amazing deals, updates, interesting news right in your inbox</h3>--}}
-							<p>Nom complet : {{$data['name']}}</p>
+							<p>Nom complet : {{$data->nom}}</p>
 							<hr>
-							<p>Numéro de téléphone : {{$data['tele']}}</p>
+							<p>Numéro de téléphone : {{$data->telephone}}</p>
 							<hr>
-							<p>Contenu : {{$data['message']}}</p>
+							<p>Contenu : {{$data->message}}</p>
 							
             				{{--<p><a href="#" class="btn btn-primary">Yes! Subscribe Me</a></p>--}}
             			</div>

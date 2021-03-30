@@ -1,5 +1,17 @@
 <div class="container">
-    <div class="page-header page-header-big text-center" style="background-image: url('assets/images/contact-header-bg.jpg')">
-        <h1 class="page-title text-white">Contact us<span class="text-white">keep in touch with us</span></h1>
-    </div><!-- End .page-header -->
-</div><!-- End .container -->
+
+    <div class="page-header page-header text-center"
+
+        @if(setting('pages.background_cover'))
+          style="background-image: url('{{Voyager::image(setting('pages.background_cover'))}}')"
+        @endif
+    >
+   
+        <h1 class="page-title">
+
+            {{$pages['magazine']->field('title')}}
+            {{--<span class="text-white">{{__('home.about_title')}}</span>--}}
+        </h1>
+    </div>
+
+</div>
