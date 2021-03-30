@@ -32,7 +32,7 @@ class ProductController extends Controller
   public function show($product)
   {
 
-    $product = $this->Product()->getProduct($product);
+    $product = $this->Product()->getProduct($product, ['category', 'colors', 'reviews']);
 
     $products = $this->Product()
       ->model()
@@ -72,6 +72,6 @@ class ProductController extends Controller
       return redirect()->route('cart');
     }
 
-    return redirect()->back()->with('isExiste','Ce produis et deja exit dans le panier');
+    return redirect()->back()->with('isExiste', 'Ce produis et deja exit dans le panier');
   }
 }

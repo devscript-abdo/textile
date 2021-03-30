@@ -40,6 +40,9 @@
 
                         {{--<a href="#" class="btn-product btn-cart"><span>add to cart</span></a>--}}
                         {{--<livewire:cart.add-to-cart-button :product-id="$product->id" :key="time().$product->id" />--}}
+                        <div class="product-action">
+                            <a href="{{route('products.single',$product->slug)}}" class="btn-product btn-cart"><span>{{__('buttons.add_to_cart')}}</span></a>
+                        </div>
                     </div>
                 </div>
 

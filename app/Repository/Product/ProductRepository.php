@@ -35,10 +35,14 @@ class ProductRepository  implements ProductInterface
         return $this->model->showInNavbar();
     }
 
-    public function getProduct($slug)
+    public function getProduct($slug, $with = null)
     {
+        if (isset($with) && is_array($with)) {
+            return $this->model->whereSlug($slug)->whereActive(true)
+                ->with($with)
+                ->firstOrFail();
+        }
         return $this->model->whereSlug($slug)->whereActive(true)
-            ->with(['category', 'colors'])
             ->firstOrFail();
     }
 

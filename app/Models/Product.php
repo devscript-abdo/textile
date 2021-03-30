@@ -30,6 +30,12 @@ class Product extends Model
         return $this->belongsToMany('App\Models\Color', 'color_product', 'product_id', 'color_id');
     }
 
+    public function reviews()
+    {
+
+        return $this->hasMany('App\Models\Review');
+    }
+
     public function setCategoryIdAttribute($value)
     {
         // dd($value);

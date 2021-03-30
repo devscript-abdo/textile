@@ -44,13 +44,19 @@ class ProductRepositoryCache  implements ProductInterface
         });
     }
 
-    public function getProduct($slug)
+    public function getProduct($slug, $with = null)
     {
         $sluger = json_encode($slug);
 
+        if (isset($with) && is_array($with)) {
+            return $this->cache->remember("product_cache_{$sluger}", $this->timeToLive(), function () use ($slug, $with) {
+                return $this->model->whereSlug($slug)->whereActive(true)
+                    ->with($with)
+                    ->firstOrFail();
+            });
+        }
         return $this->cache->remember("product_cache_{$sluger}", $this->timeToLive(), function () use ($slug) {
             return $this->model->whereSlug($slug)->whereActive(true)
-                ->with(['category', 'colors'])
                 ->firstOrFail();
         });
     }
