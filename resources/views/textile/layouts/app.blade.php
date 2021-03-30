@@ -16,7 +16,7 @@
 
             @yield('content')
 
-        </main><!-- End .main -->
+        </main>
 
         @include('textile.layouts.sections.Footer')
 
