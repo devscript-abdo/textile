@@ -27,7 +27,7 @@ class AddToCartRequest extends FormRequest
     {
         return [
             'colors' => 'required_with:mycolor|array',
-            'designs' => 'nullable|integer',
+            'designs' => 'required_with:mydesign|integer',
             'quantity' => 'required|integer',
             'productData' => 'required|string'
         ];
@@ -37,6 +37,7 @@ class AddToCartRequest extends FormRequest
     {
         return [
             'colors.required_with' => "s'il vous plaît choisir au moins une couleure",
+            'designs.required_with' => "s'il vous plait entrer le numéro du design",
         ];
     }
 }

@@ -68,19 +68,20 @@
                                         @endif
 
                                         @if($product->designs)
+                                            <input type="hidden" name="mydesign" value="1">
                                             <div class="details-filter-row details-row-size">
 
                                                 <div class="details-filter-row details-row-size">
                                                     <label for="qty">{{__('shop.shop_single_designs')}}:  ({{__('shop.shop_single_designs_photos')}})</label>
                                                     <div class="product-details-quantity">
                                                         <input type="number" name="designs" id="qty" class="form-control @error('designs') is-invalid @enderror"  min="1" max="{{$product->designs}}" >
-                                                    
+                                                        @error('designs')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
+                                                        @enderror
                                                     </div>
-                                                    @error('designs')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
+                                                
                                                 </div>
                                                 <a href="#" class="size-guide">
                                                     <i class="icon-th-list"></i>{{__('shop.shop_single_designs_select')}}
@@ -92,13 +93,13 @@
                                             <label for="qty">{{__('shop.shop_signle_qte')}}:  ({{$product->type}})</label>
                                             <div class="product-details-quantity">
                                                 <input type="number" name="quantity" id="qty" class="form-control @error('quantity') is-invalid @enderror"  min="1"   required>
-                                            
+                                                @error('quantity')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
-                                            @error('quantity')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
+                                        
                                         </div>
                                         @if (session()->has('isExiste'))
                                             <p style="color: red; font-weight:bold">{{session('isExiste')}}</p>
