@@ -18,7 +18,7 @@
                                 <div><a href="tel:#">{{$magazine->tele}}</a></div>
 
                                 <h4 class="store-subtitle">Store Hours:</h4><!-- End .store-subtitle -->
-                            
+
                                 {!! $magazine->hours !!}
 
                                 <a href="{{$magazine->googlemap}}" class="btn btn-link" target="_blank"><span>View Map</span><i class="icon-long-arrow-right"></i></a>

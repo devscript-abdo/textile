@@ -2,11 +2,11 @@
 
     <div class="page-header page-header text-center"
 
-        @if(setting('pages.background_cover'))
-          style="background-image: url('{{Voyager::image(setting('pages.background_cover'))}}')"
+         @if(setting('pages.background_cover'))
+         style="background-image: url('{{Voyager::image(setting('pages.background_cover'))}}')"
         @endif
     >
-   
+
         <h1 class="page-title">
 
             {{$pages['magazine']->field('title')}}

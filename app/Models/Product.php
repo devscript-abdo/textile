@@ -33,7 +33,7 @@ class Product extends Model
     public function reviews()
     {
 
-        return $this->hasMany('App\Models\Review');
+        return $this->hasMany('App\Models\Review')->where('active', true);
     }
 
     public function setCategoryIdAttribute($value)

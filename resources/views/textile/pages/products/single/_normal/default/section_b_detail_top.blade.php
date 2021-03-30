@@ -34,7 +34,7 @@
                                         <div class="ratings">
                                             <div class="ratings-val" style="width: 80%;"></div>
                                         </div>
-                                        <a class="ratings-text" href="#product-review-link" id="review-link">( 2 {{__('shop.shop_reviews')}} )</a>
+                                        <a class="ratings-text" href="#product-review-link" id="review-link">({{count($product->reviews)}}) {{__('shop.shop_reviews')}} </a>
                                     </div>
 
                                     <div class="product-price">

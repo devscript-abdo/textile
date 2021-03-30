@@ -1,7 +1,7 @@
 <div class="widget widget-collapsible">
     <h3 class="widget-title">
         <a data-toggle="collapse" href="#widget-3" role="button" aria-expanded="true" aria-controls="widget-3">
-           {{__('shop.shop_color')}}
+            {{__('shop.shop_color')}}
         </a>
     </h3>
 

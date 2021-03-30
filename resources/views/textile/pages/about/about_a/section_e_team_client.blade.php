@@ -9,7 +9,7 @@
         <div class="col-lg-7">
             <div class="brands-display">
                 <div class="row justify-content-center">
-                    
+
                     @foreach($clients as $client)
                         <div class="col-6 col-sm-4">
                             <a href="{{$client->site_url ?? route('about')}}" class="brand">
@@ -37,7 +37,7 @@
                         <figcaption class="member-overlay">
                             <div class="member-overlay-content">
                                 <h3 class="member-title">{{$team->name}}<span>{{$team->post}}</span></h3>
-                                <p>{{$team->excerpt}}</p> 
+                                <p>{{$team->excerpt}}</p>
                                 <div class="social-icons social-icons-simple">
                                     <a href="{{$team->facebook ?? route('about')}}" class="social-icon" title="Facebook" target="_blank"><i class="icon-facebook-f"></i></a>
                                     <a href="{{$team->twitter ?? route('about')}}" class="social-icon" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>

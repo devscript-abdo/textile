@@ -5,9 +5,9 @@
             <p class="title-desc">{{__('home.blog_description')}}</p><!-- End .title-desc -->
         </div><!-- End .heading -->
 
-        <div class="owl-carousel owl-simple" data-toggle="owl" 
-            data-owl-options='{
-                "nav": false, 
+        <div class="owl-carousel owl-simple" data-toggle="owl"
+             data-owl-options='{
+                "nav": false,
                 "dots": true,
                 "items": 3,
                 "margin": 20,
@@ -38,10 +38,10 @@
                     <div class="entry-body text-center">
                         <div class="entry-meta">
                             <a href="{{route('blog.single',$post->slug)}}">
-                             
+
                                 {!! $post->full_date !!}
                             </a>
-                           
+
                         </div><!-- End .entry-meta -->
 
                         <h3 class="entry-title">

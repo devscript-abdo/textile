@@ -8,16 +8,16 @@
     <div class="collapse show" id="widget-3">
         <div class="widget-body">
             <div class="filter-items">
-    
+
                 <div class="filter-item">
                     <div class="custom-control ">
-                        <input 
-                        wire:click="$emit('filterType')"
-                        wire:model="type" type="radio"
-                        value="ff" 
-                        class="custom-control-input typeChecker" 
-                        id="fff"
-                        style="background: #b87145; !important"
+                        <input
+                            wire:click="$emit('filterType')"
+                            wire:model="type" type="radio"
+                            value="ff"
+                            class="custom-control-input typeChecker"
+                            id="fff"
+                            style="background: #b87145; !important"
                         >
                         <label class="custom-control-label" for="ff">M²</label>
                     </div><!-- End .custom-checkbox -->

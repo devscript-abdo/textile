@@ -1,12 +1,12 @@
 {{--<div class="bg-light-2 pt-6 pb-5 mb-6 mb-lg-8">--}}
-<div class="">    
+<div class="">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 mb-3 mb-lg-0">
                 {{--<h2 class="title">Who We Are</h2>--}}
                 {{--<p class="lead text-primary mb-3">Pellentesque</p>--}}
                 <p class="mb-2">
-                   {!!$pages['about']->body!!}
+                    {!!$pages['about']->body!!}
                 </p>
 
                 <a href="{{route('products')}}" class="btn btn-sm btn-minwidth btn-outline-primary-2 mt-2">

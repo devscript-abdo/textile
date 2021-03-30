@@ -37,7 +37,7 @@ class Products extends Component
         } else {
             $this->products = $productsInterface->activeItems();
         }
-  
+
         $this->colors =   $colorInterface->active();
     }
     public function render()

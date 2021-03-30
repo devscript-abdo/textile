@@ -9,14 +9,14 @@
 
                     <div class="banner-content women">
                         <h2 class="banner-title">{{$categorie->field('name')}}</h2>
-                        
+
                         {{--<h3 class="banner-subtitle text-darkblack">IN THIS LOOK</h3>--}}
-                     
+
 
                         {{--<ul>
 
                             <li>Light grey linen shirt dress</li>
-                
+
                         </ul>--}}
                         <p>{{$categorie->field('description')}}</p>
 
@@ -64,7 +64,7 @@
                                 <div class="product-nav product-nav-dots">
                                     @foreach($product->colors as $color)
                                         <a href="#" class="" style="background: {{$color->code}};"><span class="sr-only">{{$color->name}}</span></a>
-                        
+
                                     @endforeach
                                 </div>
                             </div>

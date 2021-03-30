@@ -7,7 +7,7 @@
       </div>
     @endif--}}
     @foreach($products as $product)
-      
+
         <div class="product product-list">
             <div class="row">
                 <div class="col-6 col-lg-3">
@@ -22,7 +22,7 @@
                 <div class="col-6 col-lg-3 order-lg-last">
                     <div class="product-list-action">
                         <div class="product-price">
-                           {{-- {{$product->price}} | {{$product->type}} --}}
+                            {{-- {{$product->price}} | {{$product->type}} --}}
 
                             {{__('shop.shop_type')}} : {{$product->type}}
                         </div>
@@ -64,7 +64,7 @@
                                         <img src="{{$product->singlePhoto($photo)}}" alt="product desc">
                                     </a>
                                 @endforeach
-        
+
                             </div>
                         @endif
                     </div>

@@ -16,7 +16,7 @@
 
                         <div class="video-poster-content">
                             <a href="https://www.youtube.com/watch?v=vBPgmASQ1A0" class="btn-video btn-iframe"><i class="icon-play"></i></a>
-                        </div><!-- End .video-poster-content -->	
+                        </div><!-- End .video-poster-content -->
                     </div><!-- End .video-poster -->
                 </div><!-- End .col-md-6 -->
             </div><!-- End .row -->

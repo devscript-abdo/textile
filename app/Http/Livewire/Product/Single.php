@@ -52,7 +52,7 @@ class Single extends Component
 
     public function hydrate()
     {
-        
-        
+
+
     }
 }

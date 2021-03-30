@@ -13,12 +13,12 @@
                     <div class="custom-control custom-checkbox">
                         <input wire:click="$emit('filterCategory')" wire:model="category"  type="checkbox" class="custom-control-input categoriesChecker" value="0" id="categorie-0">
                         <label class="custom-control-label" for="categorie-0">{{__('shop.shop_category_all')}}</label>
-                    
+
                     </div>
                     {{--<span class="item-count">3</span>--}}
                 </div>
                 @foreach($categories as $categorie)
-                
+
                     @if($categorie->parent_id === null && count($categorie->childrens))
                         <div class="filter-item">
                             <div class="custom-control custom-checkbox">
@@ -35,14 +35,14 @@
                                     </div>
                                 @endforeach
                             </div>
-                           
+
                         </div>
                     @elseif($categorie->parent_id ===null && $categorie->childrens()->count()===0)
                         <div class="filter-item">
                             <div class="custom-control custom-checkbox">
                                 <input wire:click="$emit('filterCategory')" wire:model="category"  type="checkbox" class="custom-control-input categoriesChecker" value="{{$categorie->id}}" id="categorie-{{$categorie->id}}">
                                 <label class="custom-control-label" for="categorie-{{$categorie->id}}">{{$categorie->field('name')}}</label>
-                            
+
                             </div>
                             {{--<span class="item-count">3</span>--}}
                         </div>

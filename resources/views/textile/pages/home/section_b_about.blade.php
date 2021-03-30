@@ -8,7 +8,7 @@
                      <br>in diam. Sed arcu. Cras consequat
                 </p>--}}
                 <p class="mb-2">
-                  {{$pages['about']->excerpt}}
+                    {{$pages['about']->excerpt}}
                 </p>
 
                 <a href="{{route('about')}}" class="btn btn-sm btn-minwidth btn-outline-primary-2">

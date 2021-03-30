@@ -5,7 +5,7 @@
                 <div class="cta-wrapper cta-text text-center">
                     <h3 class="cta-title">{{__('home.shop_social')}}</h3><!-- End .cta-title -->
                     <p class="cta-desc">{{__('home.shop_social_description')}} </p><!-- End .cta-desc -->
-            
+
                     <div class="social-icons social-icons-colored justify-content-center">
                         <a href="{{setting('social.facebook')}}" class="social-icon social-facebook" title="Facebook" target="_blank"><i class="icon-facebook-f"></i></a>
                         <a href="{{setting('social.twitter')}}" class="social-icon social-twitter" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
@@ -20,9 +20,9 @@
                 <div class="cta-wrapper text-center">
                     <h3 class="cta-title mb-2">{{__('home.testimonials')}}</h3><!-- End .cta-title -->
 
-                    <div class="owl-carousel owl-simple owl-testimonials" data-toggle="owl" 
-                        data-owl-options='{
-                            "nav": false, 
+                    <div class="owl-carousel owl-simple owl-testimonials" data-toggle="owl"
+                         data-owl-options='{
+                            "nav": false,
                             "dots": true,
                             "margin": 20,
                             "loop": true,

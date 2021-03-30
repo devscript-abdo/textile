@@ -1,7 +1,7 @@
 <div class="toolbox">
     <div class="toolbox-left">
         <div class="toolbox-info">
-           100 products
+            100 products
         </div>
     </div>
 

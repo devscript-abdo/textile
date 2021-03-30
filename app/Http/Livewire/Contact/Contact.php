@@ -35,7 +35,7 @@ class Contact extends Component
         $this->validate();
 
         $action = $service->execute('sendEmail', $this->fields);
-        
+
         if ($action) {
 
             $this->resetInput();

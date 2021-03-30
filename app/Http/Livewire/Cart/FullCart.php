@@ -39,7 +39,7 @@ class FullCart extends Component
     {
 
         $this->cart = \Mailletex::myCart()->all();
-         //dd($this->cart);
+        //dd($this->cart);
         $this->productsFullCart = tap(
             $this->products(),
             fn (Collection $products) => $this->total = \Mailletex::int_to_decimal($products->sum('total'))
