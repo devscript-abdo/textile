@@ -6,10 +6,7 @@
                     <div class="widget widget-about">
                         <img src="{{Voyager::image(setting('site.logo_footer'))}}" class="footer-logo" alt="Mailletex" width="105" height="25">
                         <p>
-                            dapibus, neque id cursus ucibus, tortor neque egestas augue,
-                            eu vulputate magna eros eu erat. Aliquam erat volutpat.
-                            Nam dui mi, tincidunt quis, accumsan porttitor,
-                            facilisis luctus, metus. 
+                         {{__('footer.footer_description')}} 
                         </p>
                         
                         <div class="widget-about-info">
