@@ -30,4 +30,10 @@ class PageRepository  implements PageInterface
     {
         return $this->model->whereSlug($slug)->whereStatus('active')->first();
     }
+
+    public function getFooters()
+    {
+        return $this->model->whereNotIn('slug', ['a-propos-de-nous', 'devenir-partenaire', 'nos-magazines'])
+            ->get();
+    }
 }

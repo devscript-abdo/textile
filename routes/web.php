@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ShoppingController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Spatie\Honeypot\ProtectAgainstSpam;
+
 /*
     |--------------------------------------------------------------------------
     | Web Routes
@@ -19,7 +21,6 @@ use Spatie\Honeypot\ProtectAgainstSpam;
     | contains the "web" middleware group. Now create something great!
     |
     */
-
 
 Route::group(
     [
@@ -46,7 +47,6 @@ Route::group(
 
             Route::get('/nos-magazines', [SiteController::class, 'magazines'])->name('magazines');
 
-
             Route::get('/blog', [SiteController::class, 'blog'])->name('blog');
 
             Route::get('/blog/{post}', [SiteController::class, 'singleBlog'])
@@ -56,6 +56,8 @@ Route::group(
 
             Route::get('/contactez-nous', [ContactController::class, 'index'])->name('contact');
             Route::post('/contactez-nous', [ContactController::class, 'store'])->name('contactPost');
+
+            Route::get('/page/{slug}', [PageController::class, 'getPage'])->name('page');
 
             Route::get('/que-cherchez-vous', [SearchController::class, 'index'])->name('search');
 

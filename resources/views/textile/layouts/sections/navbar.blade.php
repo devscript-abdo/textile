@@ -13,7 +13,7 @@
                 </button>
 
                 <a href="{{route('home')}}" class="logo">
-                    <img src="{{asset('assets/images/demos/demo-15/logo.png')}}" alt="Mailletex" width="105" height="25">
+                    <img src="{{Voyager::image(setting('site.logo'))}}" alt="Mailletex" width="105" height="25">
                 </a>
 
                 <nav class="main-nav">

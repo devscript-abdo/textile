@@ -13,5 +13,7 @@ interface PageInterface
 
     public function getPage($slug);
 
+    public function getFooters();
+
     // more
 }

@@ -8,8 +8,7 @@
     <title>{{request()->getHost()}}</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-
-    <!-- CSS Reset : BEGIN -->
+	
     @include('emails.contactUs.__style')
 
 

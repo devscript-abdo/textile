@@ -33,10 +33,15 @@ class ViewComposerServiceProvider extends ServiceProvider
             'about' => app(PageInterface::class)->getPage('a-propos-de-nous'),
             'partner' => app(PageInterface::class)->getPage('devenir-partenaire'),
             'magazine' => app(PageInterface::class)->getPage('nos-magazines'),
+            'politique' => app(PageInterface::class)->getPage('politique-de-confidentialite'),
+            'termes' => app(PageInterface::class)->getPage('termes-et-conditions'),
+            'faq' => app(PageInterface::class)->getPage('faq'),
+
 
         ];
         $viewsPages = [
             'textile.pages.*',
+            'textile.layouts.sections.Footer'
         ];
 
         $viewsCategories = [
@@ -64,6 +69,12 @@ class ViewComposerServiceProvider extends ServiceProvider
         $productsCart = \ShoppingCart::all();
         View::composer($viewsCart, function ($view) use ($productsCart) {
             $view->with('productsCart', $productsCart);
+        });
+
+        $footerPages = app(PageInterface::class)->getFooters();
+
+        View::composer('textile.layouts.sections.Footer', function ($view) use ($footerPages) {
+            $view->with('footerPages', $footerPages);
         });
     }
 }

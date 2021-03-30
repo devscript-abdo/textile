@@ -4,101 +4,94 @@
             <div class="row">
                 <div class="col-sm-6 col-lg-4">
                     <div class="widget widget-about">
-                        <img src="{{asset('assets/images/demos/demo-15/logo-footer.png')}}" class="footer-logo" alt="Footer Logo" width="105" height="25">
-                        <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus. </p>
+                        <img src="{{Voyager::image(setting('site.logo_footer'))}}" class="footer-logo" alt="Mailletex" width="105" height="25">
+                        <p>
+                            dapibus, neque id cursus ucibus, tortor neque egestas augue,
+                            eu vulputate magna eros eu erat. Aliquam erat volutpat.
+                            Nam dui mi, tincidunt quis, accumsan porttitor,
+                            facilisis luctus, metus. 
+                        </p>
                         
                         <div class="widget-about-info">
                             <div class="row">
                                 <div class="col-sm-6 col-md-4">
-                                    <span class="widget-about-title">Got Question? Call us 24/7</span>
-                                    <a href="tel:123456789">+0123 456 789</a>
-                                </div><!-- End .col-sm-6 -->
-                                <div class="col-sm-6 col-md-8">
+                                    <span class="widget-about-title">{{__('footer.footer_call_us')}}</span>
+                                    <a href="tel:{{setting('contact.contact_tel')}}">{{setting('contact.contact_tel')}}</a>
+                                </div>
+                                {{--<div class="col-sm-6 col-md-8">
                                     <span class="widget-about-title">Payment Method</span>
                                     <figure class="footer-payments">
                                         <img src="{{asset('assets/images/payments.png')}}" alt="Payment methods" width="272" height="20">
-                                    </figure><!-- End .footer-payments -->
-                                </div><!-- End .col-sm-6 -->
-                            </div><!-- End .row -->
-                        </div><!-- End .widget-about-info -->
-                    </div><!-- End .widget about-widget -->
-                </div><!-- End .col-sm-12 col-lg-4 -->
+                                    </figure>
+                                </div>--}}
+                            </div>
+                        </div>
+                    </div><
+                </div>
 
                 <div class="col-sm-4 col-lg-2">
                     <div class="widget">
-                        <h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
+                        <h4 class="widget-title">{{__('footer.footer_useful_link')}}</h4>
 
                         <ul class="widget-list">
-                            <li><a href="about.html">About Molla</a></li>
-                            <li><a href="#">How to shop on Molla</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="contact.html">Contact us</a></li>
-                            <li><a href="login.html">Log in</a></li>
-                        </ul><!-- End .widget-list -->
-                    </div><!-- End .widget -->
-                </div><!-- End .col-sm-4 col-lg-2 -->
+                            @foreach($footerPages as $page)
+                              <li><a href="{{route('page',$page->slug)}}">{{$page->field('title')}}</a></li>
+                            @endforeach
+                           
+                        </ul>
+                    </div>
+                </div>
 
                 <div class="col-sm-4 col-lg-2">
                     <div class="widget">
-                        <h4 class="widget-title">Customer Service</h4><!-- End .widget-title -->
+                        <h4 class="widget-title">{{__('footer.footer_pages')}}</h4>
 
                         <ul class="widget-list">
-                            <li><a href="#">Payment Methods</a></li>
-                            <li><a href="#">Money-back guarantee!</a></li>
-                            <li><a href="#">Returns</a></li>
-                            <li><a href="#">Shipping</a></li>
-                            <li><a href="#">Terms and conditions</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                        </ul><!-- End .widget-list -->
-                    </div><!-- End .widget -->
-                </div><!-- End .col-sm-4 col-lg-2 -->
+                            <li><a href="{{route('home')}}">{{__('navbar.home')}}</a></li>
+                            <li><a href="{{route('about')}}">{{__('navbar.about')}}</a></li>
+                            <li><a href="{{route('products')}}">{{__('navbar.shope')}}</a></li>
+                            <li><a href="{{route('partner')}}">{{__('navbar.partner')}}</a></li>
+                            <li><a href="{{route('magazines')}}">{{__('navbar.magazine')}}</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-                <div class="col-sm-4 col-lg-2">
-                    <div class="widget">
-                        <h4 class="widget-title">My Account</h4><!-- End .widget-title -->
-
-                        <ul class="widget-list">
-                            <li><a href="#">Sign In</a></li>
-                            <li><a href="cart.html">View Cart</a></li>
-                            <li><a href="#">My Wishlist</a></li>
-                            <li><a href="#">Track My Order</a></li>
-                            <li><a href="#">Help</a></li>
-                        </ul><!-- End .widget-list -->
-                    </div><!-- End .widget -->
-                </div><!-- End .col-sm-4 col-lg-2 -->
-
-                <div class="col-sm-6 col-lg-2">
+                <div class="col-sm-6 col-lg-4">
                     <div class="widget widget-newsletter">
-                        <h4 class="widget-title">Sign Up to Newsletter</h4><!-- End .widget-title -->
+                        <h4 class="widget-title">{{__('footer.footer_newslatter')}}</h4>
 
-                        <p>Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan.</p>
+                        <p>{{__('footer.footer_newslatter_description')}}</p>
                         
                         <form action="#">
                             <div class="input-group">
                                 <input type="email" class="form-control" placeholder="Enter your Email Address" aria-label="Email Adress" required>
                                 <div class="input-group-append">
                                     <button class="btn btn-dark" type="submit"><i class="icon-long-arrow-right"></i></button>
-                                </div><!-- .End .input-group-append -->
-                            </div><!-- .End .input-group -->
+                                </div>
+                            </div>
                         </form>
-                    </div><!-- End .widget -->
-                </div><!-- End .col-sm-6 col-lg-2 -->
-            </div><!-- End .row -->
-        </div><!-- End .container-fluid -->
-    </div><!-- End .footer-middle -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <div class="footer-bottom">
         <div class="container-fluid">
-            <p class="footer-copyright">Copyright © 2019 Molla Store. All Rights Reserved.</p><!-- End .footer-copyright -->
+            <p class="footer-copyright">
+                Copyright © {{date('Y')}} Mailletex. All Rights Reserved.
+                <span>powered by Haymacproduction</span>
+            </p>
 
             <div class="social-icons social-icons-color">
-                <span class="social-label">Social Media</span>
-                <a href="#" class="social-icon social-facebook" title="Facebook" target="_blank"><i class="icon-facebook-f"></i></a>
-                <a href="#" class="social-icon social-twitter" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
-                <a href="#" class="social-icon social-instagram" title="Instagram" target="_blank"><i class="icon-instagram"></i></a>
-                <a href="#" class="social-icon social-youtube" title="Youtube" target="_blank"><i class="icon-youtube"></i></a>
-                <a href="#" class="social-icon social-pinterest" title="Pinterest" target="_blank"><i class="icon-pinterest"></i></a>
-            </div><!-- End .soial-icons -->
-        </div><!-- End .container-fluid -->
-    </div><!-- End .footer-bottom -->
-</footer><!-- End .footer -->
+                <span class="social-label">{{__('home.shop_social')}}</span>
+                <a href="{{setting('social.facebook')}}" class="social-icon social-facebook" title="Facebook" target="_blank"><i class="icon-facebook-f"></i></a>
+                <a href="{{setting('social.twitter')}}" class="social-icon social-twitter" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+                <a href="{{setting('social.instagram')}}" class="social-icon social-instagram" title="Instagram" target="_blank"><i class="icon-instagram"></i></a>
+                <a href="{{setting('social.youtube')}}" class="social-icon social-youtube" title="Youtube" target="_blank"><i class="icon-youtube"></i></a>
+            </div>
+
+        </div>
+    </div>
+</footer>

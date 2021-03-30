@@ -41,4 +41,12 @@ class PageRepositoryCache  implements PageInterface
             return $this->model->whereSlug($slug)->whereStatus('active')->first();
         });
     }
+
+    public function getFooters()
+    {
+        return $this->cache->remember('page_cache_footers', self::TTL, function () {
+            return $this->model->whereNotIn('slug', ['a-propos-de-nous', 'devenir-partenaire', 'nos-magazines'])
+                ->get();
+        });
+    }
 }
