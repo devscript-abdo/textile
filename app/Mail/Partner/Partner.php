@@ -1,28 +1,26 @@
 <?php
 
-namespace App\Mail\Order;
+namespace App\Mail\Partner;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class OrderMail extends Mailable
+class Partner extends Mailable
 {
     use Queueable, SerializesModels;
 
     private $data;
-    private $productsCart;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($data, $productsCart)
+    public function __construct($data)
     {
         $this->data = $data;
-
-        $this->productsCart = $productsCart;
     }
 
     /**
@@ -33,11 +31,9 @@ class OrderMail extends Mailable
     public function build()
     {
 
-        //dd($this->data,'-----------------',$this->commands);
         return $this->from('noreplay@' . request()->getHost(), 'mailletex.ma')
-            ->subject('nouvelle demande de devis')
-            ->view('emails.orders.newOrder.index')
-            ->with('data', $this->data)
-            ->with('productsCart', $this->productsCart);
+            ->subject('nouvelle demande de partenariat')
+            ->view('emails.partner.index')
+            ->with('data', (object)$this->data);
     }
 }

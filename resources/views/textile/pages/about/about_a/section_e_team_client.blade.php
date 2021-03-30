@@ -9,6 +9,7 @@
         <div class="col-lg-7">
             <div class="brands-display">
                 <div class="row justify-content-center">
+                    
                     @foreach($clients as $client)
                         <div class="col-6 col-sm-4">
                             <a href="{{$client->site_url ?? route('about')}}" class="brand">
@@ -24,14 +25,14 @@
 
     <hr class="mt-4 mb-6">
 
-    <h2 class="title text-center mb-4">{{__('about.teams_title')}}</h2><!-- End .title text-center mb-2 -->
+    <h2 class="title text-center mb-4">{{__('about.teams_title')}}</h2>
 
     <div class="row">
         @foreach($teams as $team)
             <div class="col-md-4">
                 <div class="member member-anim text-center">
                     <figure class="member-media">
-                        <img src="{{$team->full_photo}}" alt="member photo">
+                        <img src="{{$team->full_photo}}" alt="{{$team->name}}">
 
                         <figcaption class="member-overlay">
                             <div class="member-overlay-content">

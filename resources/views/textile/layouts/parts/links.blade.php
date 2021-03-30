@@ -16,6 +16,7 @@
     
     <link rel="stylesheet" href="{{asset('assets/css/plugins/nouislider/nouislider.css')}}">
 
-    <link rel="stylesheet" href="{{asset('assets/css/demos/demo-15.css')}}">
+    @yield('homePageCss')
+
     @yield('singleCss')
    

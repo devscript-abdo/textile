@@ -1,7 +1,8 @@
-<header class="header">
-    @if(!request()->is('/'))
+
+<header class="header {{request()->routeIs('home') ? 'header-5':''}}">
+    {{--@if(!request()->routeIs('home'))--}}
      @include('textile.layouts.sections.headerTop')
-    @endif
+    {{--@endif--}}
 
     <div class="header-middle sticky-header">
         <div class="container">
@@ -12,7 +13,7 @@
                 </button>
 
                 <a href="{{route('home')}}" class="logo">
-                    <img src="{{asset('assets/images/demos/demo-15/logo.png')}}" alt="Molla Logo" width="105" height="25">
+                    <img src="{{asset('assets/images/demos/demo-15/logo.png')}}" alt="Mailletex" width="105" height="25">
                 </a>
 
                 <nav class="main-nav">
@@ -55,9 +56,9 @@
             <div class="header-right">
                 {{--@include('textile.layouts.sections.searchProduct')--}}
                 
-                <a href="wishlist.html" class="wishlist-link">
+                {{--<a href="wishlist.html" class="wishlist-link">
                     <i class="icon-heart-o"></i>
-                </a>
+                </a>--}}
 
                 <div class="dropdown cart-dropdown">
               

@@ -1,38 +1,41 @@
-<div class="col-lg-6">
-    <h2 class="title mb-1">Got Any Questions?</h2><!-- End .title mb-2 -->
-    <p class="mb-2">Use the form below to get in touch with the sales team</p>
+<div class="col-lg-6 mt-5">
+    <h2 class="title mb-1">{{__('form.form_partner_title')}}</h2><!-- End .title mb-2 -->
+    <p class="mb-2">{{__('form.form_partner_title_description')}}</p>
 
-    <form action="#" class="contact-form mb-3">
+    <form action="{{route('partnerPost')}}" method="post" class="contact-form mb-3">
+        <div class="row">
+            @csrf
+            @honeypot
+            <div class="col-sm-6">
+                <label for="cname" class="sr-only">{{__('form.form_partner_name')}}</label>
+                <input type="text" name="nom" class="form-control" id="cname" placeholder="{{__('form.form_partner_name')}} *" required>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="cemail" class="sr-only">{{__('form.form_partner_email')}}</label>
+                <input type="email" name="email" class="form-control" id="cemail" placeholder="{{__('form.form_partner_email')}} *" required>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-sm-6">
-                <label for="cname" class="sr-only">Name</label>
-                <input type="text" class="form-control" id="cname" placeholder="Name *" required>
-            </div><!-- End .col-sm-6 -->
+                <label for="cphone" class="sr-only">{{__('form.form_partner_phone')}}</label>
+                <input type="tel" name="telephone" class="form-control" id="cphone" placeholder="{{__('form.form_partner_phone')}}">
+            </div>
 
             <div class="col-sm-6">
-                <label for="cemail" class="sr-only">Email</label>
-                <input type="email" class="form-control" id="cemail" placeholder="Email *" required>
-            </div><!-- End .col-sm-6 -->
-        </div><!-- End .row -->
+                <label for="csubject" class="sr-only">{{__('form.form_partner_subject')}}</label>
+                <input type="text" name="subject" class="form-control" id="csubject" placeholder="{{__('form.form_partner_subject')}}">
+            </div>
+        </div>
 
-        <div class="row">
-            <div class="col-sm-6">
-                <label for="cphone" class="sr-only">Phone</label>
-                <input type="tel" class="form-control" id="cphone" placeholder="Phone">
-            </div><!-- End .col-sm-6 -->
-
-            <div class="col-sm-6">
-                <label for="csubject" class="sr-only">Subject</label>
-                <input type="text" class="form-control" id="csubject" placeholder="Subject">
-            </div><!-- End .col-sm-6 -->
-        </div><!-- End .row -->
-
-        <label for="cmessage" class="sr-only">Message</label>
-        <textarea class="form-control" cols="30" rows="4" id="cmessage" required placeholder="Message *"></textarea>
+        <label for="cmessage" class="sr-only">{{__('form.form_partner_message')}}</label>
+        <textarea name="message" class="form-control" cols="30" rows="4" id="cmessage"  placeholder="{{__('form.form_partner_message')}} *">
+        </textarea>
 
         <button type="submit" class="btn btn-outline-primary-2 btn-minwidth-sm">
-            <span>SUBMIT</span>
+            <span>{{__('form.form_partner_button')}}</span>
             <i class="icon-long-arrow-right"></i>
         </button>
-    </form><!-- End .contact-form -->
-</div><!-- End .col-lg-6 -->
+    </form>
+</div>

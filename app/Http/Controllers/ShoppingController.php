@@ -35,7 +35,7 @@ class ShoppingController extends Controller
 
     public function cartSend(OrderRequest $request)
     {
-        $commands = \MailletexCart::all();
+       
         //  dd($commands);
         $order = new Order();
         $order->nom = $request->nom;
@@ -71,7 +71,7 @@ class ShoppingController extends Controller
 
             \MailletexCart::destroy();
 
-            return redirect()->route('products')->with('isDone', true);
+            return redirect()->route('products');
         }
     }
 }

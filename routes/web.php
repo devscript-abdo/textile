@@ -40,16 +40,12 @@ Route::group(
             Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.single');
 
             Route::get('/a-propos-de-nous', [SiteController::class, 'about'])->name('about');
+
             Route::get('/devenir-partenaire', [SiteController::class, 'partner'])->name('partner');
+            Route::post('/devenir-partenaire', [SiteController::class, 'partnerPost'])->name('partnerPost');
 
             Route::get('/nos-magazines', [SiteController::class, 'magazines'])->name('magazines');
 
-            Route::get('/nos-services', [SiteController::class, 'services'])->name('services');
-
-            Route::get('/nos-projets', [SiteController::class, 'portfolio'])->name('portfolio');
-            Route::get('/nos-projets/{project}', [SiteController::class, 'singlePortfolio'])->name('portfolio.single');
-
-            Route::get('/nos-solutions', [SiteController::class, 'solutions'])->name('solutions');
 
             Route::get('/blog', [SiteController::class, 'blog'])->name('blog');
 
@@ -57,8 +53,6 @@ Route::group(
                 ->middleware(ProtectAgainstSpam::class)
                 ->name('blog.single');
 
-            Route::get('/tags', [SiteController::class, 'tags'])->name('tags');
-            Route::get('/tags/{tag}', [SiteController::class, 'singleTag'])->name('tags.single');
 
             Route::get('/contactez-nous', [ContactController::class, 'index'])->name('contact');
 

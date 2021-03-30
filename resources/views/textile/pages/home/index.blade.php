@@ -16,3 +16,7 @@
    @include('textile.pages.home.section_f_blog')
    
 @endsection
+
+@section('homePageCss')
+  <link rel="stylesheet" href="{{asset('assets/css/demos/demo-15.css')}}">
+@endsection

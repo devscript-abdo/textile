@@ -10,5 +10,7 @@ return [
     'blog' => 'Blog et actualitée',
     'contact' => 'Contactez nous',
     /**** */
-    'local' => 'Langue'
+    'local' => 'Langue',
+
+    'shope_category_products' => "Top Produits"
 ];

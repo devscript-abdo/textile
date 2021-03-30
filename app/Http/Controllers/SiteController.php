@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Middleware\SeoChecker;
+use App\Http\Requests\Partner\PartnerRequest;
 use App\Http\Seo\BlogHandler;
 use App\Models\Subscription;
 use App\Traits\InterfaceHandler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\Partner\Partner;
 
 class SiteController extends Controller
 {
@@ -53,6 +57,20 @@ class SiteController extends Controller
     {
         return view('textile.pages.partner.index');
     }
+    public function partnerPost(PartnerRequest $request)
+    {
+       // dd($request);
+        $data = $request->except(['_token', 'valid_from']);
+
+        $email = setting('contact.email_reciver') ?? 'contact@' . request()->getHost();
+
+        if ($email) {
+
+            Mail::to($email)->send(new Partner($data));
+
+            return redirect()->route('partner')->with('isSent', 'merci pour votre message');
+        }
+    }
 
     public function magazines()
     {
@@ -77,28 +95,6 @@ class SiteController extends Controller
         return view('textile.pages.blog.single.index', compact('post'));
     }
 
-    public function tags()
-    {
-        $tags = $this->Tag()->activeItems();
-
-        return view('dark.pages.tags.index', compact('tags'));
-    }
-    public function singleTag($tag)
-    {
-        $tag = $this->Tag()->getTag($tag, ['projects']);
-
-        return view('dark.pages.tags.single.index', compact('tag'));
-    }
-
-    public function solutions()
-    {
-
-        $project = $this->Project()->getSolutions();
-        if ($project->exists()) {
-            return view('dark.pages.portfolio.single.index', compact('project'));
-        }
-        return redirect()->route('portfolio');
-    }
 
     public function subscribe(Request $request)
     {

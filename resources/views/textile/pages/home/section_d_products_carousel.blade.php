@@ -1,7 +1,7 @@
 <div class="container">
 
     <hr class="mt-2 mb-5">
-    <h2 class="title text-center mb-3">{{__('home.products_carousel')}}</h2><!-- End .title -->
+    <h2 class="title text-center mb-3">{{__('home.products_carousel')}}</h2>
         <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow product-4-carousel" data-toggle="owl" 
                                 data-owl-options='{
                                     "nav": false, 
@@ -34,22 +34,25 @@
                                                 <img src="{{$product->image}}" alt="{{$product->field('name')}}" class="product-image">
                                             </a>
 
-                                            <div class="product-action-vertical">
+                                            {{--<div class="product-action-vertical">
                                                 <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
-                                            </div><!-- End .product-action -->
+                                            </div>--}}
 
                                             {{--<livewire:cart.add-to-cart-button :product-id="$product->id" />--}}
-                                        </figure><!-- End .product-media -->
+                                                <div class="product-action">
+                                                    <a href="{{route('products.single',$product->slug)}}" class="btn-product btn-cart"><span>{{__('buttons.add_to_cart')}}</span></a>
+                                                </div>
+                                        </figure>
 
                                         <div class="product-body">
                                             <h3 class="product-title"><a href="{{route('products.single',$product->slug)}}">{{$product->field('name')}}</a></h3><!-- End .product-title -->
                                             {{--<div class="product-price">
                                                 $299.00
                                             </div>--}}
-                                        </div><!-- End .product-body -->
-                                    </div><!-- End .product product-disabled -->
+                                        </div>
+                                    </div>
                                 @endforeach
 
                     
-                            </div><!-- End owl-carousel -->
-                </div><!-- End owl-carousel -->
+                            </div>
+                </div>

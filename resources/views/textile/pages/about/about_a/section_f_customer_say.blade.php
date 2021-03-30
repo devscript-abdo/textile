@@ -1,8 +1,8 @@
 <div class="about-testimonials bg-light-2 pt-6 pb-6">
-                    <div class="container">
-                        <h2 class="title text-center mb-3">{{__('about.testimonials')}}</h2><!-- End .title text-center -->
+    <div class="container">
+        <h2 class="title text-center mb-3">{{__('about.testimonials')}}</h2>
 
-                        <div class="owl-carousel owl-simple owl-testimonials-photo" data-toggle="owl" 
+        <div class="owl-carousel owl-simple owl-testimonials-photo" data-toggle="owl" 
                             data-owl-options='{
                                 "nav": false, 
                                 "dots": true,
@@ -14,9 +14,9 @@
                                     }
                                 }
                             }'>
-                            @foreach($testimonials as $testimonial)
+                @foreach($testimonials as $testimonial)
                                 <blockquote class="testimonial text-center">
-                                    <img src="{{asset('assets/images/testimonials/user-2.jpg')}}" alt="user">
+                                    <img src="{{Voyager::image(setting('testimonials.testimonial_image'))}}" alt="{{$testimonial->name}}">
                                     <p>“ {{$testimonial->content}} ”</p>
 
                                     <cite>
@@ -24,8 +24,8 @@
                                         <span>{{$testimonial->post}}</span>
                                     </cite>
                                 </blockquote>
-                            @endforeach
+                @endforeach
 
-                        </div><!-- End .testimonials-slider owl-carousel -->
-                    </div><!-- End .container -->
-                </div><!-- End .bg-light-2 pt-5 pb-6 -->
+        </div>
+    </div>
+</div>

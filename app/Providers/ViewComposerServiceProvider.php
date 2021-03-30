@@ -31,6 +31,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         $pages = [
             // 'about' => Page::whereSlug('a-propos-de-nous')->whereStatus('active')->first(),
             'about' => app(PageInterface::class)->getPage('a-propos-de-nous'),
+            'partner' => app(PageInterface::class)->getPage('devenir-partenaire'),
 
         ];
         $viewsPages = [
@@ -58,7 +59,7 @@ class ViewComposerServiceProvider extends ServiceProvider
             $view->with('categories', $categories);
             $view->with('productsNav', $products);
         });
-        
+
         $productsCart = \ShoppingCart::all();
         View::composer($viewsCart, function ($view) use ($productsCart) {
             $view->with('productsCart', $productsCart);

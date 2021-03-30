@@ -12,7 +12,7 @@ return [
 
     'shop_category_all' => 'Tous',
 
-    'shop_type' => 'Type',
+    'shop_type' => 'Unité de mesure',
 
     'shop_color' => 'Couleurs',
 

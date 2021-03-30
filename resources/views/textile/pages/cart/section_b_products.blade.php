@@ -108,7 +108,7 @@
     
             <form method="post" action="{{route('cartSend')}}" class="contact-form mb-3">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         
                         <label for="cname" class="sr-only">{{__('form.name')}}</label>
                         <input type="text" name="nom" class="form-control @error('nom') is-invalid @enderror" id="cname" placeholder="{{__('form.name')}} *">
@@ -119,7 +119,7 @@
                         @enderror
                     </div>
         
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <label for="clname" class="sr-only">{{__('form.lname')}}</label>
                         <input type="text" name="prenom" class="form-control @error('prenom') is-invalid @enderror" id="clname" placeholder="{{__('form.lname')}} *" >
                         @error('prenom')
@@ -130,7 +130,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <label for="cadresse" class="sr-only">{{__('form.adresse')}}</label>
                         <input type="text" name="adresse" class="form-control @error('adresse') is-invalid @enderror" id="cadresse" placeholder="{{__('form.adresse')}} *" >
                         @error('adresse')
@@ -140,7 +140,7 @@
                         @enderror
                     </div>
         
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <label for="ctelephone" class="sr-only">{{__('form.telephone')}}</label>
                         <input type="text" name="telephone" class="form-control  @error('telephone') is-invalid @enderror" id="ctelephone" placeholder="{{__('form.telephone')}} *" >
                         @error('telephone')
@@ -151,7 +151,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <label for="cemail" class="sr-only">{{__('form.email')}}</label>
                         <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="cemail" placeholder="{{__('form.email')}}">
                         @error('email')
@@ -161,7 +161,7 @@
                         @enderror
                     </div>
         
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <label for="cprofession" class="sr-only">{{__('form.profession')}}</label>
                         <input type="text" name="profession" class="form-control @error('profession') is-invalid @enderror" id="cprofession" placeholder="{{__('form.profession')}}" >
                         @error('profession')
