@@ -56,17 +56,17 @@
                                 </figure>
 
                                 <div class="product-body">
-                                    <h3 class="product-title"><a href="{{route('products.single',$product->slug)}}">{{$product->field('name')}}</a></h3><!-- End .product-title -->
+                                    <h3 class="product-title"><a href="{{route('products.single',$product->slug)}}">{{$product->field('name')}}</a></h3>
                                     {{--<div class="product-price">
                                         $92.00
                                     </div>--}}
                                 </div>
-                                <div class="product-nav product-nav-dots">
+                                {{--<div class="product-nav product-nav-dots">
                                     @foreach($product->colors as $color)
                                         <a href="#" class="" style="background: {{$color->code}};"><span class="sr-only">{{$color->name}}</span></a>
 
                                     @endforeach
-                                </div>
+                                </div>--}}
                             </div>
                         </div>
                     @endforeach

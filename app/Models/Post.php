@@ -35,14 +35,14 @@ class Post extends Model implements Feedable, Searchable
     public function scopeActive($query)
     {
         return $query->whereStatus('PUBLISHED')
-            ->with('tags')
+            //->with('tags')
             ->get();
     }
 
     public function scopeGetPaginated($query)
     {
         return $query->whereStatus('PUBLISHED')
-            ->with('tags')
+            //->with('tags')
             ->paginate(6);
     }
 

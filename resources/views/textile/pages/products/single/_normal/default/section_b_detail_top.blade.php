@@ -54,7 +54,7 @@
                                                     <select id="colors" class="form-control singleProductsColors @error('colors') is-invalid @enderror" name="colors[]" multiple="multiple">
                                                         @foreach($product->colors as $color)
                                                             <option value="{{$color->slug}}">
-                                                                {{$color->name}}
+                                                                {{$color->field('name')}}
                                                             </option>
                                                         @endforeach
                                                     </select>

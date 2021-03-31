@@ -63,8 +63,10 @@ class Product extends Model
 
     public function scopeActive($query)
     {
+
         return $query->where('active', true)
-            ->with(['category'])
+            ->with(['category', 'translations'])
+            //->paginate(10);
             ->get();
     }
 
@@ -72,6 +74,7 @@ class Product extends Model
     {
         // return $query->with('colors')->inRandomOrder()->get();
         return $query
+            ->with(['translations'])
             ->inRandomOrder()
             ->get();
     }

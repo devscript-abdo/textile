@@ -45,7 +45,7 @@ class Category extends Categories
     {
         // return $query->with('products')->inRandomOrder()->get();
         return $query->with(['products' => fn ($q) => $q->where('inHome', true)
-            ->with(['colors'])
+            //->with(['colors'])
             ->inRandomOrder()
             ->limit(3)])
             ->has('products')

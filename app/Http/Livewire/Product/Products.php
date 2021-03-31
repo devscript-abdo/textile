@@ -6,9 +6,12 @@ use App\Repository\Category\CategoryInterface;
 use App\Repository\Color\ColorInterface;
 use App\Repository\Product\ProductInterface;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Products extends Component
 {
+    use WithPagination;
+
     public $products;
 
     public $category = [];
@@ -21,6 +24,8 @@ class Products extends Component
 
     protected $listeners = ['filterCategory', 'filterType', 'filterColor', 'reRender' => 'mount'];
 
+    protected $paginationTheme = 'bootstrap';
+
     public function mount(ProductInterface $productsInterface, ColorInterface $colorInterface, CategoryInterface $categoryInterface)
     {
         $url = request()->route();
@@ -30,11 +35,14 @@ class Products extends Component
             //dd( $categorie);
             $this->products = $productsInterface->model()
                 ->whereCategoryId($categorie)
-                ->orWhere('category_parent',$categorie)
+                ->orWhere('category_parent', $categorie)
                 //->firstOrFail()
                 ->with(['category'])
+                //->paginate(10);
                 ->get();
+           // dd('Here 1');
         } else {
+           
             $this->products = $productsInterface->activeItems();
         }
 
@@ -58,9 +66,10 @@ class Products extends Component
             $this->products = $productsInterface->model()
                 ->whereIn('category_id', array_filter($this->category))
                 ->orWhereIn('category_parent', array_filter($this->category))
-                ->get();
+                ->paginate(10);
+            //->get();
         } else {
-            $this->products = $productsInterface->active();
+            $this->products = $productsInterface->activeItems();
         }
     }
 
@@ -70,9 +79,10 @@ class Products extends Component
 
             $this->products = $productsInterface->model()
                 ->where('type', $this->type)
-                ->get();
+                ->paginate(10);
+            //->get();
         } else {
-            $this->products = $productsInterface->active();
+            $this->products = $productsInterface->activeItems();
         }
     }
 
@@ -83,6 +93,7 @@ class Products extends Component
             ->whereHas('colors', function ($query) use ($id) {
                 $query->where('color_id', $id);
             })
-            ->get();
+            ->paginate(10);
+        //->get();
     }
 }
