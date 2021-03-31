@@ -6,12 +6,8 @@
     <link rel="mask-icon" href="{{asset('assets/images/icons/safari-pinned-tab.svg')}}" color="#666666">
     <link rel="shortcut icon" href="{{asset('assets/images/icons/favicon.ico')}}">
 
-    <!-- Plugins CSS File -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/plugins/owl-carousel/owl.carousel.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/plugins/magnific-popup/magnific-popup.css')}}">
-   
-    <!-- Main CSS File -->
+  
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     
     {{--<link rel="stylesheet" href="{{asset('assets/css/plugins/nouislider/nouislider.css')}}">--}}

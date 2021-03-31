@@ -1,5 +1,10 @@
+
 <div class="touch-container row justify-content-center">
+
     <div class="col-md-9 col-lg-7">
+        @if(session()->has('isSent'))
+         <p style="color:red;font-size:19px" class="text-center">{{session('isSent')}}</p>
+        @endif
         {{--<div class="text-center">
         <h2 class="title mb-1">Get In Touch</h2><!-- End .title mb-2 -->
         <p class="lead text-primary">

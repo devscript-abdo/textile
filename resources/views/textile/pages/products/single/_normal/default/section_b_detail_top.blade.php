@@ -48,6 +48,7 @@
                                         @csrf
                                         <input type="hidden" name="productData" value="{{$product->slug}}">
                                         @if(count($product->colors))
+                                        {{__('shop.shop_color')}} : 
                                             <input type="hidden" name="mycolor" value="1">
                                             <div class="">
                                                 <div class="select-custom">

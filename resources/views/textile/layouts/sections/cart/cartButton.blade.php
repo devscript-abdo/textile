@@ -8,6 +8,6 @@
 <a  href="{{route('cart')}}" class="dropdown-toggle">
     <i class="icon-shopping-cart"></i>
   
-     <span class="cart-count">{{$productsCartCount}}</span>
+     {{--<span class="cart-count">{{$productsCartCount}}</span>--}}
    
 </a>

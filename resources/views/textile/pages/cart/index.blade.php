@@ -21,10 +21,17 @@
 @section('singleCartJs')
 
     <script type="text/javascript">
+
+        window.onload = function() {
+        if(!window.location.hash) {
+            window.location = window.location + '#loaded';
+            window.location.reload();
+        }
+    }
       
         $(".deleteProductFromCart").click(function (e) {
             e.preventDefault()
-            console.log('OoOoO');
+           // console.log('OoOoO');
            
             var ele = $(this);
             //console.log(this);

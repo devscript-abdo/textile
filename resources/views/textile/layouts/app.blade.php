@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ LaravelLocalization::getCurrentLocale() }}">
 <head>
 
     @include('textile.layouts.parts.metas')
+
     @include('textile.layouts.parts.links')
-    @livewireStyles
+
+    @yield('livewireCss')
+    
 </head>
 
 <body>
@@ -26,12 +29,10 @@
 
      @include('textile.layouts.sections.mobileNavbar')
 
-     @if(session()->has('isDone') && session('isDone') === true)
-      @include('textile.layouts.sections.newsLatter')
-     @endif
-
-     @livewireScripts
+     @yield('livewireJs')
      @include('textile.layouts.parts.scripts')
+
+     
 
      <!-------------------------Haymacproduction.ma-------------------------------->
 </body>

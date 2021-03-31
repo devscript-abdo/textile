@@ -1,5 +1,10 @@
 
-<div class="col-lg-8">
+<div class="col-lg-7">
+
+    @if(session()->has('cartSend'))
+     <p>{{session('cartSend')}}</p>
+    @endif
+
     <table class="table table-cart table-mobile">
         <thead>
         <tr>
@@ -98,11 +103,15 @@
             <span>UPDATE CART</span>
             <i class="icon-refresh"></i>
         </a>--}}
+        
+        <a href="{{route('products')}}" class="btn btn-outline-dark-2">
+            <span>{{__('cart.cart_back_to_shop')}}</span><i class="icon-refresh"></i>
+        </a>
     </div>
 </div>
 <!---------------------------------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------------------------------->
-<aside class="col-lg-4">
+<aside class="col-lg-5">
     <div class="summary summary-cart">
         <h3 class="">{{__('form.form_devie_title')}}</h3>
 
@@ -200,9 +209,7 @@
 
     </div>
 
-    <a href="{{route('products')}}" class="btn btn-outline-dark-2 btn-block mb-3">
-        <span>{{__('cart.cart_back_to_shop')}}</span><i class="icon-refresh"></i>
-    </a>
+
 
 </aside>
 

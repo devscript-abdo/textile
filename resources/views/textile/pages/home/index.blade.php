@@ -3,7 +3,7 @@
 @section('content')
 
    {{--@include('textile.pages.home.section_a_slider')--}}
-   @include('textile.pages.home.section_a_slider')
+   @include('textile.pages.home.section_a_slider_tow')
    @include('textile.pages.home.section_b_about')
    {{--@include('textile.pages.home.section_b_display_a')--}}
   @include('textile.pages.home.section_b_display_b')
@@ -18,5 +18,7 @@
 @endsection
 
 @section('homePageCss')
+  <link rel="stylesheet" href="{{asset('assets/css/plugins/owl-carousel/owl.carousel.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/css/plugins/magnific-popup/magnific-popup.css')}}">
   <link rel="stylesheet" href="{{asset('assets/css/demos/demo-15.css')}}">
 @endsection

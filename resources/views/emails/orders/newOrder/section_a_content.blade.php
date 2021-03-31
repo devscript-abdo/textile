@@ -1,5 +1,5 @@
 
-    <div class="col-lg-8">
+    <div class="col-lg-12">
         <table class="table table-cart table-mobile">
             <thead>
                 <tr>

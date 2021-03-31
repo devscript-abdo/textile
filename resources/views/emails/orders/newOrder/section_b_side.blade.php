@@ -1,4 +1,4 @@
-<aside class="col-lg-4">
+<aside class="col-lg-12">
     <div class="summary summary-cart">
         <h3 class="">Informations </h3>
 

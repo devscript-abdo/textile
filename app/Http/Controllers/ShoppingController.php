@@ -15,6 +15,7 @@ class ShoppingController extends Controller
     public function cart()
     {
         $productsCart = \MailletexCart::all();
+        
         return view('textile.pages.cart.index', compact('productsCart'));
     }
 
@@ -71,7 +72,7 @@ class ShoppingController extends Controller
 
             \MailletexCart::destroy();
 
-            return redirect()->route('products');
+            return redirect()->route('cart')->with('cartSend','Merci pour votre demande de devis');
         }
     }
 }

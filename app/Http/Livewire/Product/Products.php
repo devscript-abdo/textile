@@ -40,9 +40,9 @@ class Products extends Component
                 ->with(['category'])
                 //->paginate(10);
                 ->get();
-           // dd('Here 1');
+            // dd('Here 1');
         } else {
-           
+
             $this->products = $productsInterface->activeItems();
         }
 
@@ -66,8 +66,8 @@ class Products extends Component
             $this->products = $productsInterface->model()
                 ->whereIn('category_id', array_filter($this->category))
                 ->orWhereIn('category_parent', array_filter($this->category))
-                ->paginate(10);
-            //->get();
+                //->paginate(10);
+                ->get();
         } else {
             $this->products = $productsInterface->activeItems();
         }
@@ -79,8 +79,8 @@ class Products extends Component
 
             $this->products = $productsInterface->model()
                 ->where('type', $this->type)
-                ->paginate(10);
-            //->get();
+                //->paginate(10);
+                ->get();
         } else {
             $this->products = $productsInterface->activeItems();
         }
@@ -93,7 +93,7 @@ class Products extends Component
             ->whereHas('colors', function ($query) use ($id) {
                 $query->where('color_id', $id);
             })
-            ->paginate(10);
-        //->get();
+            //->paginate(10);
+            ->get();
     }
 }

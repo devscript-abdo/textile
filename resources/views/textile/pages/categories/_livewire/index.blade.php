@@ -14,6 +14,8 @@
 
 @endsection
 
+
+
 @section('categoriesJs')
 <script>
     Livewire.on('filterCategory', () => {
@@ -55,4 +57,16 @@
         });
      }
 </script>
+@endsection
+
+@section('livewireCss')
+
+  @livewireStyles
+
+@endsection
+
+@section('livewireJs')
+
+  @livewireScripts
+  
 @endsection

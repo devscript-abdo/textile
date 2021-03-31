@@ -39,6 +39,7 @@ Route::group(
 
             Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
             Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.single');
+            Route::redirect('/categories', '/produits');
 
             Route::get('/a-propos-de-nous', [SiteController::class, 'about'])->name('about');
 

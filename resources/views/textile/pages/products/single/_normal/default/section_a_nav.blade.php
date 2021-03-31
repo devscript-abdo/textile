@@ -6,7 +6,7 @@
                         <li class="breadcrumb-item active" aria-current="page">{{$product->field('name')}}</li>
                     </ol>
 
-                    <nav class="product-pager ml-auto" aria-label="Product">
+                    {{--<nav class="product-pager ml-auto" aria-label="Product">
                         <a class="product-pager-link product-pager-prev" href="#" aria-label="Previous" tabindex="-1">
                             <i class="icon-angle-left"></i>
                             <span>{{__('shop.shop_single_pagination_prev')}}</span>
@@ -16,6 +16,6 @@
                             <span>{{__('shop.shop_single_pagination_next')}}</span>
                             <i class="icon-angle-right"></i>
                         </a>
-                    </nav>
+                    </nav>--}}
                 </div>
             </nav>

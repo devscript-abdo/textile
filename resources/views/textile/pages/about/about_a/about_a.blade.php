@@ -10,3 +10,7 @@
         @include('textile.pages.about.about_a.section_f_customer_say')
     </div>
 @endsection
+
+@section('singleCss')
+<link rel="stylesheet" href="{{asset('assets/css/plugins/owl-carousel/owl.carousel.css')}}">
+@endsection
