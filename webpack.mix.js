@@ -18,20 +18,12 @@ mix.webpackConfig({
  /**F3C12C */
 mix.styles(
     [
-        "resources/css/plugins/bootstrap.min.css",
-        "resources/css/plugins/animate.css",
-        "resources/css/plugins/ionicons.min.css",
-        "resources/css/plugins/pe-icon-7-stroke.css",
-        "resources/css/plugins/fontawesome-all.min.css",
-        "resources/css/plugins/justifiedGallery.min.css",
-        //"resources/css/plugins/YouTubePopUp.css",
-        "resources/css/plugins/slick.css",
-        "resources/css/plugins/slick-theme.css",
-        "resources/css/plugins/swiper.min.css",
-        "resources/css/style.css"
+        "public/assets/css/bootstrap.min.css",
+        "public/assets/css/style.css"
     ],
-    "public/css/app.css"
-).scripts(
+    "public/build/css/app.css"
+);
+/*.scripts(
     [
         "resources/js/jquery.js",
         "resources/js/jquery-migrate-3.0.0.min.js",
@@ -39,7 +31,7 @@ mix.styles(
         "resources/js/scripts.js",
     ],
     "public/js/app.js"
-);
+);*/
 
 if (mix.inProduction()) {
     mix.version();

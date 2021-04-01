@@ -44,7 +44,7 @@
                                     <div class="product-content">
                                         <p> {{$product->field('excerpt')}} </p>
                                     </div>
-                                    <form id="addToCartForm" action="{{route('products.single',$product->slug)}}" method="post">
+                                    <form id="addToCartForm" action="{{route('products.singlePost',$product->slug)}}" method="post">
                                         @csrf
                                         <input type="hidden" name="productData" value="{{$product->slug}}">
                                         @if(count($product->colors))

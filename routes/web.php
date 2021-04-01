@@ -35,7 +35,7 @@ Route::group(
 
             Route::get('/produits', [ProductController::class, 'index'])->name('products');
             Route::get('/produits/{product}', [ProductController::class, 'show'])->name('products.single');
-            Route::post('/produits/{product}', [ProductController::class, 'addToCart'])->name('products.single');
+            Route::post('/produits/{product}', [ProductController::class, 'addToCart'])->name('products.singlePost');
 
             Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
             Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.single');
@@ -63,7 +63,7 @@ Route::group(
             Route::get('/que-cherchez-vous', [SearchController::class, 'index'])->name('search');
 
             Route::get('/cart', [ShoppingController::class, 'cart'])->name('cart');
-            Route::put('/cart', [ShoppingController::class, 'cartUpdate'])->name('cart');
+            Route::put('/cart', [ShoppingController::class, 'cartUpdate'])->name('cartUpdate');
             Route::delete('/cart', [ShoppingController::class, 'cartDelete'])->name('cartDelete');
             Route::post('/cart', [ShoppingController::class, 'cartSend'])->name('cartSend');
         });

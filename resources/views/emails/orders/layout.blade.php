@@ -12,8 +12,6 @@
         
         <div class="page-wrapper">
         
-        
-
             <main class="main">
 
                 @yield('contentMail')
