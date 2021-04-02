@@ -345,7 +345,7 @@ ul.social li{
                                 </div>
                             </td>
                             <td valign="middle" width="20%" style="text-align:left; padding: 0 2.5em;">
-                                <span class="price" style="color: #000; font-size: 20px;">{{$product->qty}}</span>
+                                <span class="price" style="color: #000; font-size: 20px;">{{$product->qty}} {{$product['product']->unite}}</span>
                             </td>
                             <td valign="middle" width="20%" style="text-align:left; padding: 0 2.5em;">
                                 @foreach($product['colors'] as $color)
