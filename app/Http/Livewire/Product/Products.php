@@ -16,6 +16,8 @@ class Products extends Component
 
     public $category = [];
 
+    public $categoriee;
+
     public $loading = false;
 
     public $type;
@@ -31,11 +33,11 @@ class Products extends Component
         $url = request()->route();
 
         if ($url->getName() === 'categories.single') {
-            $categorie =  $categoryInterface->getCategory($url->parameter('category'))->id;
-            //dd( $categorie);
+            $categorie =  $categoryInterface->getCategory($url->parameter('category'));
+            $this->categoriee = $categorie->field('name');
             $this->products = $productsInterface->model()
-                ->whereCategoryId($categorie)
-                ->orWhere('category_parent', $categorie)
+                ->whereCategoryId($categorie->id)
+                ->orWhere('category_parent', $categorie->id)
                 //->firstOrFail()
                 ->with(['category'])
                 //->paginate(10);

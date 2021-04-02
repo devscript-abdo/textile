@@ -62,15 +62,6 @@ class RepositoryServiceProvider extends ServiceProvider
             'App\Repository\Post\PostRepository'
         );
 
-        $this->app->bind(
-            'App\Repository\Service\ServiceInterface',
-            'App\Repository\Service\ServiceRepository'
-        );
-
-        $this->app->bind(
-            'App\Repository\Project\ProjectInterface',
-            'App\Repository\Project\ProjectRepository'
-        );
 
         $this->app->bind(
             'App\Repository\Client\ClientInterface',
@@ -87,15 +78,6 @@ class RepositoryServiceProvider extends ServiceProvider
             'App\Repository\Team\TeamRepository'
         );
 
-        $this->app->bind(
-            'App\Repository\Tag\TagInterface',
-            'App\Repository\Tag\TagRepository'
-        );
-
-        $this->app->bind(
-            'App\Repository\Comment\CommentInterface',
-            'App\Repository\Comment\CommentRepository'
-        );
     }
 
     /**
