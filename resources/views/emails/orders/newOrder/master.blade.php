@@ -326,6 +326,7 @@ ul.social li{
           </td>
 	      </tr><!-- end tr -->
 	      <tr>
+            
 	      	<table class="bg_white" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
 	      		<tr style="border-bottom: 1px solid rgba(0,0,0,.05);">
 					    <th width="80%" style="text-align:left; padding: 0 2.5em; color: #000; padding-bottom: 20px">Produit</th>
