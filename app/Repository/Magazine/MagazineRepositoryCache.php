@@ -33,7 +33,6 @@ class MagazineRepositoryCache  implements MagazineInterface
         });
     }
 
-
     public function activeItems()
     {
         return $this->cache->remember('magazines_cache_active', $this->timeToLive(), function () {

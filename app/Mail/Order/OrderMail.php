@@ -36,7 +36,7 @@ class OrderMail extends Mailable
         //dd($this->data,'-----------------',$this->commands);
         return $this->from('noreplay@' . request()->getHost(), 'mailletex.ma')
             ->subject('nouvelle demande de devis')
-            ->view('emails.orders.newOrder.index')
+            ->view('emails.orders.newOrder.master')
             ->with('data', $this->data)
             ->with('productsCart', $this->productsCart);
     }

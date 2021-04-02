@@ -37,7 +37,7 @@
                             </div>
 
                         </div>
-                    @elseif($categorie->parent_id ===null && $categorie->childrens()->count()===0)
+                    @elseif($categorie->parent_id === null && $categorie->childrens()->count()=== 0)
                         <div class="filter-item">
                             <div class="custom-control custom-checkbox">
                                 <input wire:click="$emit('filterCategory')" wire:model="category"  type="checkbox" class="custom-control-input categoriesChecker" value="{{$categorie->id}}" id="categorie-{{$categorie->id}}">

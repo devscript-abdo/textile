@@ -1,7 +1,9 @@
 <div class="page-header text-center"
+
     @if(setting('pages.background_cover'))
-    style="background-image: url('{{Voyager::image(setting('pages.background_cover'))}}')"
+       style="background-image: url('{{Voyager::image(setting('pages.background_cover'))}}')"
     @endif
+    
 >
     <div class="container">
         <h1 class="page-title">
