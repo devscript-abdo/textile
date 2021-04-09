@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Cart\AddToCartRequest;
-
+use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
 use App\Traits\InterfaceHandler;
 
 class ProductController extends Controller
@@ -17,9 +18,44 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //$products = $this->Product()->active();
-        // $colors = $this->Color()->active();
-        return view('textile.pages.categories._livewire.index');
+        $products = $this->Product()->activeItems();
+
+        $colors = $this->Color()->active();
+
+        return view('textile.pages.categories._normal.index', compact('products', 'colors'));
+    }
+
+
+    public function indexWithFilters()
+    {
+
+        if (request()->has('filter') && request()->filled('filter')) {
+
+            // dd(request()->filter['GetCategory']);
+
+            /* $slug = request()->filter['GetCategory'];
+
+            $category = $this->Category()->model()->whereSlug($slug)->firstOrFail()->id;*/
+
+            $products = QueryBuilder::for($this->Product()->model())
+
+                ->allowedFilters([
+
+                    //AllowedFilter::exact('GetCategory', 'filters_category'),
+                    AllowedFilter::scope('GetCategory', 'filters_category'),
+
+                ])
+                ->with(['category', 'translations'])
+                // ->paginate(2)
+                // ->appends(request()->query());
+                ->get();
+        } else {
+            $products = $this->Product()->activeItems();
+        }
+
+        $colors = $this->Color()->active();
+
+        return view('textile.pages.categories._normal.index', compact('products', 'colors'));
     }
 
     /**

@@ -2,7 +2,7 @@
 <div class="">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 mb-3 mb-lg-0">
+            <div class="col-lg-6">
                 {{--<h2 class="title">Who We Are</h2>--}}
                 {{--<p class="lead text-primary mb-3">Pellentesque</p>--}}
                 <p class="mb-2">
@@ -15,12 +15,12 @@
                 </a>
             </div>
 
-            {{--<div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="about-images">
                     <img src="{{$pages['about']->photo}}" alt="{{$pages['about']->field('title')}}" class="about-img-front">
                     <img src="{{asset('assets/images/about/img-2.jpg')}}" alt="" class="about-img-back">
                 </div>
-            </div>--}}
+            </div>
         </div>
     </div>
 </div>

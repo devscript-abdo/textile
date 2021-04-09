@@ -357,12 +357,14 @@
 							<ul>
 								
 								<li><a href="#">Nom complet : {{$data->nom}}</a></li>
-								<li><a href="#">E-mail : {{$data->email}}</a></li>
-								<li><a href="#">Téléphone : {{$data->telephone}}</a></li>
-								<li><a href="#">Sujet : {{$data->subject}}</a></li>
+								<li><a href="#">Profession : {{$data->profession}}</a></li>
+								{{--<li><a href="#">E-mail : {{$data->email}}</a></li>--}}
+								<li><a href="#">Numéro de téléphone : {{$data->telephone}}</a></li>
+								<li><a href="#">Ville : {{$data->ville}}</a></li>
+						
 								<li>
 
-									<p>Message :</p>
+									<p>demande :</p>
 									<p>{{$data->message}}</p>
 
 								</li>

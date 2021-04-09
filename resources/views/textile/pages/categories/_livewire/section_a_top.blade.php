@@ -8,9 +8,9 @@
     <div class="container">
         <h1 class="page-title">
             
-            @php 
-               $url = request()->route();
-            @endphp
+               @php 
+                $url = request()->route();
+                @endphp
                @if($url->getName() === 'categories.single')
 
                     {{$categoriee}}

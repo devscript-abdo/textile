@@ -7,6 +7,8 @@ interface CategoryInterface
 
     public function all();
 
+    public function model();
+
     public function query();
 
     public function activeItems();

@@ -25,9 +25,9 @@ class PartnerRequest extends FormRequest
     {
         return [
             'nom' => 'required|string',
-            'email' => 'required|email',
+            'profession' => 'required|string',
             'telephone' => 'required|string',
-            'subject' => 'required|string',
+            'ville' => 'required|string',
             'message' => 'required|string'
         ];
     }

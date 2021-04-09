@@ -17,14 +17,13 @@
 @endsection
 
 
-
 @section('singleCartJs')
 
     <script type="text/javascript">
 
         window.onload = function() {
         if(!window.location.hash) {
-            window.location = window.location + '#loaded';
+            window.location = window.location + '#loadedMailletex';
             window.location.reload();
         }
     }

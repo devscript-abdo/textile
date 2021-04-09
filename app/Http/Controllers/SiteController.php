@@ -48,7 +48,7 @@ class SiteController extends Controller
     }
     public function partnerPost(PartnerRequest $request)
     {
-        // dd($request);
+        //dd($request);
         $data = $request->except(['_token', 'valid_from']);
 
         $email = setting('contact.email_reciver') ?? 'contact@' . request()->getHost();

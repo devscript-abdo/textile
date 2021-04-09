@@ -8,6 +8,8 @@ use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Traits\Translatable;
 use App\Traits\Language;
 
+use Illuminate\Database\Eloquent\Builder;
+
 class Product extends Model
 {
     use HasFactory, Translatable, Language;
@@ -78,6 +80,18 @@ class Product extends Model
             ->inRandomOrder()
             ->get();
     }
+
+    /*******Filters */
+    public function scopeFiltersCategory(Builder $query, $category)
+    {
+        $categoryy = Category::whereSlug($category)->firstOrFail()->id;
+
+        return $query
+            ->where('category_id', $categoryy)
+            ->orWhere('category_parent', $categoryy);
+    }
+
+    /******end Filters */
 
     public function getImageAttribute()
     {

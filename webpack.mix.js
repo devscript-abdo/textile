@@ -15,23 +15,29 @@ mix.webpackConfig({
  |
  */
 
- /**F3C12C */
-mix.styles(
+/*mix.styles(
     [
         "public/assets/css/bootstrap.min.css",
         "public/assets/css/style.css"
     ],
     "public/build/css/app.css"
-);
-/*.scripts(
+)*/
+mix.scripts(
     [
-        "resources/js/jquery.js",
-        "resources/js/jquery-migrate-3.0.0.min.js",
-        "resources/js/plugins.js",
-        "resources/js/scripts.js",
+       "public/assets/js/jquery.min.js",
+       "public/assets/js/bootstrap.bundle.min.js",
+       "public/assets/js/jquery.hoverIntent.min.js",
+       "public/assets/js/jquery.waypoints.min.js",
+       "public/assets/js/superfish.min.js",
+       "public/assets/js/owl.carousel.min.js",
+       "public/assets/js/wNumb.js",
+
+       "public/assets/js/jquery.elevateZoom.min.js",
+       "public/assets/js/jquery.magnific-popup.min.js",
+       "public/assets/js/main.js",
     ],
-    "public/js/app.js"
-);*/
+    "public/build/js/app.js"
+);
 
 if (mix.inProduction()) {
     mix.version();

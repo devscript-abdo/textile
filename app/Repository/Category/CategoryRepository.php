@@ -16,6 +16,11 @@ class CategoryRepository  implements CategoryInterface
     }
 
 
+    public function model()
+    {
+        return $this->model;
+    }
+
     public function query()
     {
         return $this->model->query();

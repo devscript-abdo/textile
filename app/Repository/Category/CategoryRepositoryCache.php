@@ -20,6 +20,11 @@ class CategoryRepositoryCache  implements CategoryInterface
         $this->model = $model;
     }
 
+    public function model()
+    {
+        return $this->model;
+    }
+
 
     public function query()
     {

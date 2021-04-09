@@ -33,7 +33,7 @@ Route::group(
 
             Route::get('/', [SiteController::class, 'index'])->name('home');
 
-            Route::get('/produits', [ProductController::class, 'index'])->name('products');
+            Route::get('/produits', [ProductController::class, 'indexWithFilters'])->name('products');
             Route::get('/produits/{product}', [ProductController::class, 'show'])->name('products.single');
             Route::post('/produits/{product}', [ProductController::class, 'addToCart'])->name('products.singlePost');
 

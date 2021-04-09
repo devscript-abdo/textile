@@ -30,7 +30,8 @@
      @include('textile.layouts.sections.mobileNavbar')
 
      @yield('livewireJs')
-     @include('textile.layouts.parts.scripts')
+     {{--@include('textile.layouts.parts.scripts')--}}
+     @include('textile.layouts.parts.singleScript')
 
      
 
