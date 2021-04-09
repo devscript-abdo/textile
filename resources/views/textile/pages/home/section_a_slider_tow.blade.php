@@ -13,11 +13,11 @@
         @foreach($sliders as $slider)
             <div class="intro-slide" style="background-image: url({{Voyager::image($slider->image)}});">
                 <div class="container intro-content">
-                    <h3 class="intro-subtitle text-primary">{{$slider->description}}</h3>
-                    <h1 class="intro-title text-white">{{$slider->title}}</h1>
+                    <h3 class="intro-subtitle text-primary">{{$slider->field('description')}}</h3>
+                    <h1 class="intro-title text-white">{{$slider->field('title')}}</h1>
 
                     <a href="{{$slider->button_link ?? request()->url()}}" class="btn btn-outline-primary-2 min-width-sm">
-                        <span>{{$slider->button_text}}</span>
+                        <span>{{$slider->field('button_text')}}</span>
                         <i class="icon-long-arrow-right"></i>
                     </a>
                 </div>
