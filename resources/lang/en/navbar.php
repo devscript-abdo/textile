@@ -4,7 +4,7 @@ return [
 
     'home' => 'Home',
     'about' => 'About Us',
-    'shope' => "Boutique",
+    'shope' => "Shop",
     'partner' => 'become Partner',
     'magazine' => 'Our Magazines',
     'blog' => 'Blog',
