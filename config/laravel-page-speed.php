@@ -23,8 +23,8 @@ return [
     |
     */
     'skip' => [
-        /*'fr/produits',
-        'en/produits',*/
+        'fr/produits',
+        'en/produits',
         'fr/produits/*',
         'en/produits/*', 
         
