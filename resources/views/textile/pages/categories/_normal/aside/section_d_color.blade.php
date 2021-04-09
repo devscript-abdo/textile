@@ -9,7 +9,15 @@
         <div class="widget-body">
             <div class="filter-colors">
                 @foreach($colors as $color)
-                    <a href="#" style="background: {{$color->code}};" class="colorsChecker " data-getColor="{{$color->id}}" title="{{$color->name}}"><span class="sr-only">{{$color->name}}</span></a>
+                    <a href="#"
+                        style="background: {{$color->code}};"
+                        class="colorsChecker "
+                        title="{{$color->name}}"
+
+                        onclick="filterColor('{{$color->slug}}')"
+                    >
+                      <span class="sr-only">{{$color->name}}</span>
+                    </a>
                 @endforeach
             </div>
         </div>

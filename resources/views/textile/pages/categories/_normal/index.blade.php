@@ -34,10 +34,18 @@
 
 <script>
 
-    function sendUrl(value){
+    function filterCategory(value){
 
         let filter = value;
+    
         window.location = `{{route('products')}}?filter[GetCategory]=${value}`;
+    }
+
+    function filterColor(value){
+
+        let filter = value;
+    
+        window.location = `{{route('products')}}?filter[GetColor]=${value}`;  
     }
 
 </script>

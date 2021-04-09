@@ -91,6 +91,17 @@ class Product extends Model
             ->orWhere('category_parent', $categoryy);
     }
 
+    public function scopeFiltersColor(Builder $query, $color)
+    {
+        $colorId = Color::whereSlug($color)->firstOrFail()->id;
+        
+        $query->whereHas('colors', function ($q) use ($colorId) {
+            $q->where('color_id', $colorId);
+        });
+        //->paginate(10);
+       // ->get();
+    }
+
     /******end Filters */
 
     public function getImageAttribute()

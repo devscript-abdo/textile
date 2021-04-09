@@ -43,6 +43,7 @@ class ProductController extends Controller
 
                     //AllowedFilter::exact('GetCategory', 'filters_category'),
                     AllowedFilter::scope('GetCategory', 'filters_category'),
+                    AllowedFilter::scope('GetColor', 'filters_color'),
 
                 ])
                 ->with(['category', 'translations'])
