@@ -6,7 +6,15 @@
                                 <div class="product-gallery product-gallery-vertical">
                                     <div class="row">
                                         <figure class="product-main-image">
-                                            <img id="product-zoom" src="{{$product->image}}" data-zoom-image="{{$product->image}}" alt="{{$product->field('name')}}">
+                                            <img 
+                                                id="product-zoom" 
+                                                src="{{$product->image}}" 
+                                                data-zoom-image="{{$product->image}}" 
+                                                alt="{{$product->field('name')}}"
+                                                width="457"
+                                                height="571"
+                                                loading="lazy"
+                                            >
 
                                             <a href="#" id="btn-product-gallery" class="btn-product-gallery">
                                                 <i class="icon-arrows"></i>
@@ -17,7 +25,13 @@
                                             @if($product->all_photos)
                                                 @foreach($product->all_photos as $photo)
                                                     <a class="product-gallery-item active" href="#" data-image="{{$product->singlePhoto($photo)}}" data-zoom-image="{{$product->singlePhoto($photo)}}">
-                                                        <img src="{{$product->singlePhoto($photo)}}" alt="{{$product->field('name')}}">
+                                                        <img 
+                                                            src="{{$product->singlePhoto($photo)}}" 
+                                                            alt="{{$product->field('name')}}"
+                                                            width="40"
+                                                            height="50"
+                                                            loading="lazy"
+                                                        >
                                                     </a>
                                                 @endforeach
                                             @endif
