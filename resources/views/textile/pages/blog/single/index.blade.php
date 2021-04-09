@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 @include('textile.pages.blog.single.section_b_content')
-                @include('textile.pages.blog.single.section_c_sidebar')
+                {{--@include('textile.pages.blog.single.section_c_sidebar')--}}
             </div>
         </div>
     </div>

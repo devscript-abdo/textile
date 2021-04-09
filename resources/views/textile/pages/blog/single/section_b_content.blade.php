@@ -1,4 +1,4 @@
-<div class="col-lg-9">
+<div class="col-lg-12">
                             <article class="entry single-entry">
                                 <figure class="entry-media">
                                     <img src="{{$post->photo}}" alt="image desc">
