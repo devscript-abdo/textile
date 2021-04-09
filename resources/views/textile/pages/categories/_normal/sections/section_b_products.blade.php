@@ -12,6 +12,7 @@
                                class="product-image"
                                width="202"
                                height="253"
+                               loading="lazy"
                               >
                         </a>
                     </figure>
@@ -64,6 +65,7 @@
                                             alt="{{$product->field('name')}}"
                                             width="40"
                                             height="50"
+                                            loading="lazy"
                                          >
                                     </a>
                                 @endforeach
