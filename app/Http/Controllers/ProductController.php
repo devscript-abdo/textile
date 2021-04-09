@@ -47,7 +47,7 @@ class ProductController extends Controller
 
                 ])
                 ->with(['category', 'translations'])
-                 //->paginate(1)
+                //->paginate(1)
                 // ->appends(request()->query());
                 ->get();
         } else {
