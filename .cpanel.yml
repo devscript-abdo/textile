@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/maillete/public_html/mailletex/
+    - export DEPLOYPATH=/home/maillete/public_html/
     - /bin/cp -R * $DEPLOYPATH
