@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'ou_magazines_title' => 'Nos magazines'
+    'ou_magazines_title' => 'NOS MAGASINS'
 ];
