@@ -17,11 +17,11 @@
                                 <address>{{$magazine->field('address')}}</address>
                                 <div><a href="tel:{{$magazine->tele}}">{{$magazine->tele}}</a></div>
 
-                                <h4 class="store-subtitle">Store Hours:</h4>
+                                <h4 class="store-subtitle">{{__('magazine.hours')}}</h4>
 
                                 {!! $magazine->hours !!}
 
-                                <a href="{{$magazine->googlemap}}" class="btn btn-link" target="_blank"><span>View Map</span><i class="icon-long-arrow-right"></i></a>
+                                <a href="{{$magazine->googlemap}}" class="btn btn-link" target="_blank"><span>{{__('magazine.view_map')}}</span><i class="icon-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
