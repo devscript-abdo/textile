@@ -23,13 +23,13 @@ return [
     |
     */
     'skip' => [
-        'fr/produits',
-        'en/produits',
+        /*'fr/produits',
+        'en/produits',*/
         'fr/produits/*',
         'en/produits/*', 
         
-        'en/categories',
-        'fr/categories/*',
+        /*'en/categories',
+        'fr/categories/*',*/
 
         'theadmin',
         'theadmin/*',
