@@ -15,13 +15,13 @@
 
 @section('livewireCss')
 
-  @livewireStyles
+ {{--- @livewireStyles---}}
 
 @endsection
 
 @section('livewireJs')
 
-  @livewireScripts
+  {{---@livewireScripts---}}
   
 @endsection
 
