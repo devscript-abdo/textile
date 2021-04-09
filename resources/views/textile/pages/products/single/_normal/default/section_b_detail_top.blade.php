@@ -107,9 +107,14 @@
                                         @endif
                                         <div class="product-details-action">
                                            
-                                            <a href="#" class="btn-product btn-cart" onclick="document.getElementById('addToCartForm').submit();">
+                                            {{--<a href="#" class="btn-product btn-cart" onclick="document.getElementById('addToCartForm').submit();">
                                                 <span>{{__('buttons.add_to_cart')}}</span>
-                                            </a>
+                                            </a>--}}
+
+                                            <button type="submit" class="btn-product btn-cart">
+                                                <span>{{__('buttons.add_to_cart')}}</span>
+                                             
+                                            </button>
                                             {{--<livewire:cart.add-to-cart-button :is-single="true" :product-id="$product->id" :key="time().$product->id" />--}}
 
                                             {{--<div class="details-action-wrapper">

@@ -4,6 +4,7 @@
 
    @include('textile.pages.categories._normal.section_a_top')
    @include('textile.pages.categories._normal.section_b_nav')
+
    <div class="page-content">
         <div class="container">
             <div class="row">
@@ -38,14 +39,16 @@
 
         let filter = value;
     
-        window.location = `{{route('products')}}?filter[GetCategory]=${value}`;
+        window.location = `{{route('products')}}?mailletexFilter[GetCategory]=${value}`;
     }
 
     function filterColor(value){
 
         let filter = value;
+
+        //console.log('haymacproduction.ma');
     
-        window.location = `{{route('products')}}?filter[GetColor]=${value}`;  
+        window.location = `{{route('products')}}?mailletexFilter[GetColor]=${value}`;  
     }
 
 </script>

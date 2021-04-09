@@ -29,11 +29,11 @@ class ProductController extends Controller
     public function indexWithFilters()
     {
 
-        if (request()->has('filter') && request()->filled('filter')) {
+        if (request()->has('mailletexFilter') && request()->filled('mailletexFilter')) {
 
-            // dd(request()->filter['GetCategory']);
+            // dd(request()->mailltexFilter['GetCategory']);
 
-            /* $slug = request()->filter['GetCategory'];
+            /* $slug = request()->mailltexFilter['GetCategory'];
 
             $category = $this->Category()->model()->whereSlug($slug)->firstOrFail()->id;*/
 
@@ -47,7 +47,7 @@ class ProductController extends Controller
 
                 ])
                 ->with(['category', 'translations'])
-                // ->paginate(2)
+                 //->paginate(1)
                 // ->appends(request()->query());
                 ->get();
         } else {
@@ -79,7 +79,7 @@ class ProductController extends Controller
         return view('textile.pages.products.single._normal.default.index', compact('product', 'products'));
     }
 
-    public function addToCart(AddToCartRequest $request): \Illuminate\Http\RedirectResponse
+    public function addToCart(AddToCartRequest $request)
     {
         $product = $this->Product()->getProduct($request->productData);
 

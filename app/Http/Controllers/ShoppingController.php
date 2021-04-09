@@ -15,7 +15,7 @@ class ShoppingController extends Controller
     public function cart()
     {
         $productsCart = \MailletexCart::all();
-        
+
         return view('textile.pages.cart.index', compact('productsCart'));
     }
 
@@ -38,7 +38,7 @@ class ShoppingController extends Controller
     {
 
         //  dd($commands);
-        $order = new Order();
+        /* $order = new Order();
         $order->nom = $request->nom;
         $order->prenom = $request->prenom;
         $order->adresse = $request->adresse;
@@ -50,17 +50,17 @@ class ShoppingController extends Controller
 
         $order->product_name = 'alpha';
         $order->quantity = 100;
-        $order->save();
+        $order->save();*/
         /******************************************* */
         $data = (object)[
-            'nom' => $order->nom,
-            'prenom' =>  $order->prenom,
-            'adresse' => $order->adresse,
-            'telephone' => $order->telephone,
-            'email' => $order->email,
-            'profession' => $order->profession,
-            'entreprise' => $order->entreprise,
-            'message' => $order->message,
+            'nom' => $request->nom,
+            'prenom' =>  $request->prenom,
+            'adresse' => $request->adresse,
+            'telephone' => $request->telephone,
+            'email' => $request->email,
+            'profession' => $request->profession,
+            'entreprise' => $request->entreprise,
+            'message' => $request->message,
         ];
         $productsCart = \MailletexCart::all();
 
@@ -70,9 +70,13 @@ class ShoppingController extends Controller
 
             Mail::to($email)->send(new OrderMail($data, $productsCart));
 
-            \MailletexCart::destroy();
+            // check for failures
+            if (!Mail::failures()) {
 
-            return redirect()->route('cart')->with('cartSend','Merci pour votre demande de devis');
+                \MailletexCart::destroy();
+            }
+
+            return redirect()->route('cart')->with('cartSend', 'Merci pour votre demande de devis');
         }
     }
 }

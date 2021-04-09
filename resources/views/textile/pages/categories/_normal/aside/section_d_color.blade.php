@@ -13,8 +13,7 @@
                         style="background: {{$color->code}};"
                         class="colorsChecker "
                         title="{{$color->name}}"
-
-                        onclick="filterColor('{{$color->slug}}')"
+                        onclick="filterColor('{{$color->slug}}');this.classList.add('selected')"
                     >
                       <span class="sr-only">{{$color->name}}</span>
                     </a>

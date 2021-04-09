@@ -60,6 +60,7 @@ class Product extends Model
         return $query->where('show_in_nav', true)
             //->inRandomOrder()
             ->limit(8)
+            ->select(['name','slug'])
             ->get();
     }
 
@@ -94,12 +95,10 @@ class Product extends Model
     public function scopeFiltersColor(Builder $query, $color)
     {
         $colorId = Color::whereSlug($color)->firstOrFail()->id;
-        
+
         $query->whereHas('colors', function ($q) use ($colorId) {
             $q->where('color_id', $colorId);
         });
-        //->paginate(10);
-       // ->get();
     }
 
     /******end Filters */
