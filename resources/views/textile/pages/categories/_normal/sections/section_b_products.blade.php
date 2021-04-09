@@ -59,7 +59,12 @@
                             <div class="product-nav product-nav-thumbs">
                                 @foreach($product->all_photos as $photo)
                                     <a href="{{route('products.single',$product->slug)}}" class="{{$loop->first ? 'active' : ''}}">
-                                        <img src="{{$product->singlePhoto($photo)}}" alt="product desc">
+                                        <img 
+                                            src="{{$product->singlePhoto($photo)}}"
+                                            alt="{{$product->field('name')}}"
+                                            width="40"
+                                            height="50"
+                                         >
                                     </a>
                                 @endforeach
 
