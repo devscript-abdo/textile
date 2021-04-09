@@ -25,5 +25,5 @@ return [
     'form_partner_phone' => 'Numéro de téléphone',
     'form_partner_subject' => 'Sujet',
     'form_partner_message' => 'Votre demande',
-    'form_partner_button' => 'Envoyer'
+    'form_partner_button' => 'DEVENIR PARTENAIRE'
 ];
