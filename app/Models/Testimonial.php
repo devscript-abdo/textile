@@ -6,10 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 use Illuminate\Database\Eloquent\Model;
 use TCG\Voyager\Facades\Voyager;
-
+use TCG\Voyager\Traits\Translatable;
+use App\Traits\Language;
 class Testimonial extends Model
 {
-    use HasFactory;
+    use HasFactory, Translatable, Language;
+
+    protected $translatable = ['post', 'content'];
 
     public function scopeActive($query)
     {

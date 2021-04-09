@@ -21,14 +21,14 @@ return [
 
     /*******section - 3 social */
 
-    'shop_social' => 'NOS RESEAUX SOCIEAUX',
-    'shop_social_description' => 'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.',
+    'shop_social' => 'REJOIGNEZ NOUS ',
+    'shop_social_description' => 'REJOIGNEZ NOUS ',
 
     /*******end section - 3 social */
 
     /*****section - 4 Testimonial */
 
-    'testimonials' => 'ce que nos clients disent de nous',
+    'testimonials' => 'TEMOIGNAGES CLIENTS',
 
     /*****end  section - 4 Testimonials */
 

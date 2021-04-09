@@ -21,8 +21,8 @@ return [
 
     /*******section - 3 social */
 
-    'shop_social' => 'Shop Social',
-    'shop_social_description' => 'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.',
+    'shop_social' => 'JOIN US ',
+    'shop_social_description' => 'JOIN US.',
 
     /*******end section - 3 social */
 
