@@ -31,7 +31,13 @@
                 <article class="entry">
                     <figure class="entry-media">
                         <a href="{{route('blog.single',$post->slug)}}">
-                            <img src="{{$post->photo}}" alt="image desc">
+                            <img 
+                                src="{{$post->photo}}" 
+                                alt="{{$post->field('title')}}"
+                                width="429"
+                                height="530"
+                                loading="lazy"
+                            >
                         </a>
                     </figure>
 

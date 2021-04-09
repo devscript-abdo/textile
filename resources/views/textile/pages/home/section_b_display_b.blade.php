@@ -4,7 +4,12 @@
             <div class="col-lg-6">
                 <div class="banner banner-light banner-overlay">
                     <a href="{{$categorie->url}}" title="{{$categorie->field('name')}}">
-                        <img src="{{$categorie->photo}}" alt="{{$categorie->field('name')}}">
+                        <img 
+                            src="{{$categorie->photo}}" 
+                            alt="{{$categorie->field('name')}}"
+                          
+                            loading="lazy"
+                        >
                     </a>
 
                     <div class="banner-content women">
@@ -39,7 +44,14 @@
                             <div class="product product-4">
                                 <figure class="product-media">
                                     <a href="{{route('products.single',$product->slug)}}">
-                                        <img src="{{$product->image}}" alt="{{$product->field('name')}}" class="product-image">
+                                        <img 
+                                        src="{{$product->image}}" 
+                                        alt="{{$product->field('name')}}" 
+                                        class="product-image"
+                                        width="279"
+                                        height="349"
+                                        loading="lazy"
+                                        >
                                         {{--<img src="assets/images/demos/demo-15/products/product-3-2.jpg" alt="Product image" class="product-image-hover">--}}
                                     </a>
 

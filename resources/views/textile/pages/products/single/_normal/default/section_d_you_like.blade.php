@@ -29,7 +29,14 @@
                                 <figure class="product-media">
                                     {{--<span class="product-label label-new">New</span>--}}
                                     <a href="{{route('products.single',$product->slug)}}">
-                                        <img src="{{$product->image}}" alt="{{$product->field('name')}}" class="product-image">
+                                        <img 
+                                            src="{{$product->image}}" 
+                                            alt="{{$product->field('name')}}" 
+                                            class="product-image"
+                                            width="276"
+                                            height="345"
+                                            loading="lazy"
+                                        >
                                     </a>
 
                                     {{--<div class="product-action-vertical">
@@ -41,7 +48,9 @@
                                     {{--<div class="product-action">
                                         <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
                                     </div>--}}
-                                    <livewire:cart.add-to-cart-button :product-id="$product->id" :key="time().$product->id" />
+                                    <div class="product-action">
+                                        <a href="{{route('products.single',$product->slug)}}" class="btn-product btn-cart"><span>{{__('buttons.add_to_cart')}}</span></a>
+                                    </div>
                                 </figure>
 
                                 <div class="product-body">
@@ -63,7 +72,13 @@
                                         @if($product->all_photos)
                                             @foreach($product->all_photos as $photo)
                                                 <a href="#" class="{{$loop->first ? 'active':''}}">
-                                                    <img src="{{$product->singlePhoto($photo)}}" alt="{{$product->field('name')}}">
+                                                    <img 
+                                                        src="{{$product->singlePhoto($photo)}}" 
+                                                        alt="{{$product->field('name')}}"
+                                                        width="40"
+                                                        height="50"
+                                                        loading="lazy"
+                                                    >
                                                 </a>
                                             @endforeach
                                         @endif

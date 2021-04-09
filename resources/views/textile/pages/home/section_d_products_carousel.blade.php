@@ -31,7 +31,14 @@
                 <figure class="product-media">
                     {{--<span class="product-label label-circle label-top">Top</span>--}}
                     <a href="{{route('products.single',$product->slug)}}">
-                        <img src="{{$product->image}}" alt="{{$product->field('name')}}" class="product-image">
+                        <img 
+                        src="{{$product->image}}" 
+                        alt="{{$product->field('name')}}" 
+                        class="product-image"
+                        width="217"
+                        height="271"
+                        loading="lazy"
+                        >
                     </a>
 
                     {{--<div class="product-action-vertical">

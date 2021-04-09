@@ -19,7 +19,13 @@
 
             <div class="col-lg-6 offset-lg-1">
                 <div class="about-images">
-                    <img src="{{$pages['about']->photo}}" alt="" class="about-img-front">
+                    <img 
+                        src="{{$pages['about']->photo}}" alt="Mailletex"
+                        class="about-img-front"
+                        width="276"
+                        height="320"
+                        loading="lazy"
+                     >
                     {{--<img src="assets/images/about/img-2.jpg" alt="" class="about-img-back">--}}
                 </div><!-- End .about-images -->
             </div><!-- End .col-lg-6 -->
