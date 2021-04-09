@@ -6,7 +6,7 @@
                 {{--<h2 class="title">Who We Are</h2>--}}
                 {{--<p class="lead text-primary mb-3">Pellentesque</p>--}}
                 <p class="mb-2">
-                   {!!$page->body!!}
+                   {!!$page->field('body')!!}
                 </p>
 
             
