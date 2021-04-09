@@ -7,7 +7,12 @@
                     <figure class="product-media">
                         {{--<span class="product-label label-new">New</span>--}}
                         <a href="{{route('products.single',$product->slug)}}">
-                            <img src="{{$product->image}}" alt="{{$product->field('name')}}" class="product-image">
+                            <img src="{{$product->image}}"
+                               alt="{{$product->field('name')}}"
+                               class="product-image"
+                               width="202"
+                               height="253"
+                              >
                         </a>
                     </figure>
                 </div>
