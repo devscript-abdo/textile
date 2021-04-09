@@ -55,7 +55,7 @@ return [
         // Here is your custom disk
         'static' => [
             'driver' => 'local',
-            'url' => env('ASSET_URL') . '/storage',
+          
             // This should be a correct absolute path, so change it with yours
             'root'   => '/home/maillete/public_html/static-files/storage/',
             'visibility' => 'public',
