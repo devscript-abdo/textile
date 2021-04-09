@@ -16,16 +16,14 @@ return [
     /*****end  section -  Testimonials */
 
     /*******nos values ***************/
-    'values' => 'NOS VALEURS ',
+    'values' => 'OUR VALUES',
 
-    'value_excelence' => 'L’excellence professionnelle',
-    'value_excelence_description' => "Notre expertise dans le domaine du textile et de tissus pour habillement spécifiquement, garantit la plus-value professionnelle dans toutes nos transactions.
-         Notre perspective est orientée clients, nous collaborons ensemble pour atteindre l’excellence professionnelle.
-        ",
+    'value_excelence' => 'Professional excellence',
+    'value_excelence_description' => " MAILLE TEX’s expertise in textile and fabrics manufacturing especially, guarantees an added value in all our professional transactions. Client’s satisfaction is our priority, we collaborate together to reach professional excellence.",
 
-    'value_qualite' => 'Qualité',
-    'value_qualite_description' => "La priorité chez MAILLE TEX c’est la qualité de nos produits fabriqués localement et importés aussi. Nos clients le disent à haute voix, la qualité des articles MAILLE TEX est indiscutable. ",
+    'value_qualite' => 'Quality',
+    'value_qualite_description' => "The first concern of MAILLE TEX is to offer high quality products to our clients, in local manufacturing and importation. ",
 
     'value_innovation' => 'Innovation',
-    'value_innovation_description' => "La veille technologique est indispensable pour tous les secteurs industriels afin de pouvoir avancer dans l’environnement actuel. Pour cela, MAILLE TEX s’assure d’être à jour en nouveautés techniques de tissage.",
+    'value_innovation_description' => "Up to date technological awareness became a must for all industries, the reason why we make sure to follow the latest updates of textile fabrics manufacturing.",
 ];
