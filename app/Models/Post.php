@@ -17,6 +17,8 @@ class Post extends Model implements Feedable, Searchable
 {
     use HasFactory, Translatable, Language;
 
+    protected $translatable = ['title', 'excerpt','body','meta_description','meta_keywords','seo_title'];
+
     public function category()
     {
 

@@ -33,7 +33,7 @@
                         <a href="{{route('blog.single',$post->slug)}}">
                             <img src="{{$post->photo}}" alt="image desc">
                         </a>
-                    </figure><!-- End .entry-media -->
+                    </figure>
 
                     <div class="entry-body text-center">
                         <div class="entry-meta">
@@ -42,19 +42,19 @@
                                 {!! $post->full_date !!}
                             </a>
 
-                        </div><!-- End .entry-meta -->
+                        </div>
 
                         <h3 class="entry-title">
                             <a href="{{route('blog.single',$post->slug)}}">{{$post->field('title')}}</a>
-                        </h3><!-- End .entry-title -->
+                        </h3>
 
                         <div class="entry-content">
                             <p>{{$post->field('excerpt')}} </p>
-                            <a href="{{route('blog.single',$post->slug)}}" class="read-more">Read More</a>
-                        </div><!-- End .entry-content -->
-                    </div><!-- End .entry-body -->
+                            <a href="{{route('blog.single',$post->slug)}}" class="read-more">{{__('buttons.readmore')}}</a>
+                        </div>
+                    </div>
                 </article>
             @endforeach()
-        </div><!-- End .owl-carousel -->
-    </div><!-- End .container-fluid -->
-</div><!-- End .blog-posts -->
+        </div>
+    </div>
+</div>
