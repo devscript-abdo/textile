@@ -16,7 +16,9 @@ class Testimonial extends Model
 
     public function scopeActive($query)
     {
-        return $query->where('active', true)->get();
+        return $query->where('active', true)
+        ->with(['translations'])
+        ->get();
     }
 
     public function getDefaultAvatarAttribute()

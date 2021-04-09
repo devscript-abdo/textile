@@ -1,5 +1,5 @@
 <div class="stores mb-4 mb-lg-5">
-    <h2 class="title text-center mb-3">{{__('magazine.ou_magazines_title')}}</h2><!-- End .title text-center mb-2 -->
+    <h2 class="title text-center mb-3">{{__('magazine.ou_magazines_title')}}</h2>
 
     <div class="row">
         @foreach($magazines as $magazine)
@@ -8,25 +8,25 @@
                     <div class="row">
                         <div class="col-sm-5 col-xl-6">
                             <figure class="store-media mb-2 mb-lg-0">
-                                <img src="{{$magazine->photo}}" alt="{{$magazine->name}}">
-                            </figure><!-- End .store-media -->
-                        </div><!-- End .col-xl-6 -->
+                                <img src="{{$magazine->photo}}" alt="{{$magazine->field('name')}}">
+                            </figure>
+                        </div>
                         <div class="col-sm-7 col-xl-6">
                             <div class="store-content">
-                                <h3 class="store-title">{{$magazine->name}}</h3><!-- End .store-title -->
-                                <address>{{$magazine->address}}</address>
-                                <div><a href="tel:#">{{$magazine->tele}}</a></div>
+                                <h3 class="store-title">{{$magazine->field('name')}}</h3>
+                                <address>{{$magazine->field('address')}}</address>
+                                <div><a href="tel:{{$magazine->tele}}">{{$magazine->tele}}</a></div>
 
-                                <h4 class="store-subtitle">Store Hours:</h4><!-- End .store-subtitle -->
+                                <h4 class="store-subtitle">Store Hours:</h4>
 
                                 {!! $magazine->hours !!}
 
                                 <a href="{{$magazine->googlemap}}" class="btn btn-link" target="_blank"><span>View Map</span><i class="icon-long-arrow-right"></i></a>
-                            </div><!-- End .store-content -->
-                        </div><!-- End .col-xl-6 -->
-                    </div><!-- End .row -->
-                </div><!-- End .store -->
-            </div><!-- End .col-lg-6 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         @endforeach
 
 
